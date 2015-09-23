@@ -1,4 +1,4 @@
-src/main.o: ../src/main.cpp ../system/include/diag/Trace.h ../src/uart.h \
+src/main.o: ../src/main.cpp ../src/uart.h \
  ../system/include/cmsis/stm32f0xx.h ../system/include/cmsis/core_cm0.h \
  ../system/include/cmsis/core_cmInstr.h \
  ../system/include/cmsis/core_cmFunc.h \
@@ -31,8 +31,6 @@ src/main.o: ../src/main.cpp ../system/include/diag/Trace.h ../src/uart.h \
  ../src/OSC/OSCMessage.h ../src/OSC/OSCData.h ../src/OSC/OSCTiming.h \
  ../src/OSC/SimpleWriter.h ../src/SLIPEncodedSerial.h ../src/Serial.h \
  ../src/OSC/SimpleWriter.h
-
-../system/include/diag/Trace.h:
 
 ../src/uart.h:
 
