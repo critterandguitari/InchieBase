@@ -20,8 +20,10 @@ private:
 
 public:
 	
-	SLIPEncodedSerial();
+	SLIPEncodedSerial(hardware_uart * u);
     
+	hardware_uart * uart; // the uart device
+
     uint8_t rstate;
 
     // encoded message
@@ -49,9 +51,9 @@ public:
     
     void decode(const uint8_t *buf, int size);
 
-    int sendPacket(const uint8_t *buf, uint32_t len, hardware_uart * uart);
+    int sendPacket(const uint8_t *buf, uint32_t len);//, hardware_uart * uart);
 
-    int recvPacket(hardware_uart * uart);
+    int recvPacket(void);//hardware_uart * uart);
     
 };
 

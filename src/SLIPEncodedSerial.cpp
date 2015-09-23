@@ -14,12 +14,13 @@ extern "C" {
 /*
  CONSTRUCTOR
  */
-SLIPEncodedSerial::SLIPEncodedSerial()
+SLIPEncodedSerial::SLIPEncodedSerial(hardware_uart * u)
 {
     rstate = WAITING;
     rxPacketIndex = 0;
     encodedBufIndex = 0;
     decodedBufIndex = 0;
+	uart = u;
 }
 
 static const uint8_t eot = 0300;
@@ -28,8 +29,7 @@ static const uint8_t slipescend = 0334;
 static const uint8_t slipescesc = 0335;
 
 
-
-int SLIPEncodedSerial::sendPacket(const uint8_t *buf, uint32_t len, hardware_uart * uart)
+int SLIPEncodedSerial::sendPacket(const uint8_t *buf, uint32_t len)//, hardware_uart * uart)
 {
 	uint32_t i;
     encode(buf, len);
@@ -37,12 +37,12 @@ int SLIPEncodedSerial::sendPacket(const uint8_t *buf, uint32_t len, hardware_uar
     	//uart2_send(encodedBuf[i]);
     	uart->tx_buf[uart->tx_buf_head++] = encodedBuf[i];  //TODO:  block here if buffer gets full
     	uart->tx_buf_head %= UART2_BUFFER_SIZE;
-    	uart_tx_it_en();
+    	uart->tx_it_en();
     }
     return encodedLength;//s.writeBuffer(encodedBuf, encodedLength);
 }
 
-int SLIPEncodedSerial::recvPacket(hardware_uart * uart)
+int SLIPEncodedSerial::recvPacket(void)//hardware_uart * uart)
 {
     while (uart->rx_buf_tail != uart->rx_buf_head) {
         uint8_t tmp8 = uart->rx_buf[uart->rx_buf_tail++];

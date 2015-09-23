@@ -12,6 +12,7 @@
 
 #include "stm32f0xx.h"
 
+// each uart has a tx and rx buffer, and a function to enable tx interrupt
 typedef struct {
     uint8_t  rx_buf[UART2_BUFFER_SIZE];
     uint16_t  rx_buf_head;
@@ -21,16 +22,15 @@ typedef struct {
     uint16_t  tx_buf_head;
     uint16_t  tx_buf_tail;
 
+    void (*tx_it_en) (void);
+
 } hardware_uart;
 
 
 void uart2_init(void);
-void uart2_send(uint8_t c);
-int uart2_available(void);
-int uart2_peek(void);
-int uart2_read(void);
 
-void uart_tx_it_en(void);
+void uart1_tx_it_en(void);
+void uart2_tx_it_en(void);
 
 
 #endif /* UART_H_ */

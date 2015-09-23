@@ -15,8 +15,12 @@
 hardware_uart uart_upstream;
 hardware_uart uart_downstream;
 
-void uart_tx_it_en(void){
+void uart1_tx_it_en(void){
     USART_ITConfig(USART1, USART_IT_TXE, ENABLE); // turn on tx interrupt
+}
+
+void uart2_tx_it_en(void){
+    USART_ITConfig(USART2, USART_IT_TXE, ENABLE); // turn on tx interrupt
 }
 
 void uart2_init(void){
@@ -27,12 +31,14 @@ void uart2_init(void){
     uart_upstream.rx_buf_tail = 0;
     uart_upstream.tx_buf_head = 0;
     uart_upstream.tx_buf_tail = 0;
+    uart_upstream.tx_it_en = uart1_tx_it_en;
 
 
     uart_downstream.rx_buf_head = 0;
     uart_downstream.rx_buf_tail = 0;
     uart_downstream.tx_buf_head = 0;
     uart_downstream.tx_buf_tail = 0;
+    uart_downstream.tx_it_en = uart2_tx_it_en;
 
     USART_InitTypeDef USART_InitStructure;
     GPIO_InitTypeDef GPIO_InitStructure;

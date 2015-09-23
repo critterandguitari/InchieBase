@@ -71,13 +71,16 @@ extern "C" {
 #pragma GCC diagnostic ignored "-Wreturn-type"
 
 
-// OSC stuff
-SLIPEncodedSerial slip;
-Serial serialUart2;
-SimpleWriter oscBuf;
+
 
 extern hardware_uart uart_upstream;
 extern hardware_uart uart_downstream;
+
+// OSC stuff
+SLIPEncodedSerial upstream(&uart_upstream);
+SLIPEncodedSerial downstream(&uart_downstream);
+Serial serialUart2;
+SimpleWriter oscBuf;
 
 // reset to default turn on state
 void reset(OSCMessage &msg){
@@ -140,7 +143,7 @@ void ledControl(OSCMessage &msg) {
 	  }
 
       msg.send(oscBuf);
-      slip.sendPacket(oscBuf.buffer, oscBuf.length, &uart_upstream);
+      upstream.sendPacket(oscBuf.buffer, oscBuf.length);
 }
 
 uint32_t owen = 0;
@@ -155,7 +158,6 @@ int main(int argc, char* argv[]) {
 
 	timer_start();
 
-
     AUX_LED_RED_OFF;
     AUX_LED_GREEN_OFF;
     AUX_LED_BLUE_OFF;
@@ -167,11 +169,10 @@ int main(int argc, char* argv[]) {
 	AUX_LED_BLUE_ON;
 
 	while (1) {
-		if (slip.recvPacket(&uart_upstream)) {
+		if (upstream.recvPacket()) {
 			// fill the message and dispatch it
 
-
-			msgIn.fill(slip.decodedBuf, slip.decodedLength);
+			msgIn.fill(upstream.decodedBuf, upstream.decodedLength);
 
 			// dispatch it
 			if(!msgIn.hasError()) {
@@ -194,10 +195,10 @@ int main(int argc, char* argv[]) {
     AUX_LED_BLUE_OFF;
 
 	while (1) {
-		if (slip.recvPacket(&uart_upstream)) {
+		if (upstream.recvPacket()) {
 			// fill the message and dispatch it
 
-			msgIn.fill(slip.decodedBuf, slip.decodedLength);
+			msgIn.fill(upstream.decodedBuf, upstream.decodedLength);
 
 			// dispatch it
 			if(!msgIn.hasError()) {
