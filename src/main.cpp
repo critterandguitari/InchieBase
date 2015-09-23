@@ -17,7 +17,6 @@ extern "C" {
 #include "OSC/OSCMessage.h"
 #include "SLIPEncodedSerial.h"
 #include "OSC/SimpleWriter.h"
-#include "Serial.h"
 
 // ----- Timing definitions -------------------------------------------------
 
@@ -113,21 +112,19 @@ int main(int argc, char* argv[]) {
 
 	OSCMessage msgIn;
 
-	uart2_init();
+	uart_init();
 
 	blink_led_init();
 
 	timer_start();
 
-    AUX_LED_RED_OFF;
-    AUX_LED_GREEN_OFF;
-    AUX_LED_BLUE_OFF;
+	LEDOFF;
     timer_sleep(1000);
-	AUX_LED_RED_ON;
+    LEDON;
     timer_sleep(1000);
-	AUX_LED_GREEN_ON;
+    LEDOFF;
     timer_sleep(1000);
-	AUX_LED_BLUE_ON;
+    LEDON;
 
 	while (1) {
 		if (upstream.recvPacket()) {
@@ -139,7 +136,9 @@ int main(int argc, char* argv[]) {
 			if(!msgIn.hasError()) {
 				// wait for start message so we aren't sending stuff during boot
 				if (msgIn.fullMatch("/ready", 0)){
-					msgIn.empty(); // free space occupied by message
+				    msgIn.send(oscBuf);
+				    downstream.sendPacket(oscBuf.buffer, oscBuf.length);
+	                msgIn.empty(); // free space occupied by message
 					break;
 				}
 				msgIn.empty();
@@ -151,9 +150,7 @@ int main(int argc, char* argv[]) {
 		}
 	} // waiting for /ready command
 
-    AUX_LED_RED_OFF;
-    AUX_LED_GREEN_OFF;
-    AUX_LED_BLUE_OFF;
+    LEDOFF;
 
 	while (1) {
 		if (upstream.recvPacket()) {
@@ -163,6 +160,10 @@ int main(int argc, char* argv[]) {
 
 			// dispatch it
 			if(!msgIn.hasError()) {
+
+			    // send it downstream
+                msgIn.send(oscBuf);
+                downstream.sendPacket(oscBuf.buffer, oscBuf.length);
 
 				// led
 				msgIn.dispatch("/led", ledControl, 0);
@@ -175,6 +176,23 @@ int main(int argc, char* argv[]) {
 				msgIn.empty(); // free space occupied by message
 			}
 		}
+
+
+        if (downstream.recvPacket()) {
+            msgIn.fill(downstream.decodedBuf, downstream.decodedLength);
+            if(!msgIn.hasError()) {
+
+                // send it upstream
+                msgIn.send(oscBuf);
+                upstream.sendPacket(oscBuf.buffer, oscBuf.length);
+
+                msgIn.empty(); // free space occupied by message
+
+            }
+            else {   // just empty it if there was an error
+                msgIn.empty(); // free space occupied by message
+            }
+        }
 
 		// do stuff
 

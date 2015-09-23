@@ -36,7 +36,7 @@ int SLIPEncodedSerial::sendPacket(const uint8_t *buf, uint32_t len)//, hardware_
     for (i = 0; i<encodedLength; i++){
     	//uart2_send(encodedBuf[i]);
     	uart->tx_buf[uart->tx_buf_head++] = encodedBuf[i];  //TODO:  block here if buffer gets full
-    	uart->tx_buf_head %= UART2_BUFFER_SIZE;
+    	uart->tx_buf_head %= UART_BUFFER_SIZE;
     	uart->tx_it_en(); // turn on uart interrupt to enable sending
     }
     return encodedLength;//s.writeBuffer(encodedBuf, encodedLength);
@@ -46,7 +46,7 @@ int SLIPEncodedSerial::recvPacket(void)//hardware_uart * uart)
 {
     while (uart->rx_buf_tail != uart->rx_buf_head) {
         uint8_t tmp8 = uart->rx_buf[uart->rx_buf_tail++];
-        uart->rx_buf_tail %= UART2_BUFFER_SIZE;
+        uart->rx_buf_tail %= UART_BUFFER_SIZE;
 
         if (rstate == WAITING) {
             if (tmp8 == eot) rstate = WAITING; // just keep waiting for something afer EOT

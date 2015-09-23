@@ -5,7 +5,6 @@
 # Add inputs and outputs from these tool invocations to the build variables 
 CPP_SRCS += \
 ../src/SLIPEncodedSerial.cpp \
-../src/Serial.cpp \
 ../src/main.cpp 
 
 C_SRCS += \
@@ -16,7 +15,6 @@ C_SRCS += \
 OBJS += \
 ./src/BlinkLed.o \
 ./src/SLIPEncodedSerial.o \
-./src/Serial.o \
 ./src/Timer.o \
 ./src/main.o \
 ./src/uart.o 
@@ -28,7 +26,6 @@ C_DEPS += \
 
 CPP_DEPS += \
 ./src/SLIPEncodedSerial.d \
-./src/Serial.d \
 ./src/main.d 
 
 

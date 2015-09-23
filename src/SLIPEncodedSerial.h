@@ -3,7 +3,6 @@
 #define SLIPEncodedSerial_h
 
 #include <stdint.h> 
-#include "Serial.h"
 
 extern "C" {
 #include "uart.h"

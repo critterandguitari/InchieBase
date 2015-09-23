@@ -23,7 +23,7 @@ void uart2_tx_it_en(void){
     USART_ITConfig(USART2, USART_IT_TXE, ENABLE); // turn on tx interrupt
 }
 
-void uart2_init(void){
+void uart_init(void){
 
 
     // zero things out
@@ -32,7 +32,6 @@ void uart2_init(void){
     uart_upstream.tx_buf_head = 0;
     uart_upstream.tx_buf_tail = 0;
     uart_upstream.tx_it_en = uart1_tx_it_en;
-
 
     uart_downstream.rx_buf_head = 0;
     uart_downstream.rx_buf_tail = 0;
@@ -45,7 +44,7 @@ void uart2_init(void){
     NVIC_InitTypeDef   NVIC_InitStructure;
 
     // uart 2 init
-/*    RCC_AHBPeriphClockCmd(RCC_AHBPeriph_GPIOA, ENABLE);
+    RCC_AHBPeriphClockCmd(RCC_AHBPeriph_GPIOA, ENABLE);
 
     RCC_APB1PeriphClockCmd(RCC_APB1Periph_USART2,ENABLE);
 
@@ -79,7 +78,7 @@ void uart2_init(void){
     NVIC_InitStructure.NVIC_IRQChannelCmd = ENABLE;
     NVIC_Init(&NVIC_InitStructure);
 
-    USART_Cmd(USART2,ENABLE);*/
+    USART_Cmd(USART2,ENABLE);
 
     // end uart 2 init
 
@@ -123,14 +122,13 @@ void uart2_init(void){
      USART_Cmd(USART1,ENABLE);
 
      //end uart 1 init
-
 }
 
 void uart2_send(uint8_t c){
-    while(USART_GetFlagStatus(USART1, USART_FLAG_TXE) == RESET); // Wait for Empty
+    /*   while(USART_GetFlagStatus(USART1, USART_FLAG_TXE) == RESET); // Wait for Empty
 
     USART_SendData(USART1, c); // Send 'I'
- /*
+
     while(USART_GetFlagStatus(USART2, USART_FLAG_TXE) == RESET); // Wait for Empty
 
     USART_SendData(USART2, c); // Send 'I'
@@ -138,23 +136,31 @@ void uart2_send(uint8_t c){
 }
 
 void USART2_IRQHandler(void) {
-   /* if( USART_GetITStatus(USART2, USART_IT_RXNE) != RESET){
-        //blink_led_on();
-        //char t = USART1->DR; // the character from the USART1 data register is saved in t
-        uart2_recv_buf[uart2_recv_buf_head] = USART_ReceiveData(USART2);
+    if( USART_GetITStatus(USART2, USART_IT_RXNE) != RESET){
+        uart_downstream.rx_buf[uart_downstream.rx_buf_head] = USART_ReceiveData(USART2);
+        uart_downstream.rx_buf_head++;
+        uart_downstream.rx_buf_head %= UART_BUFFER_SIZE;  //
+    }
 
+    if (USART_GetITStatus(USART2, USART_IT_TXE) != RESET) {
+        uint8_t tx;
 
-        uart2_recv_buf_head++;
-        uart2_recv_buf_head %= UART2_BUFFER_SIZE;  //
-        //blink_led_off();
-    }*/
+        if (uart_downstream.tx_buf_head != uart_downstream.tx_buf_tail){
+            tx = uart_downstream.tx_buf[uart_downstream.tx_buf_tail++];
+            uart_downstream.tx_buf_tail %= UART_BUFFER_SIZE;
+            USART_SendData(USART2, (uint16_t)tx); // Transmit the character
+        }
+        else {
+            USART_ITConfig(USART2, USART_IT_TXE, DISABLE); // Suppress interrupt when nothing to send
+        }
+    }
 }
 
 void USART1_IRQHandler(void) {
     if( USART_GetITStatus(USART1, USART_IT_RXNE) != RESET){
         uart_upstream.rx_buf[uart_upstream.rx_buf_head] = USART_ReceiveData(USART1);
         uart_upstream.rx_buf_head++;
-        uart_upstream.rx_buf_head %= UART2_BUFFER_SIZE;  //
+        uart_upstream.rx_buf_head %= UART_BUFFER_SIZE;  //
     }
 
     if (USART_GetITStatus(USART1, USART_IT_TXE) != RESET) {
@@ -162,15 +168,11 @@ void USART1_IRQHandler(void) {
 
         if (uart_upstream.tx_buf_head != uart_upstream.tx_buf_tail){
             tx = uart_upstream.tx_buf[uart_upstream.tx_buf_tail++];
-            uart_upstream.tx_buf_tail %= UART2_BUFFER_SIZE;
+            uart_upstream.tx_buf_tail %= UART_BUFFER_SIZE;
             USART_SendData(USART1, (uint16_t)tx); // Transmit the character
         }
         else {
             USART_ITConfig(USART1, USART_IT_TXE, DISABLE); // Suppress interrupt when nothing to send
         }
-      /*if (fifo_read(TxFifo, &tx, 1) == 1) // Anything to send?
-        USART_SendData(USART1, (uint16_t)tx); // Transmit the character
-      else
-        USART_ITConfig(USART1, USART_IT_TXE, DISABLE); // Suppress interrupt when empty*/
     }
 }
