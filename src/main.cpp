@@ -7,6 +7,10 @@
 
 #include <stdio.h>
 
+#include <string>
+
+using namespace std;
+
 extern "C" {
 #include "uart.h"
 #include "stm32f0xx.h"
@@ -41,6 +45,17 @@ extern hardware_uart uart_downstream;
 SLIPEncodedSerial upstream(&uart_upstream);
 SLIPEncodedSerial downstream(&uart_downstream);
 SimpleWriter oscBuf;
+
+// declaration of independence
+int myIndex = 13;
+//string myIndexAsString = "";
+//string myType = "led";
+//string myAddress = "";
+
+char const * myType = "led";
+char myAddress[16];
+
+
 
 // reset to default turn on state
 void reset(OSCMessage &msg){
@@ -102,8 +117,8 @@ void ledControl(OSCMessage &msg) {
 	    }
 	  }
 
-      msg.send(oscBuf);
-      upstream.sendPacket(oscBuf.buffer, oscBuf.length);
+     // msg.send(oscBuf);
+     // upstream.sendPacket(oscBuf.buffer, oscBuf.length);
 }
 
 uint32_t owen = 0;
@@ -166,7 +181,13 @@ int main(int argc, char* argv[]) {
                 downstream.sendPacket(oscBuf.buffer, oscBuf.length);
 
 				// led
-				msgIn.dispatch("/led", ledControl, 0);
+                // led control
+               // myAddress = "/" + myType +"/" + std::to_string(myIndex) + "";
+
+                sprintf(myAddress, "/%s/%d", myType, myIndex);
+               // msgIn.dispatch(myAddress.c_str(), ledControl, 0);
+                msgIn.dispatch(myAddress, ledControl, 0);
+				//msgIn.dispatch("/led", ledControl, 0);
 
 
 				msgIn.empty(); // free space occupied by message
