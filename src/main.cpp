@@ -47,7 +47,7 @@ SLIPEncodedSerial downstream(&uart_downstream);
 SimpleWriter oscBuf;
 
 // declaration of independence
-int myIndex = 13;
+int myIndex = 0;
 //string myIndexAsString = "";
 //string myType = "led";
 //string myAddress = "";
@@ -55,14 +55,22 @@ int myIndex = 13;
 char const * myType = "led";
 char myAddress[16];
 
-
-
 // reset to default turn on state
-void reset(OSCMessage &msg){
+void resetIndex(OSCMessage &msg){
+	myIndex = 0;
 }
 
 void renumber(OSCMessage &msg){
-  // send out a
+
+	// send out my type
+    sprintf(myAddress, "/%s", myType);
+    OSCMessage msgOut(myAddress);
+    msgOut.send(oscBuf);
+	downstream.sendPacket(oscBuf.buffer, oscBuf.length);
+}
+
+void incIndex(OSCMessage &msg){
+	myIndex++;
 }
 
 void ledControl(OSCMessage &msg) {
@@ -181,14 +189,16 @@ int main(int argc, char* argv[]) {
                 downstream.sendPacket(oscBuf.buffer, oscBuf.length);
 
 				// led
-                // led control
-               // myAddress = "/" + myType +"/" + std::to_string(myIndex) + "";
 
                 sprintf(myAddress, "/%s/%d", myType, myIndex);
-               // msgIn.dispatch(myAddress.c_str(), ledControl, 0);
                 msgIn.dispatch(myAddress, ledControl, 0);
-				//msgIn.dispatch("/led", ledControl, 0);
 
+                sprintf(myAddress, "/%s", myType);
+                msgIn.dispatch(myAddress, incIndex, 0);
+
+                msgIn.dispatch("/renumber", renumber, 0);
+
+                msgIn.dispatch("/resetindex", resetIndex, 0);
 
 				msgIn.empty(); // free space occupied by message
 
