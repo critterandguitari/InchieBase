@@ -46,13 +46,23 @@ SLIPEncodedSerial upstream(&uart_upstream);
 SLIPEncodedSerial downstream(&uart_downstream);
 SimpleWriter oscBuf;
 
+
+/*
+ControlElement& controlElement;
+PotControlElement pot;
+controlElement = pot;
+controlElement.init();
+*/
+
+
+
 // declaration of independence
-int myIndex = 0;
+int myIndex = 0;   // or would be controlElement.index
 //string myIndexAsString = "";
 //string myType = "led";
 //string myAddress = "";
 
-char const * myType = "led";
+char const * myType = "led";   // or would be controlElement.type
 char myAddress[16];
 
 // reset to default turn on state
@@ -187,8 +197,6 @@ int main(int argc, char* argv[]) {
 			    // send it downstream
                 msgIn.send(oscBuf);
                 downstream.sendPacket(oscBuf.buffer, oscBuf.length);
-
-				// led
 
                 sprintf(myAddress, "/%s/%d", myType, myIndex);
                 msgIn.dispatch(myAddress, ledControl, 0);
