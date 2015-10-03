@@ -34,25 +34,25 @@ SimpleWriter oscBuf;
 InchieKey inchie(oscBuf, upstream, downstream);
 
 /// main callbacks
-void reset(OSCMessage &msg){
+void reset(OSCMessage &msg) {
 	inchie.index = 0;
 	inchie.init();
 }
 
-void renumber(OSCMessage &msg){
+void renumber(OSCMessage &msg) {
 
 	// send out my type
-    sprintf(inchie.address, "/%s", inchie.type);
-    OSCMessage msgOut(inchie.address);
-    msgOut.send(oscBuf);
+	sprintf(inchie.address, "/%s", inchie.type);
+	OSCMessage msgOut(inchie.address);
+	msgOut.send(oscBuf);
 	downstream.sendPacket(oscBuf.buffer, oscBuf.length);
 }
 
-void incIndex(OSCMessage &msg){
+void incIndex(OSCMessage &msg) {
 	inchie.index++;
 }
 
-void respond(OSCMessage &msg){
+void respond(OSCMessage &msg) {
 	inchie.respond(msg);
 }
 
@@ -68,7 +68,13 @@ int main(int argc, char* argv[]) {
 
 	OSCMessage msgIn;
 
-	LEDOFF;timer_sleep(1000);LEDON;timer_sleep(1000);LEDOFF;timer_sleep(1000);LEDON;
+	LEDOFF;
+	timer_sleep(1000);
+	LEDON;
+	timer_sleep(1000);
+	LEDOFF;
+	timer_sleep(1000);
+	LEDON;
 
 	while (1) {
 		if (upstream.recvPacket()) {
@@ -77,23 +83,22 @@ int main(int argc, char* argv[]) {
 			msgIn.fill(upstream.decodedBuf, upstream.decodedLength);
 
 			// dispatch it
-			if(!msgIn.hasError()) {
+			if (!msgIn.hasError()) {
 				// wait for start message so we aren't sending stuff during boot
-				if (msgIn.fullMatch("/ready", 0)){
-				    msgIn.send(oscBuf);
-				    downstream.sendPacket(oscBuf.buffer, oscBuf.length);
-	                msgIn.empty(); // free space occupied by message
+				if (msgIn.fullMatch("/ready", 0)) {
+					msgIn.send(oscBuf);
+					downstream.sendPacket(oscBuf.buffer, oscBuf.length);
+					msgIn.empty(); // free space occupied by message
 					break;
 				}
 				msgIn.empty();
-			}
-			else {   // just empty it if there was an error
+			} else {   // just empty it if there was an error
 				msgIn.empty(); // free space occupied by message
 			}
 		}
 	} // waiting for /ready command
 
-    LEDOFF;
+	LEDOFF;
 
 	while (1) {
 		if (upstream.recvPacket()) {
@@ -102,47 +107,45 @@ int main(int argc, char* argv[]) {
 			msgIn.fill(upstream.decodedBuf, upstream.decodedLength);
 
 			// dispatch it
-			if(!msgIn.hasError()) {
+			if (!msgIn.hasError()) {
 
-			    // send it downstream
-                msgIn.send(oscBuf);
-                downstream.sendPacket(oscBuf.buffer, oscBuf.length);
+				// send it downstream
+				msgIn.send(oscBuf);
+				downstream.sendPacket(oscBuf.buffer, oscBuf.length);
 
-                sprintf(inchie.address, "/%s/%d", inchie.type, inchie.index);
-                msgIn.dispatch(inchie.address, respond, 0);
+				sprintf(inchie.address, "/%s/%d", inchie.type, inchie.index);
+				msgIn.dispatch(inchie.address, respond, 0);
 
-                sprintf(inchie.address, "/%s", inchie.type);
-                msgIn.dispatch(inchie.address, incIndex, 0);
+				sprintf(inchie.address, "/%s", inchie.type);
+				msgIn.dispatch(inchie.address, incIndex, 0);
 
-                msgIn.dispatch("/renumber", renumber, 0);
+				msgIn.dispatch("/renumber", renumber, 0);
 
-                msgIn.dispatch("/resetindex", reset, 0);
+				msgIn.dispatch("/resetindex", reset, 0);
 
 				msgIn.empty(); // free space occupied by message
 
-			}
-			else {   // just empty it if there was an error
+			} else {   // just empty it if there was an error
 				msgIn.empty(); // free space occupied by message
 			}
 		}
 
-        if (downstream.recvPacket()) {
-            msgIn.fill(downstream.decodedBuf, downstream.decodedLength);
-            if(!msgIn.hasError()) {
+		if (downstream.recvPacket()) {
+			msgIn.fill(downstream.decodedBuf, downstream.decodedLength);
+			if (!msgIn.hasError()) {
 
-                // send it upstream
-                msgIn.send(oscBuf);
-                upstream.sendPacket(oscBuf.buffer, oscBuf.length);
+				// send it upstream
+				msgIn.send(oscBuf);
+				upstream.sendPacket(oscBuf.buffer, oscBuf.length);
 
-                msgIn.empty(); // free space occupied by message
+				msgIn.empty(); // free space occupied by message
 
-            }
-            else {   // just empty it if there was an error
-                msgIn.empty(); // free space occupied by message
-            }
-        }
+			} else {   // just empty it if there was an error
+				msgIn.empty(); // free space occupied by message
+			}
+		}
 		// do stuff, possibly send message out
-	    inchie.perform();
+		inchie.perform();
 
 	} // Infinite loop, never return.
 }
