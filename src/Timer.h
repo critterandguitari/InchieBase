@@ -10,7 +10,7 @@
 
 // ----------------------------------------------------------------------------
 
-#define TIMER_FREQUENCY_HZ (10000u)  // one tenth of millisecond
+#define TIMER_FREQUENCY_HZ (1000u)  // one tenth of millisecond
 
 
 extern volatile uint32_t timer_delayCount;
@@ -21,7 +21,7 @@ timer_start (void);
 void
 timer_sleep (uint32_t ticks);
 
-void stopwatchStart(void);
+void stopwatchReStart(void);
 
 uint32_t stopwatchReport(void);
 

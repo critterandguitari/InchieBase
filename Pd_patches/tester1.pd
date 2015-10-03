@@ -1,0 +1,91 @@
+#N canvas 471 49 999 716 10;
+#X obj 620 50 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X floatatom 671 33 5 10 1000 0 - - -;
+#X floatatom 707 57 5 0 0 0 - - -;
+#X obj 619 88 metro 100;
+#X obj 343 353 mrpeach/unpackOSC;
+#X floatatom 330 477 5 0 0 0 - - -;
+#X obj 335 266 mrpeach/packOSC;
+#X msg 465 250 devicename /dev/tty.usbserial-A30013Jp \, baud 115200
+\, pollintervall 1;
+#X obj 330 511 vsl 15 128 0 1023 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 4668 1;
+#X msg 620 290 baud 115200;
+#X msg 484 286 pollintervall 1;
+#X obj 378 166 random 8;
+#X floatatom 325 89 5 0 0 0 - - -;
+#X obj 342 311 o.io.slipserial;
+#X msg 63 174 /ready;
+#X msg 263 151 /renumber;
+#X obj 441 99 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 526 156 random 8;
+#X obj 522 132 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X msg 373 197 send /led/0 \$1;
+#X msg 489 192 send /led/1 \$1;
+#X obj 640 152 random 8;
+#X obj 636 128 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 756 147 random 8;
+#X obj 752 123 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X msg 603 188 send /led/2 \$1;
+#X msg 174 156 /resetindex;
+#X msg 719 183 send /led/3 \$1;
+#X floatatom 401 478 5 0 0 0 - - -;
+#X obj 401 512 vsl 15 128 0 1023 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 7039 1;
+#X floatatom 463 479 5 0 0 0 - - -;
+#X obj 463 513 vsl 15 128 0 1023 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 3662 1;
+#X floatatom 523 479 5 0 0 0 - - -;
+#X obj 523 513 vsl 15 128 0 1023 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 0 1;
+#X obj 329 429 mrpeach/routeOSC /pot/0 /pot/1 /pot/2 /pot/3;
+#X obj 110 420 routeOSC /key/0 /key/1 /key/2;
+#X obj 108 454 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 162 452 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 222 449 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X connect 0 0 3 0;
+#X connect 1 0 3 1;
+#X connect 2 0 3 1;
+#X connect 3 0 11 0;
+#X connect 4 0 34 0;
+#X connect 4 0 35 0;
+#X connect 5 0 8 0;
+#X connect 6 0 13 0;
+#X connect 7 0 13 1;
+#X connect 9 0 13 1;
+#X connect 10 0 13 1;
+#X connect 11 0 19 0;
+#X connect 12 0 19 0;
+#X connect 13 0 4 0;
+#X connect 14 0 6 0;
+#X connect 15 0 6 0;
+#X connect 16 0 11 0;
+#X connect 17 0 20 0;
+#X connect 18 0 17 0;
+#X connect 19 0 6 0;
+#X connect 20 0 6 0;
+#X connect 21 0 25 0;
+#X connect 22 0 21 0;
+#X connect 23 0 27 0;
+#X connect 24 0 23 0;
+#X connect 25 0 6 0;
+#X connect 26 0 6 0;
+#X connect 27 0 6 0;
+#X connect 28 0 29 0;
+#X connect 30 0 31 0;
+#X connect 32 0 33 0;
+#X connect 34 0 5 0;
+#X connect 34 1 28 0;
+#X connect 34 2 30 0;
+#X connect 34 3 32 0;
+#X connect 35 0 36 0;
+#X connect 35 1 37 0;
+#X connect 35 2 38 0;

@@ -6,6 +6,7 @@
 CPP_SRCS += \
 ../src/InchieKey.cpp \
 ../src/InchieLED.cpp \
+../src/InchiePot.cpp \
 ../src/SLIPEncodedSerial.cpp \
 ../src/main.cpp 
 
@@ -18,6 +19,7 @@ OBJS += \
 ./src/BlinkLed.o \
 ./src/InchieKey.o \
 ./src/InchieLED.o \
+./src/InchiePot.o \
 ./src/SLIPEncodedSerial.o \
 ./src/Timer.o \
 ./src/main.o \
@@ -31,6 +33,7 @@ C_DEPS += \
 CPP_DEPS += \
 ./src/InchieKey.d \
 ./src/InchieLED.d \
+./src/InchiePot.d \
 ./src/SLIPEncodedSerial.d \
 ./src/main.d 
 

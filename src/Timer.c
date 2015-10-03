@@ -27,7 +27,7 @@ timer_start (void)
   SysTick_Config (SystemCoreClock / TIMER_FREQUENCY_HZ);
 }
 
-void stopwatchStart(void) {
+void stopwatchReStart(void) {
 	stopwatch = 0;
 
 }

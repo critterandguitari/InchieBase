@@ -1,4 +1,6 @@
-src/main.o: ../src/main.cpp ../src/uart.h \
+src/InchiePot.o: ../src/InchiePot.cpp ../src/InchiePot.h \
+ ../src/OSC/OSCMessage.h ../src/OSC/OSCData.h ../src/OSC/OSCTiming.h \
+ ../src/OSC/SimpleWriter.h ../src/SLIPEncodedSerial.h ../src/uart.h \
  ../system/include/cmsis/stm32f0xx.h ../system/include/cmsis/core_cm0.h \
  ../system/include/cmsis/core_cmInstr.h \
  ../system/include/cmsis/core_cmFunc.h \
@@ -25,13 +27,22 @@ src/main.o: ../src/main.cpp ../src/uart.h \
  ../system/include/stm32f0-stdperiph/stm32f0xx_tim.h \
  ../system/include/stm32f0-stdperiph/stm32f0xx_usart.h \
  ../system/include/stm32f0-stdperiph/stm32f0xx_wwdg.h \
- ../system/include/stm32f0-stdperiph/stm32f0xx_misc.h ../src/Timer.h \
+ ../system/include/stm32f0-stdperiph/stm32f0xx_misc.h \
+ ../src/OSC/SimpleWriter.h ../src/Timer.h \
  ../system/include/cmsis/cmsis_device.h \
- ../system/include/cmsis/stm32f0xx.h ../src/BlinkLed.h \
- ../src/OSC/OSCMessage.h ../src/OSC/OSCData.h ../src/OSC/OSCTiming.h \
- ../src/OSC/SimpleWriter.h ../src/SLIPEncodedSerial.h \
- ../src/OSC/SimpleWriter.h ../src/InchieLED.h ../src/Inchie.h \
- ../src/InchieKey.h ../src/InchiePot.h
+ ../system/include/cmsis/stm32f0xx.h ../src/BlinkLed.h
+
+../src/InchiePot.h:
+
+../src/OSC/OSCMessage.h:
+
+../src/OSC/OSCData.h:
+
+../src/OSC/OSCTiming.h:
+
+../src/OSC/SimpleWriter.h:
+
+../src/SLIPEncodedSerial.h:
 
 ../src/uart.h:
 
@@ -93,6 +104,8 @@ src/main.o: ../src/main.cpp ../src/uart.h \
 
 ../system/include/stm32f0-stdperiph/stm32f0xx_misc.h:
 
+../src/OSC/SimpleWriter.h:
+
 ../src/Timer.h:
 
 ../system/include/cmsis/cmsis_device.h:
@@ -100,23 +113,3 @@ src/main.o: ../src/main.cpp ../src/uart.h \
 ../system/include/cmsis/stm32f0xx.h:
 
 ../src/BlinkLed.h:
-
-../src/OSC/OSCMessage.h:
-
-../src/OSC/OSCData.h:
-
-../src/OSC/OSCTiming.h:
-
-../src/OSC/SimpleWriter.h:
-
-../src/SLIPEncodedSerial.h:
-
-../src/OSC/SimpleWriter.h:
-
-../src/InchieLED.h:
-
-../src/Inchie.h:
-
-../src/InchieKey.h:
-
-../src/InchiePot.h:

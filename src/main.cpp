@@ -20,6 +20,7 @@ extern "C" {
 #include "OSC/SimpleWriter.h"
 #include "InchieLED.h"
 #include "InchieKey.h"
+#include "InchiePot.h"
 
 // uart buffers
 extern hardware_uart uart_upstream;
@@ -31,7 +32,7 @@ SLIPEncodedSerial downstream(&uart_downstream);
 SimpleWriter oscBuf;
 
 // create inchie object and initialize
-InchieKey inchie(oscBuf, upstream, downstream);
+InchiePot inchie(oscBuf, upstream, downstream);
 
 /// main callbacks
 void reset(OSCMessage &msg) {
@@ -75,6 +76,8 @@ int main(int argc, char* argv[]) {
 	LEDOFF;
 	timer_sleep(1000);
 	LEDON;
+
+	stopwatchReStart();
 
 	while (1) {
 		if (upstream.recvPacket()) {
