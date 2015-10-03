@@ -60,7 +60,6 @@ int SLIPEncodedSerial::recvPacket(void)//hardware_uart * uart)
             // drop it if too long
         	if (rxPacketIndex >= MAX_MSG_SIZE){  //TODO:  does this want to be max_msg_size * 2
                 rstate = WAITING;
-            	AUX_LED_RED_ON;
         	}
         	else if (tmp8 == eot) {
                 rstate = WAITING;

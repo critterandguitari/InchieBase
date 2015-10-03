@@ -6,10 +6,7 @@
 // ----------------------------------------------------------------------------
 
 #include <stdio.h>
-
 #include <string>
-
-using namespace std;
 
 extern "C" {
 #include "uart.h"
@@ -21,23 +18,10 @@ extern "C" {
 #include "OSC/OSCMessage.h"
 #include "SLIPEncodedSerial.h"
 #include "OSC/SimpleWriter.h"
+#include "InchieLED.h"
+#include "InchieKey.h"
 
-// ----- Timing definitions -------------------------------------------------
-
-// Keep the LED on for 2/3 of a second.
-#define BLINK_ON_TICKS  (TIMER_FREQUENCY_HZ * 2 / 3)
-#define BLINK_OFF_TICKS (TIMER_FREQUENCY_HZ - BLINK_ON_TICKS)
-
-// ----- main() ---------------------------------------------------------------
-
-// Sample pragmas to cope with warnings. Please note the related line at
-// the end of this function, used to pop the compiler diagnostics status.
-#pragma GCC diagnostic push
-#pragma GCC diagnostic ignored "-Wunused-parameter"
-#pragma GCC diagnostic ignored "-Wmissing-declarations"
-#pragma GCC diagnostic ignored "-Wreturn-type"
-
-
+// uart buffers
 extern hardware_uart uart_upstream;
 extern hardware_uart uart_downstream;
 
@@ -46,109 +30,49 @@ SLIPEncodedSerial upstream(&uart_upstream);
 SLIPEncodedSerial downstream(&uart_downstream);
 SimpleWriter oscBuf;
 
-
-/*
-ControlElement& controlElement;
-PotControlElement pot;
-controlElement = pot;
-controlElement.init();
-*/
-
-
-
 // declaration of independence
-int myIndex = 0;   // or would be controlElement.index
-//string myIndexAsString = "";
-//string myType = "led";
-//string myAddress = "";
+int inchieIndex = 0;   // or would be controlElement.index
+char const * inchieType = "key";   // or would be controlElement.type
+char inchieAddress[16];
 
-char const * myType = "led";   // or would be controlElement.type
-char myAddress[16];
+// create inchie object and initialize
+InchieLED inchieKey;
+Inchie& inchie = inchieKey;
 
-// reset to default turn on state
-void resetIndex(OSCMessage &msg){
-	myIndex = 0;
+//InchieLED inchieLED;
+//Inchie& inchie = inchieLED;
+
+/// main callbacks
+void reset(OSCMessage &msg){
+	inchieIndex = 0;
+	inchie.init();
 }
 
 void renumber(OSCMessage &msg){
 
 	// send out my type
-    sprintf(myAddress, "/%s", myType);
-    OSCMessage msgOut(myAddress);
+    sprintf(inchieAddress, "/%s", inchieType);
+    OSCMessage msgOut(inchieAddress);
     msgOut.send(oscBuf);
 	downstream.sendPacket(oscBuf.buffer, oscBuf.length);
 }
 
 void incIndex(OSCMessage &msg){
-	myIndex++;
+	inchieIndex++;
 }
 
-void ledControl(OSCMessage &msg) {
-
-	  int stat;
-
-	  // digitalWrite(ledPin, LOW);
-	  if (msg.isInt(0)) {
-	    stat = msg.getInt(0);
-
-	    stat %= 8;
-
-	    if (stat == 0) {
-	      AUX_LED_RED_OFF;
-	      AUX_LED_GREEN_OFF;
-	      AUX_LED_BLUE_OFF;
-	    }
-	    if (stat == 1) {
-	      AUX_LED_RED_OFF;
-	      AUX_LED_GREEN_OFF;
-	      AUX_LED_BLUE_ON;
-	    }
-	    if (stat == 2) {
-	      AUX_LED_RED_OFF;
-	      AUX_LED_GREEN_ON;
-	      AUX_LED_BLUE_OFF;
-	    }
-	    if (stat == 3) {
-	      AUX_LED_RED_OFF;
-	      AUX_LED_GREEN_ON;
-	      AUX_LED_BLUE_ON;
-	    }
-	    if (stat == 4) {
-	      AUX_LED_RED_ON;
-	      AUX_LED_GREEN_OFF;
-	      AUX_LED_BLUE_OFF;
-	    }
-	    if (stat == 5) {
-	      AUX_LED_RED_ON;
-	      AUX_LED_GREEN_OFF;
-	      AUX_LED_BLUE_ON;
-	    }
-	    if (stat == 6) {
-	      AUX_LED_RED_ON;
-	      AUX_LED_GREEN_ON;
-	      AUX_LED_BLUE_OFF;
-	    }
-	    if (stat == 7) {
-	      AUX_LED_RED_ON;
-	      AUX_LED_GREEN_ON;
-	      AUX_LED_BLUE_ON;
-	    }
-	  }
-
-     // msg.send(oscBuf);
-     // upstream.sendPacket(oscBuf.buffer, oscBuf.length);
+void respond(OSCMessage &msg){
+	inchie.respond(msg);
 }
-
-uint32_t owen = 0;
 
 int main(int argc, char* argv[]) {
+
+	inchie.init();
 
 	OSCMessage msgIn;
 
 	uart_init();
-
 	blink_led_init();
-
 	timer_start();
 
 	LEDOFF;
@@ -179,7 +103,6 @@ int main(int argc, char* argv[]) {
 			else {   // just empty it if there was an error
 				msgIn.empty(); // free space occupied by message
 			}
-
 		}
 	} // waiting for /ready command
 
@@ -198,15 +121,15 @@ int main(int argc, char* argv[]) {
                 msgIn.send(oscBuf);
                 downstream.sendPacket(oscBuf.buffer, oscBuf.length);
 
-                sprintf(myAddress, "/%s/%d", myType, myIndex);
-                msgIn.dispatch(myAddress, ledControl, 0);
+                sprintf(inchieAddress, "/%s/%d", inchieType, inchieIndex);
+                msgIn.dispatch(inchieAddress, respond, 0);
 
-                sprintf(myAddress, "/%s", myType);
-                msgIn.dispatch(myAddress, incIndex, 0);
+                sprintf(inchieAddress, "/%s", inchieType);
+                msgIn.dispatch(inchieAddress, incIndex, 0);
 
                 msgIn.dispatch("/renumber", renumber, 0);
 
-                msgIn.dispatch("/resetindex", resetIndex, 0);
+                msgIn.dispatch("/resetindex", reset, 0);
 
 				msgIn.empty(); // free space occupied by message
 
@@ -215,7 +138,6 @@ int main(int argc, char* argv[]) {
 				msgIn.empty(); // free space occupied by message
 			}
 		}
-
 
         if (downstream.recvPacket()) {
             msgIn.fill(downstream.decodedBuf, downstream.decodedLength);
@@ -233,7 +155,16 @@ int main(int argc, char* argv[]) {
             }
         }
 
-		// do stuff
+    	if (GPIO_ReadInputDataBit(GPIOA, GPIO_Pin_1)) LEDON;
+    	else LEDOFF;
+
+      /*  sprintf(inchieAddress, "/%s/%d", inchieType, inchieIndex);
+	    OSCMessage msgOut(inchieAddress);
+		// do stuff, possibly send message out
+        if (inchie.perform(msgOut)) {
+    	    //msgOut.send(oscBuf);
+    		//upstream.sendPacket(oscBuf.buffer, oscBuf.length);
+        }*/
 
 	} // Infinite loop, never return.
 }

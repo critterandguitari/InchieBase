@@ -4,6 +4,9 @@
 
 # Add inputs and outputs from these tool invocations to the build variables 
 CPP_SRCS += \
+../src/Inchie.cpp \
+../src/InchieKey.cpp \
+../src/InchieLED.cpp \
 ../src/SLIPEncodedSerial.cpp \
 ../src/main.cpp 
 
@@ -14,6 +17,9 @@ C_SRCS += \
 
 OBJS += \
 ./src/BlinkLed.o \
+./src/Inchie.o \
+./src/InchieKey.o \
+./src/InchieLED.o \
 ./src/SLIPEncodedSerial.o \
 ./src/Timer.o \
 ./src/main.o \
@@ -25,6 +31,9 @@ C_DEPS += \
 ./src/uart.d 
 
 CPP_DEPS += \
+./src/Inchie.d \
+./src/InchieKey.d \
+./src/InchieLED.d \
 ./src/SLIPEncodedSerial.d \
 ./src/main.d 
 

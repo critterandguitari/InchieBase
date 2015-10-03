@@ -349,8 +349,6 @@ Discarded input sections
                 0x0000000000000000       0x18 ./system/src/stm32f0-stdperiph/stm32f0xx_gpio.o
  .text.GPIO_PinLockConfig
                 0x0000000000000000       0x58 ./system/src/stm32f0-stdperiph/stm32f0xx_gpio.o
- .text.GPIO_ReadInputDataBit
-                0x0000000000000000       0xc4 ./system/src/stm32f0-stdperiph/stm32f0xx_gpio.o
  .text.GPIO_ReadInputData
                 0x0000000000000000       0x54 ./system/src/stm32f0-stdperiph/stm32f0xx_gpio.o
  .text.GPIO_ReadOutputDataBit
@@ -925,48 +923,9 @@ Discarded input sections
  .bss           0x0000000000000000        0x0 ./system/src/newlib/_cxx.o
  .text._ZN9__gnu_cxx27__verbose_terminate_handlerEv
                 0x0000000000000000       0x10 ./system/src/newlib/_cxx.o
- .text.__cxa_pure_virtual
-                0x0000000000000000       0x10 ./system/src/newlib/_cxx.o
- .rodata._ZZ18__cxa_pure_virtualE8__func__
-                0x0000000000000000       0x14 ./system/src/newlib/_cxx.o
  .rodata._ZZN9__gnu_cxx27__verbose_terminate_handlerEvE8__func__
                 0x0000000000000000       0x1c ./system/src/newlib/_cxx.o
- .debug_info    0x0000000000000000      0x4ff ./system/src/newlib/_cxx.o
- .debug_abbrev  0x0000000000000000      0x1a2 ./system/src/newlib/_cxx.o
- .debug_aranges
-                0x0000000000000000       0x28 ./system/src/newlib/_cxx.o
- .debug_ranges  0x0000000000000000       0x18 ./system/src/newlib/_cxx.o
- .debug_macro   0x0000000000000000      0x148 ./system/src/newlib/_cxx.o
- .debug_macro   0x0000000000000000      0x844 ./system/src/newlib/_cxx.o
- .debug_macro   0x0000000000000000       0xef ./system/src/newlib/_cxx.o
- .debug_macro   0x0000000000000000      0x322 ./system/src/newlib/_cxx.o
- .debug_macro   0x0000000000000000       0x58 ./system/src/newlib/_cxx.o
  .debug_macro   0x0000000000000000       0x16 ./system/src/newlib/_cxx.o
- .debug_macro   0x0000000000000000       0x35 ./system/src/newlib/_cxx.o
- .debug_macro   0x0000000000000000       0xa3 ./system/src/newlib/_cxx.o
- .debug_macro   0x0000000000000000       0x16 ./system/src/newlib/_cxx.o
- .debug_macro   0x0000000000000000      0x10e ./system/src/newlib/_cxx.o
- .debug_macro   0x0000000000000000       0x8d ./system/src/newlib/_cxx.o
- .debug_macro   0x0000000000000000       0x4a ./system/src/newlib/_cxx.o
- .debug_macro   0x0000000000000000       0x52 ./system/src/newlib/_cxx.o
- .debug_macro   0x0000000000000000       0x16 ./system/src/newlib/_cxx.o
- .debug_macro   0x0000000000000000       0x43 ./system/src/newlib/_cxx.o
- .debug_macro   0x0000000000000000      0x180 ./system/src/newlib/_cxx.o
- .debug_macro   0x0000000000000000       0x16 ./system/src/newlib/_cxx.o
- .debug_macro   0x0000000000000000       0x29 ./system/src/newlib/_cxx.o
- .debug_macro   0x0000000000000000       0xac ./system/src/newlib/_cxx.o
- .debug_macro   0x0000000000000000       0x10 ./system/src/newlib/_cxx.o
- .debug_macro   0x0000000000000000       0x22 ./system/src/newlib/_cxx.o
- .debug_macro   0x0000000000000000       0xbd ./system/src/newlib/_cxx.o
- .debug_macro   0x0000000000000000       0x16 ./system/src/newlib/_cxx.o
- .debug_macro   0x0000000000000000       0x35 ./system/src/newlib/_cxx.o
- .debug_macro   0x0000000000000000      0x48e ./system/src/newlib/_cxx.o
- .debug_line    0x0000000000000000      0x36a ./system/src/newlib/_cxx.o
- .debug_str     0x0000000000000000     0x6033 ./system/src/newlib/_cxx.o
- .comment       0x0000000000000000       0x71 ./system/src/newlib/_cxx.o
- .ARM.attributes
-                0x0000000000000000       0x31 ./system/src/newlib/_cxx.o
- .debug_frame   0x0000000000000000       0x40 ./system/src/newlib/_cxx.o
  .group         0x0000000000000000        0x8 ./system/src/newlib/_exit.o
  .group         0x0000000000000000        0x8 ./system/src/newlib/_exit.o
  .group         0x0000000000000000        0x8 ./system/src/newlib/_exit.o
@@ -2005,6 +1964,259 @@ Discarded input sections
  .debug_macro   0x0000000000000000      0x353 ./src/BlinkLed.o
  .debug_macro   0x0000000000000000       0x34 ./src/BlinkLed.o
  .debug_macro   0x0000000000000000       0x3a ./src/BlinkLed.o
+ .group         0x0000000000000000        0x8 ./src/Inchie.o
+ .text          0x0000000000000000        0x0 ./src/Inchie.o
+ .data          0x0000000000000000        0x0 ./src/Inchie.o
+ .bss           0x0000000000000000        0x0 ./src/Inchie.o
+ .debug_info    0x0000000000000000       0x21 ./src/Inchie.o
+ .debug_abbrev  0x0000000000000000       0x13 ./src/Inchie.o
+ .debug_aranges
+                0x0000000000000000       0x18 ./src/Inchie.o
+ .debug_macro   0x0000000000000000       0x11 ./src/Inchie.o
+ .debug_macro   0x0000000000000000      0x844 ./src/Inchie.o
+ .debug_line    0x0000000000000000       0x32 ./src/Inchie.o
+ .debug_str     0x0000000000000000     0x23c3 ./src/Inchie.o
+ .comment       0x0000000000000000       0x71 ./src/Inchie.o
+ .ARM.attributes
+                0x0000000000000000       0x31 ./src/Inchie.o
+ .group         0x0000000000000000        0x8 ./src/InchieKey.o
+ .group         0x0000000000000000        0x8 ./src/InchieKey.o
+ .group         0x0000000000000000        0x8 ./src/InchieKey.o
+ .group         0x0000000000000000        0x8 ./src/InchieKey.o
+ .group         0x0000000000000000        0x8 ./src/InchieKey.o
+ .group         0x0000000000000000        0x8 ./src/InchieKey.o
+ .group         0x0000000000000000        0x8 ./src/InchieKey.o
+ .group         0x0000000000000000        0x8 ./src/InchieKey.o
+ .group         0x0000000000000000        0x8 ./src/InchieKey.o
+ .group         0x0000000000000000        0x8 ./src/InchieKey.o
+ .group         0x0000000000000000        0x8 ./src/InchieKey.o
+ .group         0x0000000000000000        0x8 ./src/InchieKey.o
+ .group         0x0000000000000000        0x8 ./src/InchieKey.o
+ .group         0x0000000000000000        0x8 ./src/InchieKey.o
+ .group         0x0000000000000000        0x8 ./src/InchieKey.o
+ .group         0x0000000000000000        0x8 ./src/InchieKey.o
+ .group         0x0000000000000000        0x8 ./src/InchieKey.o
+ .group         0x0000000000000000        0x8 ./src/InchieKey.o
+ .group         0x0000000000000000        0x8 ./src/InchieKey.o
+ .group         0x0000000000000000        0x8 ./src/InchieKey.o
+ .group         0x0000000000000000        0x8 ./src/InchieKey.o
+ .group         0x0000000000000000        0x8 ./src/InchieKey.o
+ .group         0x0000000000000000        0x8 ./src/InchieKey.o
+ .group         0x0000000000000000        0x8 ./src/InchieKey.o
+ .group         0x0000000000000000        0x8 ./src/InchieKey.o
+ .group         0x0000000000000000        0x8 ./src/InchieKey.o
+ .group         0x0000000000000000        0x8 ./src/InchieKey.o
+ .group         0x0000000000000000        0x8 ./src/InchieKey.o
+ .group         0x0000000000000000        0x8 ./src/InchieKey.o
+ .group         0x0000000000000000        0x8 ./src/InchieKey.o
+ .group         0x0000000000000000        0x8 ./src/InchieKey.o
+ .group         0x0000000000000000        0x8 ./src/InchieKey.o
+ .group         0x0000000000000000        0x8 ./src/InchieKey.o
+ .group         0x0000000000000000        0x8 ./src/InchieKey.o
+ .group         0x0000000000000000        0x8 ./src/InchieKey.o
+ .group         0x0000000000000000        0x8 ./src/InchieKey.o
+ .group         0x0000000000000000        0x8 ./src/InchieKey.o
+ .group         0x0000000000000000        0x8 ./src/InchieKey.o
+ .group         0x0000000000000000        0x8 ./src/InchieKey.o
+ .group         0x0000000000000000        0x8 ./src/InchieKey.o
+ .group         0x0000000000000000        0x8 ./src/InchieKey.o
+ .group         0x0000000000000000        0x8 ./src/InchieKey.o
+ .group         0x0000000000000000        0x8 ./src/InchieKey.o
+ .group         0x0000000000000000        0x8 ./src/InchieKey.o
+ .group         0x0000000000000000        0x8 ./src/InchieKey.o
+ .group         0x0000000000000000        0x8 ./src/InchieKey.o
+ .group         0x0000000000000000        0x8 ./src/InchieKey.o
+ .group         0x0000000000000000        0x8 ./src/InchieKey.o
+ .group         0x0000000000000000        0x8 ./src/InchieKey.o
+ .group         0x0000000000000000        0x8 ./src/InchieKey.o
+ .group         0x0000000000000000        0x8 ./src/InchieKey.o
+ .group         0x0000000000000000        0x8 ./src/InchieKey.o
+ .group         0x0000000000000000        0x8 ./src/InchieKey.o
+ .group         0x0000000000000000        0x8 ./src/InchieKey.o
+ .group         0x0000000000000000        0x8 ./src/InchieKey.o
+ .group         0x0000000000000000        0x8 ./src/InchieKey.o
+ .group         0x0000000000000000        0x8 ./src/InchieKey.o
+ .text          0x0000000000000000        0x0 ./src/InchieKey.o
+ .data          0x0000000000000000        0x0 ./src/InchieKey.o
+ .bss           0x0000000000000000        0x0 ./src/InchieKey.o
+ .text._ZN9InchieKeyD2Ev
+                0x0000000000000000        0xc ./src/InchieKey.o
+ .text._ZN9InchieKey7respondER10OSCMessage
+                0x0000000000000000        0x4 ./src/InchieKey.o
+ .text._ZN9InchieKeyD0Ev
+                0x0000000000000000       0x14 ./src/InchieKey.o
+ .text._ZN9InchieKey4initEv
+                0x0000000000000000       0x2c ./src/InchieKey.o
+ .text._ZN9InchieKey7performER10OSCMessage
+                0x0000000000000000       0x34 ./src/InchieKey.o
+ .rodata._ZTV9InchieKey
+                0x0000000000000000       0x20 ./src/InchieKey.o
+ .debug_macro   0x0000000000000000      0x844 ./src/InchieKey.o
+ .debug_macro   0x0000000000000000       0x1c ./src/InchieKey.o
+ .debug_macro   0x0000000000000000       0x16 ./src/InchieKey.o
+ .debug_macro   0x0000000000000000       0x44 ./src/InchieKey.o
+ .debug_macro   0x0000000000000000      0x209 ./src/InchieKey.o
+ .debug_macro   0x0000000000000000       0x58 ./src/InchieKey.o
+ .debug_macro   0x0000000000000000       0x35 ./src/InchieKey.o
+ .debug_macro   0x0000000000000000       0xa3 ./src/InchieKey.o
+ .debug_macro   0x0000000000000000       0x16 ./src/InchieKey.o
+ .debug_macro   0x0000000000000000      0x10e ./src/InchieKey.o
+ .debug_macro   0x0000000000000000       0x8d ./src/InchieKey.o
+ .debug_macro   0x0000000000000000       0x52 ./src/InchieKey.o
+ .debug_macro   0x0000000000000000       0x16 ./src/InchieKey.o
+ .debug_macro   0x0000000000000000       0x43 ./src/InchieKey.o
+ .debug_macro   0x0000000000000000      0x180 ./src/InchieKey.o
+ .debug_macro   0x0000000000000000       0x16 ./src/InchieKey.o
+ .debug_macro   0x0000000000000000       0x29 ./src/InchieKey.o
+ .debug_macro   0x0000000000000000       0x10 ./src/InchieKey.o
+ .debug_macro   0x0000000000000000       0x35 ./src/InchieKey.o
+ .debug_macro   0x0000000000000000      0x452 ./src/InchieKey.o
+ .debug_macro   0x0000000000000000      0x2ad ./src/InchieKey.o
+ .debug_macro   0x0000000000000000       0x10 ./src/InchieKey.o
+ .debug_macro   0x0000000000000000       0x1f ./src/InchieKey.o
+ .debug_macro   0x0000000000000000       0x7a ./src/InchieKey.o
+ .debug_macro   0x0000000000000000       0x3a ./src/InchieKey.o
+ .debug_macro   0x0000000000000000       0x1f ./src/InchieKey.o
+ .debug_macro   0x0000000000000000     0x5b9e ./src/InchieKey.o
+ .debug_macro   0x0000000000000000      0x2ec ./src/InchieKey.o
+ .debug_macro   0x0000000000000000      0x3cf ./src/InchieKey.o
+ .debug_macro   0x0000000000000000      0x191 ./src/InchieKey.o
+ .debug_macro   0x0000000000000000       0x46 ./src/InchieKey.o
+ .debug_macro   0x0000000000000000       0xd9 ./src/InchieKey.o
+ .debug_macro   0x0000000000000000       0xef ./src/InchieKey.o
+ .debug_macro   0x0000000000000000      0x184 ./src/InchieKey.o
+ .debug_macro   0x0000000000000000       0x7c ./src/InchieKey.o
+ .debug_macro   0x0000000000000000      0x295 ./src/InchieKey.o
+ .debug_macro   0x0000000000000000       0xd7 ./src/InchieKey.o
+ .debug_macro   0x0000000000000000      0x23d ./src/InchieKey.o
+ .debug_macro   0x0000000000000000      0x185 ./src/InchieKey.o
+ .debug_macro   0x0000000000000000      0x184 ./src/InchieKey.o
+ .debug_macro   0x0000000000000000      0x2a0 ./src/InchieKey.o
+ .debug_macro   0x0000000000000000       0x70 ./src/InchieKey.o
+ .debug_macro   0x0000000000000000       0xdf ./src/InchieKey.o
+ .debug_macro   0x0000000000000000      0x4e3 ./src/InchieKey.o
+ .debug_macro   0x0000000000000000      0x4c5 ./src/InchieKey.o
+ .debug_macro   0x0000000000000000      0x397 ./src/InchieKey.o
+ .debug_macro   0x0000000000000000      0x750 ./src/InchieKey.o
+ .debug_macro   0x0000000000000000      0x353 ./src/InchieKey.o
+ .debug_macro   0x0000000000000000       0x34 ./src/InchieKey.o
+ .debug_macro   0x0000000000000000       0x3a ./src/InchieKey.o
+ .group         0x0000000000000000        0x8 ./src/InchieLED.o
+ .group         0x0000000000000000        0x8 ./src/InchieLED.o
+ .group         0x0000000000000000        0x8 ./src/InchieLED.o
+ .group         0x0000000000000000        0x8 ./src/InchieLED.o
+ .group         0x0000000000000000        0x8 ./src/InchieLED.o
+ .group         0x0000000000000000        0x8 ./src/InchieLED.o
+ .group         0x0000000000000000        0x8 ./src/InchieLED.o
+ .group         0x0000000000000000        0x8 ./src/InchieLED.o
+ .group         0x0000000000000000        0x8 ./src/InchieLED.o
+ .group         0x0000000000000000        0x8 ./src/InchieLED.o
+ .group         0x0000000000000000        0x8 ./src/InchieLED.o
+ .group         0x0000000000000000        0x8 ./src/InchieLED.o
+ .group         0x0000000000000000        0x8 ./src/InchieLED.o
+ .group         0x0000000000000000        0x8 ./src/InchieLED.o
+ .group         0x0000000000000000        0x8 ./src/InchieLED.o
+ .group         0x0000000000000000        0x8 ./src/InchieLED.o
+ .group         0x0000000000000000        0x8 ./src/InchieLED.o
+ .group         0x0000000000000000        0x8 ./src/InchieLED.o
+ .group         0x0000000000000000        0x8 ./src/InchieLED.o
+ .group         0x0000000000000000        0x8 ./src/InchieLED.o
+ .group         0x0000000000000000        0x8 ./src/InchieLED.o
+ .group         0x0000000000000000        0x8 ./src/InchieLED.o
+ .group         0x0000000000000000        0x8 ./src/InchieLED.o
+ .group         0x0000000000000000        0x8 ./src/InchieLED.o
+ .group         0x0000000000000000        0x8 ./src/InchieLED.o
+ .group         0x0000000000000000        0x8 ./src/InchieLED.o
+ .group         0x0000000000000000        0x8 ./src/InchieLED.o
+ .group         0x0000000000000000        0x8 ./src/InchieLED.o
+ .group         0x0000000000000000        0x8 ./src/InchieLED.o
+ .group         0x0000000000000000        0x8 ./src/InchieLED.o
+ .group         0x0000000000000000        0x8 ./src/InchieLED.o
+ .group         0x0000000000000000        0x8 ./src/InchieLED.o
+ .group         0x0000000000000000        0x8 ./src/InchieLED.o
+ .group         0x0000000000000000        0x8 ./src/InchieLED.o
+ .group         0x0000000000000000        0x8 ./src/InchieLED.o
+ .group         0x0000000000000000        0x8 ./src/InchieLED.o
+ .group         0x0000000000000000        0x8 ./src/InchieLED.o
+ .group         0x0000000000000000        0x8 ./src/InchieLED.o
+ .group         0x0000000000000000        0x8 ./src/InchieLED.o
+ .group         0x0000000000000000        0x8 ./src/InchieLED.o
+ .group         0x0000000000000000        0x8 ./src/InchieLED.o
+ .group         0x0000000000000000        0x8 ./src/InchieLED.o
+ .group         0x0000000000000000        0x8 ./src/InchieLED.o
+ .group         0x0000000000000000        0x8 ./src/InchieLED.o
+ .group         0x0000000000000000        0x8 ./src/InchieLED.o
+ .group         0x0000000000000000        0x8 ./src/InchieLED.o
+ .group         0x0000000000000000        0x8 ./src/InchieLED.o
+ .group         0x0000000000000000        0x8 ./src/InchieLED.o
+ .group         0x0000000000000000        0x8 ./src/InchieLED.o
+ .group         0x0000000000000000        0x8 ./src/InchieLED.o
+ .group         0x0000000000000000        0x8 ./src/InchieLED.o
+ .group         0x0000000000000000        0x8 ./src/InchieLED.o
+ .group         0x0000000000000000        0x8 ./src/InchieLED.o
+ .group         0x0000000000000000        0x8 ./src/InchieLED.o
+ .group         0x0000000000000000        0x8 ./src/InchieLED.o
+ .group         0x0000000000000000        0x8 ./src/InchieLED.o
+ .text          0x0000000000000000        0x0 ./src/InchieLED.o
+ .data          0x0000000000000000        0x0 ./src/InchieLED.o
+ .bss           0x0000000000000000        0x0 ./src/InchieLED.o
+ .text._ZN6InchieD2Ev
+                0x0000000000000000        0xc ./src/InchieLED.o
+ .text._ZN6InchieD0Ev
+                0x0000000000000000       0x14 ./src/InchieLED.o
+ .rodata._ZTV6Inchie
+                0x0000000000000000       0x20 ./src/InchieLED.o
+ .debug_macro   0x0000000000000000      0x844 ./src/InchieLED.o
+ .debug_macro   0x0000000000000000       0x1c ./src/InchieLED.o
+ .debug_macro   0x0000000000000000       0x16 ./src/InchieLED.o
+ .debug_macro   0x0000000000000000       0x44 ./src/InchieLED.o
+ .debug_macro   0x0000000000000000      0x209 ./src/InchieLED.o
+ .debug_macro   0x0000000000000000       0x58 ./src/InchieLED.o
+ .debug_macro   0x0000000000000000       0x35 ./src/InchieLED.o
+ .debug_macro   0x0000000000000000       0xa3 ./src/InchieLED.o
+ .debug_macro   0x0000000000000000       0x16 ./src/InchieLED.o
+ .debug_macro   0x0000000000000000      0x10e ./src/InchieLED.o
+ .debug_macro   0x0000000000000000       0x8d ./src/InchieLED.o
+ .debug_macro   0x0000000000000000       0x52 ./src/InchieLED.o
+ .debug_macro   0x0000000000000000       0x16 ./src/InchieLED.o
+ .debug_macro   0x0000000000000000       0x43 ./src/InchieLED.o
+ .debug_macro   0x0000000000000000      0x180 ./src/InchieLED.o
+ .debug_macro   0x0000000000000000       0x16 ./src/InchieLED.o
+ .debug_macro   0x0000000000000000       0x29 ./src/InchieLED.o
+ .debug_macro   0x0000000000000000       0x10 ./src/InchieLED.o
+ .debug_macro   0x0000000000000000       0x35 ./src/InchieLED.o
+ .debug_macro   0x0000000000000000      0x452 ./src/InchieLED.o
+ .debug_macro   0x0000000000000000      0x2ad ./src/InchieLED.o
+ .debug_macro   0x0000000000000000       0x10 ./src/InchieLED.o
+ .debug_macro   0x0000000000000000       0x1f ./src/InchieLED.o
+ .debug_macro   0x0000000000000000       0x7a ./src/InchieLED.o
+ .debug_macro   0x0000000000000000       0x3a ./src/InchieLED.o
+ .debug_macro   0x0000000000000000       0x1f ./src/InchieLED.o
+ .debug_macro   0x0000000000000000      0x242 ./src/InchieLED.o
+ .debug_macro   0x0000000000000000     0x5b9e ./src/InchieLED.o
+ .debug_macro   0x0000000000000000      0x2ec ./src/InchieLED.o
+ .debug_macro   0x0000000000000000      0x3cf ./src/InchieLED.o
+ .debug_macro   0x0000000000000000      0x191 ./src/InchieLED.o
+ .debug_macro   0x0000000000000000       0x46 ./src/InchieLED.o
+ .debug_macro   0x0000000000000000       0xd9 ./src/InchieLED.o
+ .debug_macro   0x0000000000000000       0xef ./src/InchieLED.o
+ .debug_macro   0x0000000000000000      0x184 ./src/InchieLED.o
+ .debug_macro   0x0000000000000000       0x7c ./src/InchieLED.o
+ .debug_macro   0x0000000000000000      0x295 ./src/InchieLED.o
+ .debug_macro   0x0000000000000000       0xd7 ./src/InchieLED.o
+ .debug_macro   0x0000000000000000      0x23d ./src/InchieLED.o
+ .debug_macro   0x0000000000000000      0x185 ./src/InchieLED.o
+ .debug_macro   0x0000000000000000      0x184 ./src/InchieLED.o
+ .debug_macro   0x0000000000000000      0x2a0 ./src/InchieLED.o
+ .debug_macro   0x0000000000000000       0x70 ./src/InchieLED.o
+ .debug_macro   0x0000000000000000       0xdf ./src/InchieLED.o
+ .debug_macro   0x0000000000000000      0x4e3 ./src/InchieLED.o
+ .debug_macro   0x0000000000000000      0x4c5 ./src/InchieLED.o
+ .debug_macro   0x0000000000000000      0x397 ./src/InchieLED.o
+ .debug_macro   0x0000000000000000      0x750 ./src/InchieLED.o
+ .debug_macro   0x0000000000000000      0x353 ./src/InchieLED.o
+ .debug_macro   0x0000000000000000       0x34 ./src/InchieLED.o
+ .debug_macro   0x0000000000000000       0x3a ./src/InchieLED.o
  .group         0x0000000000000000        0x8 ./src/SLIPEncodedSerial.o
  .group         0x0000000000000000        0x8 ./src/SLIPEncodedSerial.o
  .group         0x0000000000000000        0x8 ./src/SLIPEncodedSerial.o
@@ -2052,6 +2264,7 @@ Discarded input sections
  .debug_macro   0x0000000000000000       0x7a ./src/SLIPEncodedSerial.o
  .debug_macro   0x0000000000000000       0x3a ./src/SLIPEncodedSerial.o
  .debug_macro   0x0000000000000000       0x1f ./src/SLIPEncodedSerial.o
+ .debug_macro   0x0000000000000000      0x242 ./src/SLIPEncodedSerial.o
  .debug_macro   0x0000000000000000     0x5b9e ./src/SLIPEncodedSerial.o
  .debug_macro   0x0000000000000000      0x2ec ./src/SLIPEncodedSerial.o
  .debug_macro   0x0000000000000000      0x3cf ./src/SLIPEncodedSerial.o
@@ -2076,6 +2289,7 @@ Discarded input sections
  .debug_macro   0x0000000000000000      0x353 ./src/SLIPEncodedSerial.o
  .debug_macro   0x0000000000000000       0x34 ./src/SLIPEncodedSerial.o
  .debug_macro   0x0000000000000000       0x3a ./src/SLIPEncodedSerial.o
+ .debug_macro   0x0000000000000000       0x16 ./src/SLIPEncodedSerial.o
  .group         0x0000000000000000        0x8 ./src/Timer.o
  .group         0x0000000000000000        0x8 ./src/Timer.o
  .group         0x0000000000000000        0x8 ./src/Timer.o
@@ -2232,10 +2446,20 @@ Discarded input sections
  .group         0x0000000000000000        0x8 ./src/main.o
  .group         0x0000000000000000        0x8 ./src/main.o
  .group         0x0000000000000000        0x8 ./src/main.o
+ .group         0x0000000000000000        0x8 ./src/main.o
+ .group         0x0000000000000000        0x8 ./src/main.o
+ .group         0x0000000000000000        0x8 ./src/main.o
  .text          0x0000000000000000        0x0 ./src/main.o
  .data          0x0000000000000000        0x0 ./src/main.o
  .bss           0x0000000000000000        0x0 ./src/main.o
- .bss.owen      0x0000000000000000        0x4 ./src/main.o
+ .text._ZN6InchieD2Ev
+                0x0000000000000000        0xc ./src/main.o
+ .text._ZN6InchieD0Ev
+                0x0000000000000000       0x14 ./src/main.o
+ .rodata._ZTV6Inchie
+                0x0000000000000000       0x20 ./src/main.o
+ .rodata.inchie
+                0x0000000000000000        0x4 ./src/main.o
  .debug_macro   0x0000000000000000      0x844 ./src/main.o
  .debug_macro   0x0000000000000000       0x58 ./src/main.o
  .debug_macro   0x0000000000000000       0x16 ./src/main.o
@@ -2289,7 +2513,7 @@ Discarded input sections
  .debug_macro   0x0000000000000000      0x353 ./src/main.o
  .debug_macro   0x0000000000000000       0x34 ./src/main.o
  .debug_macro   0x0000000000000000       0x3a ./src/main.o
- .debug_macro   0x0000000000000000       0x3a ./src/main.o
+ .debug_macro   0x0000000000000000       0x16 ./src/main.o
  .debug_macro   0x0000000000000000       0x16 ./src/main.o
  .debug_macro   0x0000000000000000       0x16 ./src/main.o
  .debug_macro   0x0000000000000000       0x29 ./src/main.o
@@ -2370,7 +2594,7 @@ Discarded input sections
  .debug_macro   0x0000000000000000      0x353 ./src/uart.o
  .debug_macro   0x0000000000000000       0x34 ./src/uart.o
  .debug_macro   0x0000000000000000       0x3a ./src/uart.o
- .debug_macro   0x0000000000000000       0x3a ./src/uart.o
+ .debug_macro   0x0000000000000000       0x16 ./src/uart.o
  .text          0x0000000000000000        0x0 /Users/owen/gcc-arm-none-eabi-4_8-2014q1/bin/../lib/gcc/arm-none-eabi/4.8.3/../../../../arm-none-eabi/lib/armv6-m/libstdc++_s.a(del_op.o)
  .data          0x0000000000000000        0x0 /Users/owen/gcc-arm-none-eabi-4_8-2014q1/bin/../lib/gcc/arm-none-eabi/4.8.3/../../../../arm-none-eabi/lib/armv6-m/libstdc++_s.a(del_op.o)
  .bss           0x0000000000000000        0x0 /Users/owen/gcc-arm-none-eabi-4_8-2014q1/bin/../lib/gcc/arm-none-eabi/4.8.3/../../../../arm-none-eabi/lib/armv6-m/libstdc++_s.a(del_op.o)
@@ -2504,6 +2728,9 @@ LOAD ./src/OSC/OSCMessage.o
 LOAD ./src/OSC/OSCTiming.o
 LOAD ./src/OSC/SimpleWriter.o
 LOAD ./src/BlinkLed.o
+LOAD ./src/Inchie.o
+LOAD ./src/InchieKey.o
+LOAD ./src/InchieLED.o
 LOAD ./src/SLIPEncodedSerial.o
 LOAD ./src/Timer.o
 LOAD ./src/main.o
@@ -2526,7 +2753,7 @@ END GROUP
                 0x0000000020001c00                __Main_Stack_Limit = (__stack - __Main_Stack_Size)
                 0x0000000020001c00                PROVIDE (_Main_Stack_Limit, __Main_Stack_Limit)
                 0x0000000000000100                _Minimum_Stack_Size = 0x100
-                0x000000002000109c                PROVIDE (_Heap_Begin, _end_noinit)
+                0x00000000200010a0                PROVIDE (_Heap_Begin, _end_noinit)
                 0x0000000020001c00                PROVIDE (_Heap_Limit, (__stack - __Main_Stack_Size))
 
 .isr_vector     0x0000000008000000      0x1f4
@@ -2587,7 +2814,7 @@ END GROUP
                 0x00000000080001f0                TIM1_CC_IRQHandler
                 0x00000000080001f4                . = ALIGN (0x4)
 
-.inits          0x00000000080001f4        0x4
+.inits          0x00000000080001f4        0x8
                 0x00000000080001f4                . = ALIGN (0x4)
  *(.init)
  *(.fini)
@@ -2607,405 +2834,446 @@ END GROUP
                 0x00000000080001f8                PROVIDE (__fini_array_start, .)
  *(SORT(.fini_array.*))
  *(.fini_array)
-                0x00000000080001f8                PROVIDE (__fini_array_end, .)
-                0x00000000080001f8                . = ALIGN (0x4)
+ .fini_array    0x00000000080001f8        0x4 ./src/main.o
+                0x00000000080001fc                PROVIDE (__fini_array_end, .)
+                0x00000000080001fc                . = ALIGN (0x4)
 
-.flashtext      0x00000000080001f8        0x0
-                0x00000000080001f8                . = ALIGN (0x4)
+.flashtext      0x00000000080001fc        0x0
+                0x00000000080001fc                . = ALIGN (0x4)
  *(.flashtext .flashtext.*)
-                0x00000000080001f8                . = ALIGN (0x4)
+                0x00000000080001fc                . = ALIGN (0x4)
 
-.text           0x00000000080001f8     0x31f9
-                0x00000000080001f8                . = ALIGN (0x4)
+.text           0x0000000008000200     0x341d
+                0x0000000008000200                . = ALIGN (0x4)
  *(.text .text.*)
  .text.GPIO_Init
-                0x00000000080001f8      0x11c ./system/src/stm32f0-stdperiph/stm32f0xx_gpio.o
-                0x00000000080001f8                GPIO_Init
+                0x0000000008000200      0x11c ./system/src/stm32f0-stdperiph/stm32f0xx_gpio.o
+                0x0000000008000200                GPIO_Init
+ .text.GPIO_ReadInputDataBit
+                0x000000000800031c       0xc4 ./system/src/stm32f0-stdperiph/stm32f0xx_gpio.o
+                0x000000000800031c                GPIO_ReadInputDataBit
  .text.GPIO_SetBits
-                0x0000000008000314       0x60 ./system/src/stm32f0-stdperiph/stm32f0xx_gpio.o
-                0x0000000008000314                GPIO_SetBits
+                0x00000000080003e0       0x60 ./system/src/stm32f0-stdperiph/stm32f0xx_gpio.o
+                0x00000000080003e0                GPIO_SetBits
  .text.GPIO_ResetBits
-                0x0000000008000374       0x60 ./system/src/stm32f0-stdperiph/stm32f0xx_gpio.o
-                0x0000000008000374                GPIO_ResetBits
+                0x0000000008000440       0x60 ./system/src/stm32f0-stdperiph/stm32f0xx_gpio.o
+                0x0000000008000440                GPIO_ResetBits
  .text.GPIO_PinAFConfig
-                0x00000000080003d4       0x94 ./system/src/stm32f0-stdperiph/stm32f0xx_gpio.o
-                0x00000000080003d4                GPIO_PinAFConfig
+                0x00000000080004a0       0x94 ./system/src/stm32f0-stdperiph/stm32f0xx_gpio.o
+                0x00000000080004a0                GPIO_PinAFConfig
  .text.NVIC_Init
-                0x0000000008000468       0x7c ./system/src/stm32f0-stdperiph/stm32f0xx_misc.o
-                0x0000000008000468                NVIC_Init
+                0x0000000008000534       0x7c ./system/src/stm32f0-stdperiph/stm32f0xx_misc.o
+                0x0000000008000534                NVIC_Init
  .text.RCC_GetClocksFreq
-                0x00000000080004e4      0x19c ./system/src/stm32f0-stdperiph/stm32f0xx_rcc.o
-                0x00000000080004e4                RCC_GetClocksFreq
+                0x00000000080005b0      0x19c ./system/src/stm32f0-stdperiph/stm32f0xx_rcc.o
+                0x00000000080005b0                RCC_GetClocksFreq
  .text.RCC_AHBPeriphClockCmd
-                0x0000000008000680       0x50 ./system/src/stm32f0-stdperiph/stm32f0xx_rcc.o
-                0x0000000008000680                RCC_AHBPeriphClockCmd
+                0x000000000800074c       0x50 ./system/src/stm32f0-stdperiph/stm32f0xx_rcc.o
+                0x000000000800074c                RCC_AHBPeriphClockCmd
  .text.RCC_APB2PeriphClockCmd
-                0x00000000080006d0       0x50 ./system/src/stm32f0-stdperiph/stm32f0xx_rcc.o
-                0x00000000080006d0                RCC_APB2PeriphClockCmd
+                0x000000000800079c       0x50 ./system/src/stm32f0-stdperiph/stm32f0xx_rcc.o
+                0x000000000800079c                RCC_APB2PeriphClockCmd
  .text.RCC_APB1PeriphClockCmd
-                0x0000000008000720       0x50 ./system/src/stm32f0-stdperiph/stm32f0xx_rcc.o
-                0x0000000008000720                RCC_APB1PeriphClockCmd
+                0x00000000080007ec       0x50 ./system/src/stm32f0-stdperiph/stm32f0xx_rcc.o
+                0x00000000080007ec                RCC_APB1PeriphClockCmd
  .text.USART_Init
-                0x0000000008000770      0x1ac ./system/src/stm32f0-stdperiph/stm32f0xx_usart.o
-                0x0000000008000770                USART_Init
+                0x000000000800083c      0x1ac ./system/src/stm32f0-stdperiph/stm32f0xx_usart.o
+                0x000000000800083c                USART_Init
  .text.USART_Cmd
-                0x000000000800091c       0x64 ./system/src/stm32f0-stdperiph/stm32f0xx_usart.o
-                0x000000000800091c                USART_Cmd
+                0x00000000080009e8       0x64 ./system/src/stm32f0-stdperiph/stm32f0xx_usart.o
+                0x00000000080009e8                USART_Cmd
  .text.USART_SendData
-                0x0000000008000980       0x5c ./system/src/stm32f0-stdperiph/stm32f0xx_usart.o
-                0x0000000008000980                USART_SendData
+                0x0000000008000a4c       0x5c ./system/src/stm32f0-stdperiph/stm32f0xx_usart.o
+                0x0000000008000a4c                USART_SendData
  .text.USART_ReceiveData
-                0x00000000080009dc       0x44 ./system/src/stm32f0-stdperiph/stm32f0xx_usart.o
-                0x00000000080009dc                USART_ReceiveData
+                0x0000000008000aa8       0x44 ./system/src/stm32f0-stdperiph/stm32f0xx_usart.o
+                0x0000000008000aa8                USART_ReceiveData
  .text.USART_ITConfig
-                0x0000000008000a20      0x104 ./system/src/stm32f0-stdperiph/stm32f0xx_usart.o
-                0x0000000008000a20                USART_ITConfig
+                0x0000000008000aec      0x104 ./system/src/stm32f0-stdperiph/stm32f0xx_usart.o
+                0x0000000008000aec                USART_ITConfig
  .text.USART_GetITStatus
-                0x0000000008000b24      0x114 ./system/src/stm32f0-stdperiph/stm32f0xx_usart.o
-                0x0000000008000b24                USART_GetITStatus
- .text._exit    0x0000000008000c38        0x4 ./system/src/newlib/_exit.o
-                0x0000000008000c38                _exit
- .text.abort    0x0000000008000c3c       0x14 ./system/src/newlib/_exit.o
-                0x0000000008000c3c                abort
- .text._sbrk    0x0000000008000c50       0x44 ./system/src/newlib/_sbrk.o
-                0x0000000008000c50                _sbrk
+                0x0000000008000bf0      0x114 ./system/src/stm32f0-stdperiph/stm32f0xx_usart.o
+                0x0000000008000bf0                USART_GetITStatus
+ .text.__cxa_pure_virtual
+                0x0000000008000d04       0x10 ./system/src/newlib/_cxx.o
+                0x0000000008000d04                __cxa_pure_virtual
+ .text._exit    0x0000000008000d14        0x4 ./system/src/newlib/_exit.o
+                0x0000000008000d14                _exit
+ .text.abort    0x0000000008000d18       0x14 ./system/src/newlib/_exit.o
+                0x0000000008000d18                abort
+ .text._sbrk    0x0000000008000d2c       0x44 ./system/src/newlib/_sbrk.o
+                0x0000000008000d2c                _sbrk
  .text.__initialize_args
-                0x0000000008000c94       0x10 ./system/src/newlib/_syscalls.o
-                0x0000000008000c94                __initialize_args
+                0x0000000008000d70       0x10 ./system/src/newlib/_syscalls.o
+                0x0000000008000d70                __initialize_args
  .text.assert_failed
-                0x0000000008000ca4       0x18 ./system/src/newlib/assert.o
-                0x0000000008000ca4                assert_failed
+                0x0000000008000d80       0x18 ./system/src/newlib/assert.o
+                0x0000000008000d80                assert_failed
  .text.trace_printf
-                0x0000000008000cbc       0x30 ./system/src/diag/Trace.o
-                0x0000000008000cbc                trace_printf
+                0x0000000008000d98       0x30 ./system/src/diag/Trace.o
+                0x0000000008000d98                trace_printf
  .text.trace_puts
-                0x0000000008000cec       0x20 ./system/src/diag/Trace.o
-                0x0000000008000cec                trace_puts
+                0x0000000008000dc8       0x20 ./system/src/diag/Trace.o
+                0x0000000008000dc8                trace_puts
  .text._trace_write_semihosting_debug
-                0x0000000008000d0c       0x74 ./system/src/diag/trace_impl.o
+                0x0000000008000de8       0x74 ./system/src/diag/trace_impl.o
  .text.trace_write
-                0x0000000008000d80        0x8 ./system/src/diag/trace_impl.o
-                0x0000000008000d80                trace_write
+                0x0000000008000e5c        0x8 ./system/src/diag/trace_impl.o
+                0x0000000008000e5c                trace_write
  .text.__initialize_hardware
-                0x0000000008000d88        0x8 ./system/src/cortexm/_initialize_hardware.o
-                0x0000000008000d88                __initialize_hardware
+                0x0000000008000e64        0x8 ./system/src/cortexm/_initialize_hardware.o
+                0x0000000008000e64                __initialize_hardware
  .text.SetSysClock
-                0x0000000008000d90       0xb4 ./system/src/cmsis/system_stm32f0xx.o
+                0x0000000008000e6c       0xb4 ./system/src/cmsis/system_stm32f0xx.o
  .text.SystemInit
-                0x0000000008000e44       0x64 ./system/src/cmsis/system_stm32f0xx.o
-                0x0000000008000e44                SystemInit
+                0x0000000008000f20       0x64 ./system/src/cmsis/system_stm32f0xx.o
+                0x0000000008000f20                SystemInit
  .text._ZN7OSCDataC2EPKc
-                0x0000000008000ea8       0x34 ./src/OSC/OSCData.o
-                0x0000000008000ea8                OSCData::OSCData(char const*)
-                0x0000000008000ea8                OSCData::OSCData(char const*)
+                0x0000000008000f84       0x34 ./src/OSC/OSCData.o
+                0x0000000008000f84                OSCData::OSCData(char const*)
+                0x0000000008000f84                OSCData::OSCData(char const*)
  .text._ZN7OSCDataC2El
-                0x0000000008000edc       0x10 ./src/OSC/OSCData.o
-                0x0000000008000edc                OSCData::OSCData(long)
-                0x0000000008000edc                OSCData::OSCData(long)
+                0x0000000008000fb8       0x10 ./src/OSC/OSCData.o
+                0x0000000008000fb8                OSCData::OSCData(long)
+                0x0000000008000fb8                OSCData::OSCData(long)
  .text._ZN7OSCDataC2Ef
-                0x0000000008000eec       0x10 ./src/OSC/OSCData.o
-                0x0000000008000eec                OSCData::OSCData(float)
-                0x0000000008000eec                OSCData::OSCData(float)
+                0x0000000008000fc8       0x10 ./src/OSC/OSCData.o
+                0x0000000008000fc8                OSCData::OSCData(float)
+                0x0000000008000fc8                OSCData::OSCData(float)
  .text._ZN7OSCDataC2E9osctime_t
-                0x0000000008000efc       0x24 ./src/OSC/OSCData.o
-                0x0000000008000efc                OSCData::OSCData(osctime_t)
-                0x0000000008000efc                OSCData::OSCData(osctime_t)
+                0x0000000008000fd8       0x24 ./src/OSC/OSCData.o
+                0x0000000008000fd8                OSCData::OSCData(osctime_t)
+                0x0000000008000fd8                OSCData::OSCData(osctime_t)
  .text._ZN7OSCDataC2Ed
-                0x0000000008000f20       0x14 ./src/OSC/OSCData.o
-                0x0000000008000f20                OSCData::OSCData(double)
-                0x0000000008000f20                OSCData::OSCData(double)
+                0x0000000008000ffc       0x14 ./src/OSC/OSCData.o
+                0x0000000008000ffc                OSCData::OSCData(double)
+                0x0000000008000ffc                OSCData::OSCData(double)
  .text._ZN7OSCDataC2EPhi
-                0x0000000008000f34       0x70 ./src/OSC/OSCData.o
-                0x0000000008000f34                OSCData::OSCData(unsigned char*, int)
-                0x0000000008000f34                OSCData::OSCData(unsigned char*, int)
+                0x0000000008001010       0x70 ./src/OSC/OSCData.o
+                0x0000000008001010                OSCData::OSCData(unsigned char*, int)
+                0x0000000008001010                OSCData::OSCData(unsigned char*, int)
  .text._ZN7OSCDataD2Ev
-                0x0000000008000fa4       0x28 ./src/OSC/OSCData.o
-                0x0000000008000fa4                OSCData::~OSCData()
-                0x0000000008000fa4                OSCData::~OSCData()
+                0x0000000008001080       0x28 ./src/OSC/OSCData.o
+                0x0000000008001080                OSCData::~OSCData()
+                0x0000000008001080                OSCData::~OSCData()
  .text._ZN7OSCDataC2Ec
-                0x0000000008000fcc        0xc ./src/OSC/OSCData.o
-                0x0000000008000fcc                OSCData::OSCData(char)
-                0x0000000008000fcc                OSCData::OSCData(char)
+                0x00000000080010a8        0xc ./src/OSC/OSCData.o
+                0x00000000080010a8                OSCData::OSCData(char)
+                0x00000000080010a8                OSCData::OSCData(char)
  .text._ZN7OSCData6getIntEv
-                0x0000000008000fd8       0x10 ./src/OSC/OSCData.o
-                0x0000000008000fd8                OSCData::getInt()
+                0x00000000080010b4       0x10 ./src/OSC/OSCData.o
+                0x00000000080010b4                OSCData::getInt()
  .text.osc_match_bracket
-                0x0000000008000fe8       0x58 ./src/OSC/OSCMatch.o
+                0x00000000080010c4       0x58 ./src/OSC/OSCMatch.o
  .text.osc_match_curly_brace
-                0x0000000008001040       0x50 ./src/OSC/OSCMatch.o
+                0x000000000800111c       0x50 ./src/OSC/OSCMatch.o
  .text.osc_match_single_char
-                0x0000000008001090       0x68 ./src/OSC/OSCMatch.o
+                0x000000000800116c       0x68 ./src/OSC/OSCMatch.o
  .text.osc_match_star_r
-                0x00000000080010f8       0x7c ./src/OSC/OSCMatch.o
+                0x00000000080011d4       0x7c ./src/OSC/OSCMatch.o
  .text.osc_match_star
-                0x0000000008001174      0x118 ./src/OSC/OSCMatch.o
+                0x0000000008001250      0x118 ./src/OSC/OSCMatch.o
  .text.osc_match
-                0x000000000800128c      0x108 ./src/OSC/OSCMatch.o
-                0x000000000800128c                osc_match
+                0x0000000008001368      0x108 ./src/OSC/OSCMatch.o
+                0x0000000008001368                osc_match
  .text._ZN10OSCMessage10getOSCDataEi
-                0x0000000008001394       0x18 ./src/OSC/OSCMessage.o
-                0x0000000008001394                OSCMessage::getOSCData(int)
+                0x0000000008001470       0x18 ./src/OSC/OSCMessage.o
+                0x0000000008001470                OSCMessage::getOSCData(int)
  .text._ZN10OSCMessage9fullMatchEPKci
-                0x00000000080013ac       0x1c ./src/OSC/OSCMessage.o
-                0x00000000080013ac                OSCMessage::fullMatch(char const*, int)
+                0x0000000008001488       0x1c ./src/OSC/OSCMessage.o
+                0x0000000008001488                OSCMessage::fullMatch(char const*, int)
  .text._ZN10OSCMessage8dispatchEPKcPFvRS_Ei
-                0x00000000080013c8       0x1c ./src/OSC/OSCMessage.o
-                0x00000000080013c8                OSCMessage::dispatch(char const*, void (*)(OSCMessage&), int)
+                0x00000000080014a4       0x1c ./src/OSC/OSCMessage.o
+                0x00000000080014a4                OSCMessage::dispatch(char const*, void (*)(OSCMessage&), int)
  .text._ZN10OSCMessage10setAddressEPKc
-                0x00000000080013e4       0x30 ./src/OSC/OSCMessage.o
-                0x00000000080013e4                OSCMessage::setAddress(char const*)
+                0x00000000080014c0       0x30 ./src/OSC/OSCMessage.o
+                0x00000000080014c0                OSCMessage::setAddress(char const*)
  .text._ZN10OSCMessage8hasErrorEv
-                0x0000000008001414       0x2c ./src/OSC/OSCMessage.o
-                0x0000000008001414                OSCMessage::hasError()
+                0x00000000080014f0       0x2c ./src/OSC/OSCMessage.o
+                0x00000000080014f0                OSCMessage::hasError()
  .text._ZN10OSCMessage6getIntEi
-                0x0000000008001440       0x20 ./src/OSC/OSCMessage.o
-                0x0000000008001440                OSCMessage::getInt(int)
+                0x000000000800151c       0x20 ./src/OSC/OSCMessage.o
+                0x000000000800151c                OSCMessage::getInt(int)
  .text._ZN10OSCMessage7getTypeEi
-                0x0000000008001460       0x1c ./src/OSC/OSCMessage.o
-                0x0000000008001460                OSCMessage::getType(int)
+                0x000000000800153c       0x1c ./src/OSC/OSCMessage.o
+                0x000000000800153c                OSCMessage::getType(int)
  .text._ZN10OSCMessage8testTypeEic
-                0x000000000800147c       0x28 ./src/OSC/OSCMessage.o
-                0x000000000800147c                OSCMessage::testType(int, char)
+                0x0000000008001558       0x28 ./src/OSC/OSCMessage.o
+                0x0000000008001558                OSCMessage::testType(int, char)
  .text._ZN10OSCMessage5isIntEi
-                0x00000000080014a4        0xc ./src/OSC/OSCMessage.o
-                0x00000000080014a4                OSCMessage::isInt(int)
+                0x0000000008001580        0xc ./src/OSC/OSCMessage.o
+                0x0000000008001580                OSCMessage::isInt(int)
  .text._ZN10OSCMessage4sendER12SimpleWriter
-                0x00000000080014b0      0x198 ./src/OSC/OSCMessage.o
-                0x00000000080014b0                OSCMessage::send(SimpleWriter&)
+                0x000000000800158c      0x198 ./src/OSC/OSCMessage.o
+                0x000000000800158c                OSCMessage::send(SimpleWriter&)
  .text._ZN10OSCMessage10decodeTypeEh
-                0x0000000008001648       0x44 ./src/OSC/OSCMessage.o
-                0x0000000008001648                OSCMessage::decodeType(unsigned char)
+                0x0000000008001724       0x44 ./src/OSC/OSCMessage.o
+                0x0000000008001724                OSCMessage::decodeType(unsigned char)
  .text._ZN10OSCMessage19addToIncomingBufferEh
-                0x000000000800168c       0x44 ./src/OSC/OSCMessage.o
-                0x000000000800168c                OSCMessage::addToIncomingBuffer(unsigned char)
+                0x0000000008001768       0x44 ./src/OSC/OSCMessage.o
+                0x0000000008001768                OSCMessage::addToIncomingBuffer(unsigned char)
  .text._ZN10OSCMessage19clearIncomingBufferEv
-                0x00000000080016d0       0x28 ./src/OSC/OSCMessage.o
-                0x00000000080016d0                OSCMessage::clearIncomingBuffer()
+                0x00000000080017ac       0x28 ./src/OSC/OSCMessage.o
+                0x00000000080017ac                OSCMessage::clearIncomingBuffer()
  .text._ZN10OSCMessage12setupMessageEv
-                0x00000000080016f8       0x1c ./src/OSC/OSCMessage.o
-                0x00000000080016f8                OSCMessage::setupMessage()
+                0x00000000080017d4       0x1c ./src/OSC/OSCMessage.o
+                0x00000000080017d4                OSCMessage::setupMessage()
  .text._ZN10OSCMessageC2EPKc
-                0x0000000008001714       0x18 ./src/OSC/OSCMessage.o
-                0x0000000008001714                OSCMessage::OSCMessage(char const*)
-                0x0000000008001714                OSCMessage::OSCMessage(char const*)
+                0x00000000080017f0       0x18 ./src/OSC/OSCMessage.o
+                0x00000000080017f0                OSCMessage::OSCMessage(char const*)
+                0x00000000080017f0                OSCMessage::OSCMessage(char const*)
  .text._ZN10OSCMessageC2Ev
-                0x000000000800172c       0x10 ./src/OSC/OSCMessage.o
-                0x000000000800172c                OSCMessage::OSCMessage()
-                0x000000000800172c                OSCMessage::OSCMessage()
+                0x0000000008001808       0x10 ./src/OSC/OSCMessage.o
+                0x0000000008001808                OSCMessage::OSCMessage()
+                0x0000000008001808                OSCMessage::OSCMessage()
  .text._ZN10OSCMessage5emptyEv
-                0x000000000800173c       0x40 ./src/OSC/OSCMessage.o
-                0x000000000800173c                OSCMessage::empty()
+                0x0000000008001818       0x40 ./src/OSC/OSCMessage.o
+                0x0000000008001818                OSCMessage::empty()
  .text._ZN10OSCMessageD2Ev
-                0x000000000800177c       0x1c ./src/OSC/OSCMessage.o
-                0x000000000800177c                OSCMessage::~OSCMessage()
-                0x000000000800177c                OSCMessage::~OSCMessage()
+                0x0000000008001858       0x1c ./src/OSC/OSCMessage.o
+                0x0000000008001858                OSCMessage::~OSCMessage()
+                0x0000000008001858                OSCMessage::~OSCMessage()
  .text._ZN10OSCMessage13decodeAddressEv
-                0x0000000008001798       0x18 ./src/OSC/OSCMessage.o
-                0x0000000008001798                OSCMessage::decodeAddress()
+                0x0000000008001874       0x18 ./src/OSC/OSCMessage.o
+                0x0000000008001874                OSCMessage::decodeAddress()
  .text._ZN10OSCMessage10decodeDataEh
-                0x00000000080017b0      0x4e0 ./src/OSC/OSCMessage.o
-                0x00000000080017b0                OSCMessage::decodeData(unsigned char)
+                0x000000000800188c      0x4e0 ./src/OSC/OSCMessage.o
+                0x000000000800188c                OSCMessage::decodeData(unsigned char)
  .text._ZN10OSCMessage6decodeEh
-                0x0000000008001c90       0xc0 ./src/OSC/OSCMessage.o
-                0x0000000008001c90                OSCMessage::decode(unsigned char)
+                0x0000000008001d6c       0xc0 ./src/OSC/OSCMessage.o
+                0x0000000008001d6c                OSCMessage::decode(unsigned char)
  .text._ZN10OSCMessage4fillEPhi
-                0x0000000008001d50       0x1c ./src/OSC/OSCMessage.o
-                0x0000000008001d50                OSCMessage::fill(unsigned char*, int)
+                0x0000000008001e2c       0x1c ./src/OSC/OSCMessage.o
+                0x0000000008001e2c                OSCMessage::fill(unsigned char*, int)
  .text._ZN12SimpleWriter5startEv
-                0x0000000008001d6c        0xc ./src/OSC/SimpleWriter.o
-                0x0000000008001d6c                SimpleWriter::start()
+                0x0000000008001e48        0xc ./src/OSC/SimpleWriter.o
+                0x0000000008001e48                SimpleWriter::start()
  .text._ZN12SimpleWriter3endEv
-                0x0000000008001d78       0x10 ./src/OSC/SimpleWriter.o
-                0x0000000008001d78                SimpleWriter::end()
+                0x0000000008001e54       0x10 ./src/OSC/SimpleWriter.o
+                0x0000000008001e54                SimpleWriter::end()
  .text._ZN12SimpleWriter5writeEh
-                0x0000000008001d88       0x10 ./src/OSC/SimpleWriter.o
-                0x0000000008001d88                SimpleWriter::write(unsigned char)
+                0x0000000008001e64       0x10 ./src/OSC/SimpleWriter.o
+                0x0000000008001e64                SimpleWriter::write(unsigned char)
  .text._ZN12SimpleWriter5writeEPKhi
-                0x0000000008001d98       0x1c ./src/OSC/SimpleWriter.o
-                0x0000000008001d98                SimpleWriter::write(unsigned char const*, int)
+                0x0000000008001e74       0x1c ./src/OSC/SimpleWriter.o
+                0x0000000008001e74                SimpleWriter::write(unsigned char const*, int)
  .text.blink_led_init
-                0x0000000008001db4       0x78 ./src/BlinkLed.o
-                0x0000000008001db4                blink_led_init
+                0x0000000008001e90       0x44 ./src/BlinkLed.o
+                0x0000000008001e90                blink_led_init
+ .text._ZN6InchieD2Ev
+                0x0000000008001ed4        0xc ./src/InchieKey.o
+                0x0000000008001ed4                Inchie::~Inchie()
+                0x0000000008001ed4                Inchie::~Inchie()
+ .text._ZN6InchieD0Ev
+                0x0000000008001ee0       0x14 ./src/InchieKey.o
+                0x0000000008001ee0                Inchie::~Inchie()
+ .text._ZN9InchieLEDD2Ev
+                0x0000000008001ef4        0xc ./src/InchieLED.o
+                0x0000000008001ef4                InchieLED::~InchieLED()
+                0x0000000008001ef4                InchieLED::~InchieLED()
+ .text._ZN9InchieLED7performER10OSCMessage
+                0x0000000008001f00        0x4 ./src/InchieLED.o
+                0x0000000008001f00                InchieLED::perform(OSCMessage&)
+ .text._ZN9InchieLEDD0Ev
+                0x0000000008001f04       0x14 ./src/InchieLED.o
+                0x0000000008001f04                InchieLED::~InchieLED()
+ .text._ZN9InchieLED4initEv
+                0x0000000008001f18       0x70 ./src/InchieLED.o
+                0x0000000008001f18                InchieLED::init()
+ .text._ZN9InchieLED7respondER10OSCMessage
+                0x0000000008001f88      0x12c ./src/InchieLED.o
+                0x0000000008001f88                InchieLED::respond(OSCMessage&)
  .text._ZN17SLIPEncodedSerialC2EP13hardware_uart
-                0x0000000008001e2c       0x1c ./src/SLIPEncodedSerial.o
-                0x0000000008001e2c                SLIPEncodedSerial::SLIPEncodedSerial(hardware_uart*)
-                0x0000000008001e2c                SLIPEncodedSerial::SLIPEncodedSerial(hardware_uart*)
+                0x00000000080020b4       0x1c ./src/SLIPEncodedSerial.o
+                0x00000000080020b4                SLIPEncodedSerial::SLIPEncodedSerial(hardware_uart*)
+                0x00000000080020b4                SLIPEncodedSerial::SLIPEncodedSerial(hardware_uart*)
  .text._ZN17SLIPEncodedSerial6encodeEh
-                0x0000000008001e48       0x50 ./src/SLIPEncodedSerial.o
-                0x0000000008001e48                SLIPEncodedSerial::encode(unsigned char)
+                0x00000000080020d0       0x50 ./src/SLIPEncodedSerial.o
+                0x00000000080020d0                SLIPEncodedSerial::encode(unsigned char)
  .text._ZN17SLIPEncodedSerial6decodeEPKhi
-                0x0000000008001e98       0x88 ./src/SLIPEncodedSerial.o
-                0x0000000008001e98                SLIPEncodedSerial::decode(unsigned char const*, int)
+                0x0000000008002120       0x88 ./src/SLIPEncodedSerial.o
+                0x0000000008002120                SLIPEncodedSerial::decode(unsigned char const*, int)
  .text._ZN17SLIPEncodedSerial10recvPacketEv
-                0x0000000008001f20       0x9c ./src/SLIPEncodedSerial.o
-                0x0000000008001f20                SLIPEncodedSerial::recvPacket()
+                0x00000000080021a8       0xa0 ./src/SLIPEncodedSerial.o
+                0x00000000080021a8                SLIPEncodedSerial::recvPacket()
  .text._ZN17SLIPEncodedSerial11beginPacketEv
-                0x0000000008001fbc       0x10 ./src/SLIPEncodedSerial.o
-                0x0000000008001fbc                SLIPEncodedSerial::beginPacket()
+                0x0000000008002248       0x10 ./src/SLIPEncodedSerial.o
+                0x0000000008002248                SLIPEncodedSerial::beginPacket()
  .text._ZN17SLIPEncodedSerial9endPacketEv
-                0x0000000008001fcc       0x18 ./src/SLIPEncodedSerial.o
-                0x0000000008001fcc                SLIPEncodedSerial::endPacket()
+                0x0000000008002258       0x18 ./src/SLIPEncodedSerial.o
+                0x0000000008002258                SLIPEncodedSerial::endPacket()
  .text._ZN17SLIPEncodedSerial6encodeEPKhi
-                0x0000000008001fe4       0x34 ./src/SLIPEncodedSerial.o
-                0x0000000008001fe4                SLIPEncodedSerial::encode(unsigned char const*, int)
+                0x0000000008002270       0x34 ./src/SLIPEncodedSerial.o
+                0x0000000008002270                SLIPEncodedSerial::encode(unsigned char const*, int)
  .text._ZN17SLIPEncodedSerial10sendPacketEPKhm
-                0x0000000008002018       0x54 ./src/SLIPEncodedSerial.o
-                0x0000000008002018                SLIPEncodedSerial::sendPacket(unsigned char const*, unsigned long)
+                0x00000000080022a4       0x54 ./src/SLIPEncodedSerial.o
+                0x00000000080022a4                SLIPEncodedSerial::sendPacket(unsigned char const*, unsigned long)
  .text.timer_start
-                0x000000000800206c       0x48 ./src/Timer.o
-                0x000000000800206c                timer_start
+                0x00000000080022f8       0x48 ./src/Timer.o
+                0x00000000080022f8                timer_start
  .text.timer_sleep
-                0x00000000080020b4       0x14 ./src/Timer.o
-                0x00000000080020b4                timer_sleep
+                0x0000000008002340       0x14 ./src/Timer.o
+                0x0000000008002340                timer_sleep
  .text.timer_tick
-                0x00000000080020c8       0x24 ./src/Timer.o
-                0x00000000080020c8                timer_tick
+                0x0000000008002354       0x24 ./src/Timer.o
+                0x0000000008002354                timer_tick
  .text.SysTick_Handler
-                0x00000000080020ec        0x8 ./src/Timer.o
-                0x00000000080020ec                SysTick_Handler
- .text._Z10resetIndexR10OSCMessage
-                0x00000000080020f4        0xc ./src/main.o
-                0x00000000080020f4                resetIndex(OSCMessage&)
+                0x0000000008002378        0x8 ./src/Timer.o
+                0x0000000008002378                SysTick_Handler
+ .text._Z5resetR10OSCMessage
+                0x0000000008002380       0x1c ./src/main.o
+                0x0000000008002380                reset(OSCMessage&)
  .text._Z8incIndexR10OSCMessage
-                0x0000000008002100       0x10 ./src/main.o
-                0x0000000008002100                incIndex(OSCMessage&)
+                0x000000000800239c       0x10 ./src/main.o
+                0x000000000800239c                incIndex(OSCMessage&)
+ .text._Z7respondR10OSCMessage
+                0x00000000080023ac       0x14 ./src/main.o
+                0x00000000080023ac                respond(OSCMessage&)
  .text._Z8renumberR10OSCMessage
-                0x0000000008002110       0x50 ./src/main.o
-                0x0000000008002110                renumber(OSCMessage&)
- .text._Z10ledControlR10OSCMessage
-                0x0000000008002160      0x128 ./src/main.o
-                0x0000000008002160                ledControl(OSCMessage&)
+                0x00000000080023c0       0x50 ./src/main.o
+                0x00000000080023c0                renumber(OSCMessage&)
  .text._Z41__static_initialization_and_destruction_0ii
-                0x0000000008002288       0x34 ./src/main.o
- .text.main     0x00000000080022bc      0x20c ./src/main.o
-                0x00000000080022bc                main
+                0x0000000008002410       0x50 ./src/main.o
+ .text.main     0x0000000008002460      0x22c ./src/main.o
+                0x0000000008002460                main
  .text._GLOBAL__sub_I_upstream
-                0x00000000080024c8       0x10 ./src/main.o
+                0x000000000800268c       0x10 ./src/main.o
+ .text._GLOBAL__sub_D_upstream
+                0x000000000800269c       0x10 ./src/main.o
  .text.uart1_tx_it_en
-                0x00000000080024d8       0x18 ./src/uart.o
-                0x00000000080024d8                uart1_tx_it_en
+                0x00000000080026ac       0x18 ./src/uart.o
+                0x00000000080026ac                uart1_tx_it_en
  .text.uart2_tx_it_en
-                0x00000000080024f0       0x18 ./src/uart.o
-                0x00000000080024f0                uart2_tx_it_en
+                0x00000000080026c4       0x18 ./src/uart.o
+                0x00000000080026c4                uart2_tx_it_en
  .text.uart_init
-                0x0000000008002508      0x194 ./src/uart.o
-                0x0000000008002508                uart_init
+                0x00000000080026dc      0x194 ./src/uart.o
+                0x00000000080026dc                uart_init
  .text.USART2_IRQHandler
-                0x000000000800269c       0x84 ./src/uart.o
-                0x000000000800269c                USART2_IRQHandler
+                0x0000000008002870       0x84 ./src/uart.o
+                0x0000000008002870                USART2_IRQHandler
  .text.USART1_IRQHandler
-                0x0000000008002720       0x84 ./src/uart.o
-                0x0000000008002720                USART1_IRQHandler
- .text._ZdlPv   0x00000000080027a4        0xc /Users/owen/gcc-arm-none-eabi-4_8-2014q1/bin/../lib/gcc/arm-none-eabi/4.8.3/../../../../arm-none-eabi/lib/armv6-m/libstdc++_s.a(del_op.o)
-                0x00000000080027a4                operator delete(void*)
- .text._Znwj    0x00000000080027b0       0x28 /Users/owen/gcc-arm-none-eabi-4_8-2014q1/bin/../lib/gcc/arm-none-eabi/4.8.3/../../../../arm-none-eabi/lib/armv6-m/libstdc++_s.a(new_op.o)
-                0x00000000080027b0                operator new(unsigned int)
- .text          0x00000000080027d8       0x9c /Users/owen/gcc-arm-none-eabi-4_8-2014q1/bin/../lib/gcc/arm-none-eabi/4.8.3/armv6-m/libgcc.a(_udivsi3.o)
-                0x00000000080027d8                __udivsi3
-                0x00000000080027d8                __aeabi_uidiv
-                0x0000000008002860                __aeabi_uidivmod
- .text          0x0000000008002874        0x4 /Users/owen/gcc-arm-none-eabi-4_8-2014q1/bin/../lib/gcc/arm-none-eabi/4.8.3/armv6-m/libgcc.a(_dvmd_tls.o)
-                0x0000000008002874                __aeabi_ldiv0
-                0x0000000008002874                __aeabi_idiv0
- .text.__errno  0x0000000008002878        0xc /Users/owen/gcc-arm-none-eabi-4_8-2014q1/bin/../lib/gcc/arm-none-eabi/4.8.3/../../../../arm-none-eabi/lib/armv6-m/libg_s.a(lib_a-errno.o)
-                0x0000000008002878                __errno
- .text.malloc   0x0000000008002884       0x14 /Users/owen/gcc-arm-none-eabi-4_8-2014q1/bin/../lib/gcc/arm-none-eabi/4.8.3/../../../../arm-none-eabi/lib/armv6-m/libg_s.a(lib_a-malloc.o)
-                0x0000000008002884                malloc
- .text.free     0x0000000008002898       0x14 /Users/owen/gcc-arm-none-eabi-4_8-2014q1/bin/../lib/gcc/arm-none-eabi/4.8.3/../../../../arm-none-eabi/lib/armv6-m/libg_s.a(lib_a-malloc.o)
-                0x0000000008002898                free
- .text.memcpy   0x00000000080028ac       0x12 /Users/owen/gcc-arm-none-eabi-4_8-2014q1/bin/../lib/gcc/arm-none-eabi/4.8.3/../../../../arm-none-eabi/lib/armv6-m/libg_s.a(lib_a-memcpy-stub.o)
-                0x00000000080028ac                memcpy
- *fill*         0x00000000080028be        0x2 
- .text._free_r  0x00000000080028c0       0x90 /Users/owen/gcc-arm-none-eabi-4_8-2014q1/bin/../lib/gcc/arm-none-eabi/4.8.3/../../../../arm-none-eabi/lib/armv6-m/libg_s.a(lib_a-nano-freer.o)
-                0x00000000080028c0                _free_r
+                0x00000000080028f4       0x84 ./src/uart.o
+                0x00000000080028f4                USART1_IRQHandler
+ .text._ZdlPv   0x0000000008002978        0xc /Users/owen/gcc-arm-none-eabi-4_8-2014q1/bin/../lib/gcc/arm-none-eabi/4.8.3/../../../../arm-none-eabi/lib/armv6-m/libstdc++_s.a(del_op.o)
+                0x0000000008002978                operator delete(void*)
+ .text._Znwj    0x0000000008002984       0x28 /Users/owen/gcc-arm-none-eabi-4_8-2014q1/bin/../lib/gcc/arm-none-eabi/4.8.3/../../../../arm-none-eabi/lib/armv6-m/libstdc++_s.a(new_op.o)
+                0x0000000008002984                operator new(unsigned int)
+ .text          0x00000000080029ac       0x9c /Users/owen/gcc-arm-none-eabi-4_8-2014q1/bin/../lib/gcc/arm-none-eabi/4.8.3/armv6-m/libgcc.a(_udivsi3.o)
+                0x00000000080029ac                __udivsi3
+                0x00000000080029ac                __aeabi_uidiv
+                0x0000000008002a34                __aeabi_uidivmod
+ .text          0x0000000008002a48        0x4 /Users/owen/gcc-arm-none-eabi-4_8-2014q1/bin/../lib/gcc/arm-none-eabi/4.8.3/armv6-m/libgcc.a(_dvmd_tls.o)
+                0x0000000008002a48                __aeabi_ldiv0
+                0x0000000008002a48                __aeabi_idiv0
+ .text.__errno  0x0000000008002a4c        0xc /Users/owen/gcc-arm-none-eabi-4_8-2014q1/bin/../lib/gcc/arm-none-eabi/4.8.3/../../../../arm-none-eabi/lib/armv6-m/libg_s.a(lib_a-errno.o)
+                0x0000000008002a4c                __errno
+ .text.malloc   0x0000000008002a58       0x14 /Users/owen/gcc-arm-none-eabi-4_8-2014q1/bin/../lib/gcc/arm-none-eabi/4.8.3/../../../../arm-none-eabi/lib/armv6-m/libg_s.a(lib_a-malloc.o)
+                0x0000000008002a58                malloc
+ .text.free     0x0000000008002a6c       0x14 /Users/owen/gcc-arm-none-eabi-4_8-2014q1/bin/../lib/gcc/arm-none-eabi/4.8.3/../../../../arm-none-eabi/lib/armv6-m/libg_s.a(lib_a-malloc.o)
+                0x0000000008002a6c                free
+ .text.memcpy   0x0000000008002a80       0x12 /Users/owen/gcc-arm-none-eabi-4_8-2014q1/bin/../lib/gcc/arm-none-eabi/4.8.3/../../../../arm-none-eabi/lib/armv6-m/libg_s.a(lib_a-memcpy-stub.o)
+                0x0000000008002a80                memcpy
+ *fill*         0x0000000008002a92        0x2 
+ .text._free_r  0x0000000008002a94       0x90 /Users/owen/gcc-arm-none-eabi-4_8-2014q1/bin/../lib/gcc/arm-none-eabi/4.8.3/../../../../arm-none-eabi/lib/armv6-m/libg_s.a(lib_a-nano-freer.o)
+                0x0000000008002a94                _free_r
  .text._malloc_r
-                0x0000000008002950       0xa8 /Users/owen/gcc-arm-none-eabi-4_8-2014q1/bin/../lib/gcc/arm-none-eabi/4.8.3/../../../../arm-none-eabi/lib/armv6-m/libg_s.a(lib_a-nano-mallocr.o)
-                0x0000000008002950                _malloc_r
- .text.realloc  0x00000000080029f8       0x18 /Users/owen/gcc-arm-none-eabi-4_8-2014q1/bin/../lib/gcc/arm-none-eabi/4.8.3/../../../../arm-none-eabi/lib/armv6-m/libg_s.a(lib_a-realloc.o)
-                0x00000000080029f8                realloc
- .text._sbrk_r  0x0000000008002a10       0x24 /Users/owen/gcc-arm-none-eabi-4_8-2014q1/bin/../lib/gcc/arm-none-eabi/4.8.3/../../../../arm-none-eabi/lib/armv6-m/libg_s.a(lib_a-sbrkr.o)
-                0x0000000008002a10                _sbrk_r
- .text.sprintf  0x0000000008002a34       0x44 /Users/owen/gcc-arm-none-eabi-4_8-2014q1/bin/../lib/gcc/arm-none-eabi/4.8.3/../../../../arm-none-eabi/lib/armv6-m/libg_s.a(lib_a-sprintf.o)
-                0x0000000008002a34                sprintf
-                0x0000000008002a34                siprintf
- .text          0x0000000008002a78       0x14 /Users/owen/gcc-arm-none-eabi-4_8-2014q1/bin/../lib/gcc/arm-none-eabi/4.8.3/../../../../arm-none-eabi/lib/armv6-m/libg_s.a(lib_a-strcmp.o)
-                0x0000000008002a78                strcmp
- .text.strcpy   0x0000000008002a8c       0x10 /Users/owen/gcc-arm-none-eabi-4_8-2014q1/bin/../lib/gcc/arm-none-eabi/4.8.3/../../../../arm-none-eabi/lib/armv6-m/libg_s.a(lib_a-strcpy.o)
-                0x0000000008002a8c                strcpy
- .text.strlen   0x0000000008002a9c        0xe /Users/owen/gcc-arm-none-eabi-4_8-2014q1/bin/../lib/gcc/arm-none-eabi/4.8.3/../../../../arm-none-eabi/lib/armv6-m/libg_s.a(lib_a-strlen.o)
-                0x0000000008002a9c                strlen
- .text.strncmp  0x0000000008002aaa       0x2c /Users/owen/gcc-arm-none-eabi-4_8-2014q1/bin/../lib/gcc/arm-none-eabi/4.8.3/../../../../arm-none-eabi/lib/armv6-m/libg_s.a(lib_a-strncmp.o)
-                0x0000000008002aaa                strncmp
- *fill*         0x0000000008002ad6        0x2 
+                0x0000000008002b24       0xa8 /Users/owen/gcc-arm-none-eabi-4_8-2014q1/bin/../lib/gcc/arm-none-eabi/4.8.3/../../../../arm-none-eabi/lib/armv6-m/libg_s.a(lib_a-nano-mallocr.o)
+                0x0000000008002b24                _malloc_r
+ .text.realloc  0x0000000008002bcc       0x18 /Users/owen/gcc-arm-none-eabi-4_8-2014q1/bin/../lib/gcc/arm-none-eabi/4.8.3/../../../../arm-none-eabi/lib/armv6-m/libg_s.a(lib_a-realloc.o)
+                0x0000000008002bcc                realloc
+ .text._sbrk_r  0x0000000008002be4       0x24 /Users/owen/gcc-arm-none-eabi-4_8-2014q1/bin/../lib/gcc/arm-none-eabi/4.8.3/../../../../arm-none-eabi/lib/armv6-m/libg_s.a(lib_a-sbrkr.o)
+                0x0000000008002be4                _sbrk_r
+ .text.sprintf  0x0000000008002c08       0x44 /Users/owen/gcc-arm-none-eabi-4_8-2014q1/bin/../lib/gcc/arm-none-eabi/4.8.3/../../../../arm-none-eabi/lib/armv6-m/libg_s.a(lib_a-sprintf.o)
+                0x0000000008002c08                sprintf
+                0x0000000008002c08                siprintf
+ .text          0x0000000008002c4c       0x14 /Users/owen/gcc-arm-none-eabi-4_8-2014q1/bin/../lib/gcc/arm-none-eabi/4.8.3/../../../../arm-none-eabi/lib/armv6-m/libg_s.a(lib_a-strcmp.o)
+                0x0000000008002c4c                strcmp
+ .text.strcpy   0x0000000008002c60       0x10 /Users/owen/gcc-arm-none-eabi-4_8-2014q1/bin/../lib/gcc/arm-none-eabi/4.8.3/../../../../arm-none-eabi/lib/armv6-m/libg_s.a(lib_a-strcpy.o)
+                0x0000000008002c60                strcpy
+ .text.strlen   0x0000000008002c70        0xe /Users/owen/gcc-arm-none-eabi-4_8-2014q1/bin/../lib/gcc/arm-none-eabi/4.8.3/../../../../arm-none-eabi/lib/armv6-m/libg_s.a(lib_a-strlen.o)
+                0x0000000008002c70                strlen
+ .text.strncmp  0x0000000008002c7e       0x2c /Users/owen/gcc-arm-none-eabi-4_8-2014q1/bin/../lib/gcc/arm-none-eabi/4.8.3/../../../../arm-none-eabi/lib/armv6-m/libg_s.a(lib_a-strncmp.o)
+                0x0000000008002c7e                strncmp
+ *fill*         0x0000000008002caa        0x2 
  .text.__ssputs_r
-                0x0000000008002ad8       0xc0 /Users/owen/gcc-arm-none-eabi-4_8-2014q1/bin/../lib/gcc/arm-none-eabi/4.8.3/../../../../arm-none-eabi/lib/armv6-m/libg_s.a(lib_a-svfprintf.o)
-                0x0000000008002ad8                __ssputs_r
+                0x0000000008002cac       0xc0 /Users/owen/gcc-arm-none-eabi-4_8-2014q1/bin/../lib/gcc/arm-none-eabi/4.8.3/../../../../arm-none-eabi/lib/armv6-m/libg_s.a(lib_a-svfprintf.o)
+                0x0000000008002cac                __ssputs_r
  .text._svfprintf_r
-                0x0000000008002b98      0x1e0 /Users/owen/gcc-arm-none-eabi-4_8-2014q1/bin/../lib/gcc/arm-none-eabi/4.8.3/../../../../arm-none-eabi/lib/armv6-m/libg_s.a(lib_a-svfprintf.o)
-                0x0000000008002b98                _svfprintf_r
-                0x0000000008002b98                _svfiprintf_r
+                0x0000000008002d6c      0x1e0 /Users/owen/gcc-arm-none-eabi-4_8-2014q1/bin/../lib/gcc/arm-none-eabi/4.8.3/../../../../arm-none-eabi/lib/armv6-m/libg_s.a(lib_a-svfprintf.o)
+                0x0000000008002d6c                _svfprintf_r
+                0x0000000008002d6c                _svfiprintf_r
  .text._printf_common
-                0x0000000008002d78       0xe8 /Users/owen/gcc-arm-none-eabi-4_8-2014q1/bin/../lib/gcc/arm-none-eabi/4.8.3/../../../../arm-none-eabi/lib/armv6-m/libg_s.a(lib_a-vfprintf_i.o)
-                0x0000000008002d78                _printf_common
+                0x0000000008002f4c       0xe8 /Users/owen/gcc-arm-none-eabi-4_8-2014q1/bin/../lib/gcc/arm-none-eabi/4.8.3/../../../../arm-none-eabi/lib/armv6-m/libg_s.a(lib_a-vfprintf_i.o)
+                0x0000000008002f4c                _printf_common
  .text._printf_i
-                0x0000000008002e60      0x22c /Users/owen/gcc-arm-none-eabi-4_8-2014q1/bin/../lib/gcc/arm-none-eabi/4.8.3/../../../../arm-none-eabi/lib/armv6-m/libg_s.a(lib_a-vfprintf_i.o)
-                0x0000000008002e60                _printf_i
+                0x0000000008003034      0x22c /Users/owen/gcc-arm-none-eabi-4_8-2014q1/bin/../lib/gcc/arm-none-eabi/4.8.3/../../../../arm-none-eabi/lib/armv6-m/libg_s.a(lib_a-vfprintf_i.o)
+                0x0000000008003034                _printf_i
  .text._vsnprintf_r
-                0x000000000800308c       0x54 /Users/owen/gcc-arm-none-eabi-4_8-2014q1/bin/../lib/gcc/arm-none-eabi/4.8.3/../../../../arm-none-eabi/lib/armv6-m/libg_s.a(lib_a-vsnprintf.o)
-                0x000000000800308c                _vsnprintf_r
-                0x000000000800308c                _vsniprintf_r
+                0x0000000008003260       0x54 /Users/owen/gcc-arm-none-eabi-4_8-2014q1/bin/../lib/gcc/arm-none-eabi/4.8.3/../../../../arm-none-eabi/lib/armv6-m/libg_s.a(lib_a-vsnprintf.o)
+                0x0000000008003260                _vsnprintf_r
+                0x0000000008003260                _vsniprintf_r
  .text.vsnprintf
-                0x00000000080030e0       0x20 /Users/owen/gcc-arm-none-eabi-4_8-2014q1/bin/../lib/gcc/arm-none-eabi/4.8.3/../../../../arm-none-eabi/lib/armv6-m/libg_s.a(lib_a-vsnprintf.o)
-                0x00000000080030e0                vsnprintf
-                0x00000000080030e0                vsniprintf
- .text.memchr   0x0000000008003100       0x16 /Users/owen/gcc-arm-none-eabi-4_8-2014q1/bin/../lib/gcc/arm-none-eabi/4.8.3/../../../../arm-none-eabi/lib/armv6-m/libg_s.a(lib_a-memchr-stub.o)
-                0x0000000008003100                memchr
- .text.memmove  0x0000000008003116       0x32 /Users/owen/gcc-arm-none-eabi-4_8-2014q1/bin/../lib/gcc/arm-none-eabi/4.8.3/../../../../arm-none-eabi/lib/armv6-m/libg_s.a(lib_a-memmove.o)
-                0x0000000008003116                memmove
+                0x00000000080032b4       0x20 /Users/owen/gcc-arm-none-eabi-4_8-2014q1/bin/../lib/gcc/arm-none-eabi/4.8.3/../../../../arm-none-eabi/lib/armv6-m/libg_s.a(lib_a-vsnprintf.o)
+                0x00000000080032b4                vsnprintf
+                0x00000000080032b4                vsniprintf
+ .text.memchr   0x00000000080032d4       0x16 /Users/owen/gcc-arm-none-eabi-4_8-2014q1/bin/../lib/gcc/arm-none-eabi/4.8.3/../../../../arm-none-eabi/lib/armv6-m/libg_s.a(lib_a-memchr-stub.o)
+                0x00000000080032d4                memchr
+ .text.memmove  0x00000000080032ea       0x32 /Users/owen/gcc-arm-none-eabi-4_8-2014q1/bin/../lib/gcc/arm-none-eabi/4.8.3/../../../../arm-none-eabi/lib/armv6-m/libg_s.a(lib_a-memmove.o)
+                0x00000000080032ea                memmove
  .text._realloc_r
-                0x0000000008003148       0x4c /Users/owen/gcc-arm-none-eabi-4_8-2014q1/bin/../lib/gcc/arm-none-eabi/4.8.3/../../../../arm-none-eabi/lib/armv6-m/libg_s.a(lib_a-nano-reallocr.o)
-                0x0000000008003148                _realloc_r
+                0x000000000800331c       0x4c /Users/owen/gcc-arm-none-eabi-4_8-2014q1/bin/../lib/gcc/arm-none-eabi/4.8.3/../../../../arm-none-eabi/lib/armv6-m/libg_s.a(lib_a-nano-reallocr.o)
+                0x000000000800331c                _realloc_r
  .text._malloc_usable_size_r
-                0x0000000008003194       0x12 /Users/owen/gcc-arm-none-eabi-4_8-2014q1/bin/../lib/gcc/arm-none-eabi/4.8.3/../../../../arm-none-eabi/lib/armv6-m/libg_s.a(lib_a-nano-msizer.o)
-                0x0000000008003194                _malloc_usable_size_r
+                0x0000000008003368       0x12 /Users/owen/gcc-arm-none-eabi-4_8-2014q1/bin/../lib/gcc/arm-none-eabi/4.8.3/../../../../arm-none-eabi/lib/armv6-m/libg_s.a(lib_a-nano-msizer.o)
+                0x0000000008003368                _malloc_usable_size_r
  *(.rodata .rodata.*)
- *fill*         0x00000000080031a6        0x2 
+ *fill*         0x000000000800337a        0x2 
  .rodata.str1.4
-                0x00000000080031a8       0x31 ./system/src/stm32f0-stdperiph/stm32f0xx_gpio.o
+                0x000000000800337c       0x31 ./system/src/stm32f0-stdperiph/stm32f0xx_gpio.o
                                          0x34 (size before relaxing)
- *fill*         0x00000000080031d9        0x3 
+ *fill*         0x00000000080033ad        0x3 
  .rodata.str1.4
-                0x00000000080031dc       0x31 ./system/src/stm32f0-stdperiph/stm32f0xx_misc.o
+                0x00000000080033b0       0x31 ./system/src/stm32f0-stdperiph/stm32f0xx_misc.o
                                          0x34 (size before relaxing)
- *fill*         0x000000000800320d        0x3 
+ *fill*         0x00000000080033e1        0x3 
  .rodata.str1.4
-                0x0000000008003210       0x30 ./system/src/stm32f0-stdperiph/stm32f0xx_rcc.o
+                0x00000000080033e4       0x30 ./system/src/stm32f0-stdperiph/stm32f0xx_rcc.o
  .rodata.str1.4
-                0x0000000008003240       0x32 ./system/src/stm32f0-stdperiph/stm32f0xx_usart.o
+                0x0000000008003414       0x32 ./system/src/stm32f0-stdperiph/stm32f0xx_usart.o
                                          0x34 (size before relaxing)
- *fill*         0x0000000008003272        0x2 
+ *fill*         0x0000000008003446        0x2 
+ .rodata._ZZ18__cxa_pure_virtualE8__func__
+                0x0000000008003448       0x14 ./system/src/newlib/_cxx.o
  .rodata.str1.4
-                0x0000000008003274       0x14 ./system/src/newlib/_exit.o
+                0x000000000800345c       0x14 ./system/src/newlib/_exit.o
  .rodata.str1.4
-                0x0000000008003288       0x6b ./system/src/newlib/assert.o
+                0x0000000008003470       0x6b ./system/src/newlib/assert.o
                                          0x70 (size before relaxing)
- *fill*         0x00000000080032f3        0x1 
+ *fill*         0x00000000080034db        0x1 
  .rodata.str1.4
-                0x00000000080032f4       0x2d ./system/src/diag/Trace.o
+                0x00000000080034dc       0x2d ./system/src/diag/Trace.o
                                          0x30 (size before relaxing)
- *fill*         0x0000000008003321        0x3 
+ *fill*         0x0000000008003509        0x3 
  .rodata._ZN10OSCMessage10decodeDataEh
-                0x0000000008003324       0x4c ./src/OSC/OSCMessage.o
+                0x000000000800350c       0x4c ./src/OSC/OSCMessage.o
  .rodata._ZN10OSCMessage6decodeEh
-                0x0000000008003370       0x1c ./src/OSC/OSCMessage.o
+                0x0000000008003558       0x1c ./src/OSC/OSCMessage.o
+ *fill*         0x0000000008003574        0x4 
+ .rodata._ZTV6Inchie
+                0x0000000008003578       0x20 ./src/InchieKey.o
+                0x0000000008003578                vtable for Inchie
+ .rodata._ZTV9InchieLED
+                0x0000000008003598       0x20 ./src/InchieLED.o
+                0x0000000008003598                vtable for InchieLED
  .rodata.str1.4
-                0x000000000800338c       0x30 ./src/main.o
+                0x00000000080035b8       0x30 ./src/main.o
  .rodata.str1.1
-                0x00000000080033bc        0x2 /Users/owen/gcc-arm-none-eabi-4_8-2014q1/bin/../lib/gcc/arm-none-eabi/4.8.3/../../../../arm-none-eabi/lib/armv6-m/libg_s.a(lib_a-impure.o)
+                0x00000000080035e8        0x2 /Users/owen/gcc-arm-none-eabi-4_8-2014q1/bin/../lib/gcc/arm-none-eabi/4.8.3/../../../../arm-none-eabi/lib/armv6-m/libg_s.a(lib_a-impure.o)
  .rodata.str1.1
-                0x00000000080033be       0x11 /Users/owen/gcc-arm-none-eabi-4_8-2014q1/bin/../lib/gcc/arm-none-eabi/4.8.3/../../../../arm-none-eabi/lib/armv6-m/libg_s.a(lib_a-svfprintf.o)
+                0x00000000080035ea       0x11 /Users/owen/gcc-arm-none-eabi-4_8-2014q1/bin/../lib/gcc/arm-none-eabi/4.8.3/../../../../arm-none-eabi/lib/armv6-m/libg_s.a(lib_a-svfprintf.o)
  .rodata.str1.1
-                0x00000000080033cf       0x22 /Users/owen/gcc-arm-none-eabi-4_8-2014q1/bin/../lib/gcc/arm-none-eabi/4.8.3/../../../../arm-none-eabi/lib/armv6-m/libg_s.a(lib_a-vfprintf_i.o)
+                0x00000000080035fb       0x22 /Users/owen/gcc-arm-none-eabi-4_8-2014q1/bin/../lib/gcc/arm-none-eabi/4.8.3/../../../../arm-none-eabi/lib/armv6-m/libg_s.a(lib_a-vfprintf_i.o)
  *(vtable)
  *(.eh_frame*)
  *(.glue_7)
@@ -3013,31 +3281,31 @@ END GROUP
  *(.glue_7t)
  .glue_7t       0x0000000000000000        0x0 linker stubs
 
-.vfp11_veneer   0x00000000080033f4        0x0
+.vfp11_veneer   0x0000000008003620        0x0
  .vfp11_veneer  0x0000000000000000        0x0 linker stubs
 
-.v4_bx          0x00000000080033f4        0x0
+.v4_bx          0x0000000008003620        0x0
  .v4_bx         0x0000000000000000        0x0 linker stubs
 
-.iplt           0x00000000080033f4        0x0
+.iplt           0x0000000008003620        0x0
  .iplt          0x0000000000000000        0x0 ./system/src/stm32f0-stdperiph/stm32f0xx_adc.o
 
-.rel.dyn        0x00000000080033f4        0x0
+.rel.dyn        0x0000000008003620        0x0
  .rel.iplt      0x0000000000000000        0x0 ./system/src/stm32f0-stdperiph/stm32f0xx_adc.o
 
 .ARM.extab
  *(.ARM.extab* .gnu.linkonce.armextab.*)
-                0x00000000080033f4                __exidx_start = .
+                0x0000000008003620                __exidx_start = .
 
 .ARM.exidx
  *(.ARM.exidx* .gnu.linkonce.armexidx.*)
-                0x00000000080033f4                __exidx_end = .
-                0x00000000080033f4                . = ALIGN (0x4)
-                0x00000000080033f4                _etext = .
-                0x00000000080033f4                __etext = .
-                0x00000000080033f4                _sidata = _etext
+                0x0000000008003620                __exidx_end = .
+                0x0000000008003620                . = ALIGN (0x4)
+                0x0000000008003620                _etext = .
+                0x0000000008003620                __etext = .
+                0x0000000008003620                _sidata = _etext
 
-.data           0x0000000020000000       0x8c load address 0x00000000080033f4
+.data           0x0000000020000000       0x90 load address 0x0000000008003620
                 0x0000000020000000                . = ALIGN (0x4)
                 0x0000000020000000                _sdata = .
                 0x0000000020000000                __data_start__ = .
@@ -3051,86 +3319,91 @@ END GROUP
  .data.SystemCoreClock
                 0x000000002000001c        0x4 ./system/src/cmsis/system_stm32f0xx.o
                 0x000000002000001c                SystemCoreClock
- .data.myType   0x0000000020000020        0x4 ./src/main.o
-                0x0000000020000020                myType
+ .data.inchieKey
+                0x0000000020000020        0x4 ./src/main.o
+                0x0000000020000020                inchieKey
+ .data.inchieType
+                0x0000000020000024        0x4 ./src/main.o
+                0x0000000020000024                inchieType
  .data.impure_data
-                0x0000000020000024       0x60 /Users/owen/gcc-arm-none-eabi-4_8-2014q1/bin/../lib/gcc/arm-none-eabi/4.8.3/../../../../arm-none-eabi/lib/armv6-m/libg_s.a(lib_a-impure.o)
+                0x0000000020000028       0x60 /Users/owen/gcc-arm-none-eabi-4_8-2014q1/bin/../lib/gcc/arm-none-eabi/4.8.3/../../../../arm-none-eabi/lib/armv6-m/libg_s.a(lib_a-impure.o)
  .data._impure_ptr
-                0x0000000020000084        0x4 /Users/owen/gcc-arm-none-eabi-4_8-2014q1/bin/../lib/gcc/arm-none-eabi/4.8.3/../../../../arm-none-eabi/lib/armv6-m/libg_s.a(lib_a-impure.o)
-                0x0000000020000084                _impure_ptr
+                0x0000000020000088        0x4 /Users/owen/gcc-arm-none-eabi-4_8-2014q1/bin/../lib/gcc/arm-none-eabi/4.8.3/../../../../arm-none-eabi/lib/armv6-m/libg_s.a(lib_a-impure.o)
+                0x0000000020000088                _impure_ptr
  *(.data_end .data_end.*)
- .data_end      0x0000000020000088        0x4 ./system/src/newlib/_startup.o
-                0x000000002000008c                . = ALIGN (0x4)
-                0x000000002000008c                _edata = .
-                0x000000002000008c                __data_end__ = .
+ .data_end      0x000000002000008c        0x4 ./system/src/newlib/_startup.o
+                0x0000000020000090                . = ALIGN (0x4)
+                0x0000000020000090                _edata = .
+                0x0000000020000090                __data_end__ = .
 
-.igot.plt       0x000000002000008c        0x0 load address 0x0000000008003480
+.igot.plt       0x0000000020000090        0x0 load address 0x00000000080036b0
  .igot.plt      0x0000000000000000        0x0 ./system/src/stm32f0-stdperiph/stm32f0xx_adc.o
 
-.bss            0x000000002000008c     0x1010 load address 0x0000000008003480
-                0x000000002000008c                . = ALIGN (0x4)
-                0x000000002000008c                __bss_start__ = .
-                0x000000002000008c                _sbss = .
+.bss            0x0000000020000090     0x1010 load address 0x00000000080036b0
+                0x0000000020000090                . = ALIGN (0x4)
+                0x0000000020000090                __bss_start__ = .
+                0x0000000020000090                _sbss = .
  *(.bss_begin .bss_begin.*)
- .bss_begin     0x000000002000008c        0x4 ./system/src/newlib/_startup.o
+ .bss_begin     0x0000000020000090        0x4 ./system/src/newlib/_startup.o
  *(.bss .bss.*)
  .bss.current_heap_end.4286
-                0x0000000020000090        0x4 ./system/src/newlib/_sbrk.o
+                0x0000000020000094        0x4 ./system/src/newlib/_sbrk.o
  .bss.name.4457
-                0x0000000020000094        0x4 ./system/src/newlib/_syscalls.o
- .bss.buf.5349  0x0000000020000098       0x80 ./system/src/diag/Trace.o
- .bss.myIndex   0x0000000020000118        0x4 ./src/main.o
-                0x0000000020000118                myIndex
+                0x0000000020000098        0x4 ./system/src/newlib/_syscalls.o
+ .bss.buf.5349  0x000000002000009c       0x80 ./system/src/diag/Trace.o
  .bss.oscBuf    0x000000002000011c      0x104 ./src/main.o
                 0x000000002000011c                oscBuf
  .bss.upstream  0x0000000020000220      0x51c ./src/main.o
                 0x0000000020000220                upstream
- .bss.myAddress
-                0x000000002000073c       0x10 ./src/main.o
-                0x000000002000073c                myAddress
+ .bss.inchieIndex
+                0x000000002000073c        0x4 ./src/main.o
+                0x000000002000073c                inchieIndex
+ .bss.inchieAddress
+                0x0000000020000740       0x10 ./src/main.o
+                0x0000000020000740                inchieAddress
  .bss.downstream
-                0x000000002000074c      0x51c ./src/main.o
-                0x000000002000074c                downstream
+                0x0000000020000750      0x51c ./src/main.o
+                0x0000000020000750                downstream
  .bss.__new_handler
-                0x0000000020000c68        0x4 /Users/owen/gcc-arm-none-eabi-4_8-2014q1/bin/../lib/gcc/arm-none-eabi/4.8.3/../../../../arm-none-eabi/lib/armv6-m/libstdc++_s.a(new_handler.o)
-                0x0000000020000c68                __new_handler
+                0x0000000020000c6c        0x4 /Users/owen/gcc-arm-none-eabi-4_8-2014q1/bin/../lib/gcc/arm-none-eabi/4.8.3/../../../../arm-none-eabi/lib/armv6-m/libstdc++_s.a(new_handler.o)
+                0x0000000020000c6c                __new_handler
  .bss.__malloc_sbrk_start
-                0x0000000020000c6c        0x4 /Users/owen/gcc-arm-none-eabi-4_8-2014q1/bin/../lib/gcc/arm-none-eabi/4.8.3/../../../../arm-none-eabi/lib/armv6-m/libg_s.a(lib_a-nano-mallocr.o)
-                0x0000000020000c6c                __malloc_sbrk_start
- .bss.__malloc_free_list
                 0x0000000020000c70        0x4 /Users/owen/gcc-arm-none-eabi-4_8-2014q1/bin/../lib/gcc/arm-none-eabi/4.8.3/../../../../arm-none-eabi/lib/armv6-m/libg_s.a(lib_a-nano-mallocr.o)
-                0x0000000020000c70                __malloc_free_list
+                0x0000000020000c70                __malloc_sbrk_start
+ .bss.__malloc_free_list
+                0x0000000020000c74        0x4 /Users/owen/gcc-arm-none-eabi-4_8-2014q1/bin/../lib/gcc/arm-none-eabi/4.8.3/../../../../arm-none-eabi/lib/armv6-m/libg_s.a(lib_a-nano-mallocr.o)
+                0x0000000020000c74                __malloc_free_list
  *(COMMON)
- COMMON         0x0000000020000c74        0x4 ./system/src/newlib/_syscalls.o
-                0x0000000020000c74                errno
- COMMON         0x0000000020000c78        0x8 ./src/Timer.o
-                0x0000000020000c78                timer_delayCount
-                0x0000000020000c7c                stopwatch
- COMMON         0x0000000020000c80      0x418 ./src/uart.o
-                0x0000000020000c80                uart_upstream
-                0x0000000020000e8c                uart_downstream
+ COMMON         0x0000000020000c78        0x4 ./system/src/newlib/_syscalls.o
+                0x0000000020000c78                errno
+ COMMON         0x0000000020000c7c        0x8 ./src/Timer.o
+                0x0000000020000c7c                timer_delayCount
+                0x0000000020000c80                stopwatch
+ COMMON         0x0000000020000c84      0x418 ./src/uart.o
+                0x0000000020000c84                uart_upstream
+                0x0000000020000e90                uart_downstream
  *(.bss_end .bss_end.*)
- .bss_end       0x0000000020001098        0x4 ./system/src/newlib/_startup.o
-                0x000000002000109c                . = ALIGN (0x4)
-                0x000000002000109c                __bss_end__ = .
-                0x000000002000109c                _ebss = .
+ .bss_end       0x000000002000109c        0x4 ./system/src/newlib/_startup.o
+                0x00000000200010a0                . = ALIGN (0x4)
+                0x00000000200010a0                __bss_end__ = .
+                0x00000000200010a0                _ebss = .
 
-.noinit         0x000000002000109c        0x0
-                0x000000002000109c                . = ALIGN (0x4)
-                0x000000002000109c                _noinit = .
+.noinit         0x00000000200010a0        0x0
+                0x00000000200010a0                . = ALIGN (0x4)
+                0x00000000200010a0                _noinit = .
  *(.noinit .noinit.*)
-                0x000000002000109c                . = ALIGN (0x4)
-                0x000000002000109c                _end_noinit = .
-                0x000000002000109c                PROVIDE (end, _end_noinit)
-                0x000000002000109c                PROVIDE (_end, _end_noinit)
-                0x000000002000109c                PROVIDE (__end, _end_noinit)
-                0x000000002000109c                PROVIDE (__end__, _end_noinit)
+                0x00000000200010a0                . = ALIGN (0x4)
+                0x00000000200010a0                _end_noinit = .
+                0x00000000200010a0                PROVIDE (end, _end_noinit)
+                0x00000000200010a0                PROVIDE (_end, _end_noinit)
+                0x00000000200010a0                PROVIDE (__end, _end_noinit)
+                0x00000000200010a0                PROVIDE (__end__, _end_noinit)
 
-._check_stack   0x000000002000109c      0x100 load address 0x0000000008004490
-                0x000000002000109c                . = ALIGN (0x4)
-                0x000000002000119c                . = (. + _Minimum_Stack_Size)
- *fill*         0x000000002000109c      0x100 
-                0x000000002000119c                . = ALIGN (0x4)
+._check_stack   0x00000000200010a0      0x100 load address 0x00000000080046c0
+                0x00000000200010a0                . = ALIGN (0x4)
+                0x00000000200011a0                . = (. + _Minimum_Stack_Size)
+ *fill*         0x00000000200010a0      0x100 
+                0x00000000200011a0                . = ALIGN (0x4)
 
 .bss_CCMRAM
  *(.bss.CCMRAM .bss.CCMRAM.*)
@@ -3185,6 +3458,7 @@ END GROUP
  .comment       0x0000000000000000       0x71 ./system/src/stm32f0-stdperiph/stm32f0xx_misc.o
  .comment       0x0000000000000000       0x71 ./system/src/stm32f0-stdperiph/stm32f0xx_rcc.o
  .comment       0x0000000000000000       0x71 ./system/src/stm32f0-stdperiph/stm32f0xx_usart.o
+ .comment       0x0000000000000000       0x71 ./system/src/newlib/_cxx.o
  .comment       0x0000000000000000       0x71 ./system/src/newlib/_exit.o
  .comment       0x0000000000000000       0x71 ./system/src/newlib/_sbrk.o
  .comment       0x0000000000000000       0x71 ./system/src/newlib/_startup.o
@@ -3201,6 +3475,8 @@ END GROUP
  .comment       0x0000000000000000       0x71 ./src/OSC/OSCMessage.o
  .comment       0x0000000000000000       0x71 ./src/OSC/SimpleWriter.o
  .comment       0x0000000000000000       0x71 ./src/BlinkLed.o
+ .comment       0x0000000000000000       0x71 ./src/InchieKey.o
+ .comment       0x0000000000000000       0x71 ./src/InchieLED.o
  .comment       0x0000000000000000       0x71 ./src/SLIPEncodedSerial.o
  .comment       0x0000000000000000       0x71 ./src/Timer.o
  .comment       0x0000000000000000       0x71 ./src/main.o
@@ -3217,95 +3493,101 @@ END GROUP
  .ARM.attributes
                 0x0000000000000093       0x31 ./system/src/stm32f0-stdperiph/stm32f0xx_usart.o
  .ARM.attributes
-                0x00000000000000c4       0x31 ./system/src/newlib/_exit.o
+                0x00000000000000c4       0x31 ./system/src/newlib/_cxx.o
  .ARM.attributes
-                0x00000000000000f5       0x31 ./system/src/newlib/_sbrk.o
+                0x00000000000000f5       0x31 ./system/src/newlib/_exit.o
  .ARM.attributes
-                0x0000000000000126       0x31 ./system/src/newlib/_startup.o
+                0x0000000000000126       0x31 ./system/src/newlib/_sbrk.o
  .ARM.attributes
-                0x0000000000000157       0x31 ./system/src/newlib/_syscalls.o
+                0x0000000000000157       0x31 ./system/src/newlib/_startup.o
  .ARM.attributes
-                0x0000000000000188       0x31 ./system/src/newlib/assert.o
+                0x0000000000000188       0x31 ./system/src/newlib/_syscalls.o
  .ARM.attributes
-                0x00000000000001b9       0x31 ./system/src/diag/Trace.o
+                0x00000000000001b9       0x31 ./system/src/newlib/assert.o
  .ARM.attributes
-                0x00000000000001ea       0x31 ./system/src/diag/trace_impl.o
+                0x00000000000001ea       0x31 ./system/src/diag/Trace.o
  .ARM.attributes
-                0x000000000000021b       0x31 ./system/src/cortexm/_initialize_hardware.o
+                0x000000000000021b       0x31 ./system/src/diag/trace_impl.o
  .ARM.attributes
-                0x000000000000024c       0x31 ./system/src/cortexm/exception_handlers.o
+                0x000000000000024c       0x31 ./system/src/cortexm/_initialize_hardware.o
  .ARM.attributes
-                0x000000000000027d       0x31 ./system/src/cmsis/system_stm32f0xx.o
+                0x000000000000027d       0x31 ./system/src/cortexm/exception_handlers.o
  .ARM.attributes
-                0x00000000000002ae       0x31 ./system/src/cmsis/vectors_stm32f0xx.o
+                0x00000000000002ae       0x31 ./system/src/cmsis/system_stm32f0xx.o
  .ARM.attributes
-                0x00000000000002df       0x31 ./src/OSC/OSCData.o
+                0x00000000000002df       0x31 ./system/src/cmsis/vectors_stm32f0xx.o
  .ARM.attributes
-                0x0000000000000310       0x31 ./src/OSC/OSCMatch.o
+                0x0000000000000310       0x31 ./src/OSC/OSCData.o
  .ARM.attributes
-                0x0000000000000341       0x31 ./src/OSC/OSCMessage.o
+                0x0000000000000341       0x31 ./src/OSC/OSCMatch.o
  .ARM.attributes
-                0x0000000000000372       0x31 ./src/OSC/SimpleWriter.o
+                0x0000000000000372       0x31 ./src/OSC/OSCMessage.o
  .ARM.attributes
-                0x00000000000003a3       0x31 ./src/BlinkLed.o
+                0x00000000000003a3       0x31 ./src/OSC/SimpleWriter.o
  .ARM.attributes
-                0x00000000000003d4       0x31 ./src/SLIPEncodedSerial.o
+                0x00000000000003d4       0x31 ./src/BlinkLed.o
  .ARM.attributes
-                0x0000000000000405       0x31 ./src/Timer.o
+                0x0000000000000405       0x31 ./src/InchieKey.o
  .ARM.attributes
-                0x0000000000000436       0x31 ./src/main.o
+                0x0000000000000436       0x31 ./src/InchieLED.o
  .ARM.attributes
-                0x0000000000000467       0x31 ./src/uart.o
+                0x0000000000000467       0x31 ./src/SLIPEncodedSerial.o
  .ARM.attributes
-                0x0000000000000498       0x2c /Users/owen/gcc-arm-none-eabi-4_8-2014q1/bin/../lib/gcc/arm-none-eabi/4.8.3/../../../../arm-none-eabi/lib/armv6-m/libstdc++_s.a(del_op.o)
+                0x0000000000000498       0x31 ./src/Timer.o
  .ARM.attributes
-                0x00000000000004c4       0x2c /Users/owen/gcc-arm-none-eabi-4_8-2014q1/bin/../lib/gcc/arm-none-eabi/4.8.3/../../../../arm-none-eabi/lib/armv6-m/libstdc++_s.a(new_op.o)
+                0x00000000000004c9       0x31 ./src/main.o
  .ARM.attributes
-                0x00000000000004f0       0x2c /Users/owen/gcc-arm-none-eabi-4_8-2014q1/bin/../lib/gcc/arm-none-eabi/4.8.3/../../../../arm-none-eabi/lib/armv6-m/libstdc++_s.a(new_handler.o)
+                0x00000000000004fa       0x31 ./src/uart.o
  .ARM.attributes
-                0x000000000000051c       0x1e /Users/owen/gcc-arm-none-eabi-4_8-2014q1/bin/../lib/gcc/arm-none-eabi/4.8.3/armv6-m/libgcc.a(_udivsi3.o)
+                0x000000000000052b       0x2c /Users/owen/gcc-arm-none-eabi-4_8-2014q1/bin/../lib/gcc/arm-none-eabi/4.8.3/../../../../arm-none-eabi/lib/armv6-m/libstdc++_s.a(del_op.o)
  .ARM.attributes
-                0x000000000000053a       0x1e /Users/owen/gcc-arm-none-eabi-4_8-2014q1/bin/../lib/gcc/arm-none-eabi/4.8.3/armv6-m/libgcc.a(_dvmd_tls.o)
+                0x0000000000000557       0x2c /Users/owen/gcc-arm-none-eabi-4_8-2014q1/bin/../lib/gcc/arm-none-eabi/4.8.3/../../../../arm-none-eabi/lib/armv6-m/libstdc++_s.a(new_op.o)
  .ARM.attributes
-                0x0000000000000558       0x2c /Users/owen/gcc-arm-none-eabi-4_8-2014q1/bin/../lib/gcc/arm-none-eabi/4.8.3/../../../../arm-none-eabi/lib/armv6-m/libg_s.a(lib_a-errno.o)
+                0x0000000000000583       0x2c /Users/owen/gcc-arm-none-eabi-4_8-2014q1/bin/../lib/gcc/arm-none-eabi/4.8.3/../../../../arm-none-eabi/lib/armv6-m/libstdc++_s.a(new_handler.o)
  .ARM.attributes
-                0x0000000000000584       0x2c /Users/owen/gcc-arm-none-eabi-4_8-2014q1/bin/../lib/gcc/arm-none-eabi/4.8.3/../../../../arm-none-eabi/lib/armv6-m/libg_s.a(lib_a-impure.o)
+                0x00000000000005af       0x1e /Users/owen/gcc-arm-none-eabi-4_8-2014q1/bin/../lib/gcc/arm-none-eabi/4.8.3/armv6-m/libgcc.a(_udivsi3.o)
  .ARM.attributes
-                0x00000000000005b0       0x2c /Users/owen/gcc-arm-none-eabi-4_8-2014q1/bin/../lib/gcc/arm-none-eabi/4.8.3/../../../../arm-none-eabi/lib/armv6-m/libg_s.a(lib_a-malloc.o)
+                0x00000000000005cd       0x1e /Users/owen/gcc-arm-none-eabi-4_8-2014q1/bin/../lib/gcc/arm-none-eabi/4.8.3/armv6-m/libgcc.a(_dvmd_tls.o)
  .ARM.attributes
-                0x00000000000005dc       0x2c /Users/owen/gcc-arm-none-eabi-4_8-2014q1/bin/../lib/gcc/arm-none-eabi/4.8.3/../../../../arm-none-eabi/lib/armv6-m/libg_s.a(lib_a-memcpy-stub.o)
+                0x00000000000005eb       0x2c /Users/owen/gcc-arm-none-eabi-4_8-2014q1/bin/../lib/gcc/arm-none-eabi/4.8.3/../../../../arm-none-eabi/lib/armv6-m/libg_s.a(lib_a-errno.o)
  .ARM.attributes
-                0x0000000000000608       0x2c /Users/owen/gcc-arm-none-eabi-4_8-2014q1/bin/../lib/gcc/arm-none-eabi/4.8.3/../../../../arm-none-eabi/lib/armv6-m/libg_s.a(lib_a-nano-freer.o)
+                0x0000000000000617       0x2c /Users/owen/gcc-arm-none-eabi-4_8-2014q1/bin/../lib/gcc/arm-none-eabi/4.8.3/../../../../arm-none-eabi/lib/armv6-m/libg_s.a(lib_a-impure.o)
  .ARM.attributes
-                0x0000000000000634       0x2c /Users/owen/gcc-arm-none-eabi-4_8-2014q1/bin/../lib/gcc/arm-none-eabi/4.8.3/../../../../arm-none-eabi/lib/armv6-m/libg_s.a(lib_a-nano-mallocr.o)
+                0x0000000000000643       0x2c /Users/owen/gcc-arm-none-eabi-4_8-2014q1/bin/../lib/gcc/arm-none-eabi/4.8.3/../../../../arm-none-eabi/lib/armv6-m/libg_s.a(lib_a-malloc.o)
  .ARM.attributes
-                0x0000000000000660       0x2c /Users/owen/gcc-arm-none-eabi-4_8-2014q1/bin/../lib/gcc/arm-none-eabi/4.8.3/../../../../arm-none-eabi/lib/armv6-m/libg_s.a(lib_a-realloc.o)
+                0x000000000000066f       0x2c /Users/owen/gcc-arm-none-eabi-4_8-2014q1/bin/../lib/gcc/arm-none-eabi/4.8.3/../../../../arm-none-eabi/lib/armv6-m/libg_s.a(lib_a-memcpy-stub.o)
  .ARM.attributes
-                0x000000000000068c       0x2c /Users/owen/gcc-arm-none-eabi-4_8-2014q1/bin/../lib/gcc/arm-none-eabi/4.8.3/../../../../arm-none-eabi/lib/armv6-m/libg_s.a(lib_a-sbrkr.o)
+                0x000000000000069b       0x2c /Users/owen/gcc-arm-none-eabi-4_8-2014q1/bin/../lib/gcc/arm-none-eabi/4.8.3/../../../../arm-none-eabi/lib/armv6-m/libg_s.a(lib_a-nano-freer.o)
  .ARM.attributes
-                0x00000000000006b8       0x2c /Users/owen/gcc-arm-none-eabi-4_8-2014q1/bin/../lib/gcc/arm-none-eabi/4.8.3/../../../../arm-none-eabi/lib/armv6-m/libg_s.a(lib_a-sprintf.o)
+                0x00000000000006c7       0x2c /Users/owen/gcc-arm-none-eabi-4_8-2014q1/bin/../lib/gcc/arm-none-eabi/4.8.3/../../../../arm-none-eabi/lib/armv6-m/libg_s.a(lib_a-nano-mallocr.o)
  .ARM.attributes
-                0x00000000000006e4       0x1c /Users/owen/gcc-arm-none-eabi-4_8-2014q1/bin/../lib/gcc/arm-none-eabi/4.8.3/../../../../arm-none-eabi/lib/armv6-m/libg_s.a(lib_a-strcmp.o)
+                0x00000000000006f3       0x2c /Users/owen/gcc-arm-none-eabi-4_8-2014q1/bin/../lib/gcc/arm-none-eabi/4.8.3/../../../../arm-none-eabi/lib/armv6-m/libg_s.a(lib_a-realloc.o)
  .ARM.attributes
-                0x0000000000000700       0x2c /Users/owen/gcc-arm-none-eabi-4_8-2014q1/bin/../lib/gcc/arm-none-eabi/4.8.3/../../../../arm-none-eabi/lib/armv6-m/libg_s.a(lib_a-strcpy.o)
+                0x000000000000071f       0x2c /Users/owen/gcc-arm-none-eabi-4_8-2014q1/bin/../lib/gcc/arm-none-eabi/4.8.3/../../../../arm-none-eabi/lib/armv6-m/libg_s.a(lib_a-sbrkr.o)
  .ARM.attributes
-                0x000000000000072c       0x2c /Users/owen/gcc-arm-none-eabi-4_8-2014q1/bin/../lib/gcc/arm-none-eabi/4.8.3/../../../../arm-none-eabi/lib/armv6-m/libg_s.a(lib_a-strlen.o)
+                0x000000000000074b       0x2c /Users/owen/gcc-arm-none-eabi-4_8-2014q1/bin/../lib/gcc/arm-none-eabi/4.8.3/../../../../arm-none-eabi/lib/armv6-m/libg_s.a(lib_a-sprintf.o)
  .ARM.attributes
-                0x0000000000000758       0x2c /Users/owen/gcc-arm-none-eabi-4_8-2014q1/bin/../lib/gcc/arm-none-eabi/4.8.3/../../../../arm-none-eabi/lib/armv6-m/libg_s.a(lib_a-strncmp.o)
+                0x0000000000000777       0x1c /Users/owen/gcc-arm-none-eabi-4_8-2014q1/bin/../lib/gcc/arm-none-eabi/4.8.3/../../../../arm-none-eabi/lib/armv6-m/libg_s.a(lib_a-strcmp.o)
  .ARM.attributes
-                0x0000000000000784       0x2c /Users/owen/gcc-arm-none-eabi-4_8-2014q1/bin/../lib/gcc/arm-none-eabi/4.8.3/../../../../arm-none-eabi/lib/armv6-m/libg_s.a(lib_a-svfprintf.o)
+                0x0000000000000793       0x2c /Users/owen/gcc-arm-none-eabi-4_8-2014q1/bin/../lib/gcc/arm-none-eabi/4.8.3/../../../../arm-none-eabi/lib/armv6-m/libg_s.a(lib_a-strcpy.o)
  .ARM.attributes
-                0x00000000000007b0       0x2c /Users/owen/gcc-arm-none-eabi-4_8-2014q1/bin/../lib/gcc/arm-none-eabi/4.8.3/../../../../arm-none-eabi/lib/armv6-m/libg_s.a(lib_a-vfprintf_i.o)
+                0x00000000000007bf       0x2c /Users/owen/gcc-arm-none-eabi-4_8-2014q1/bin/../lib/gcc/arm-none-eabi/4.8.3/../../../../arm-none-eabi/lib/armv6-m/libg_s.a(lib_a-strlen.o)
  .ARM.attributes
-                0x00000000000007dc       0x2c /Users/owen/gcc-arm-none-eabi-4_8-2014q1/bin/../lib/gcc/arm-none-eabi/4.8.3/../../../../arm-none-eabi/lib/armv6-m/libg_s.a(lib_a-vsnprintf.o)
+                0x00000000000007eb       0x2c /Users/owen/gcc-arm-none-eabi-4_8-2014q1/bin/../lib/gcc/arm-none-eabi/4.8.3/../../../../arm-none-eabi/lib/armv6-m/libg_s.a(lib_a-strncmp.o)
  .ARM.attributes
-                0x0000000000000808       0x2c /Users/owen/gcc-arm-none-eabi-4_8-2014q1/bin/../lib/gcc/arm-none-eabi/4.8.3/../../../../arm-none-eabi/lib/armv6-m/libg_s.a(lib_a-memchr-stub.o)
+                0x0000000000000817       0x2c /Users/owen/gcc-arm-none-eabi-4_8-2014q1/bin/../lib/gcc/arm-none-eabi/4.8.3/../../../../arm-none-eabi/lib/armv6-m/libg_s.a(lib_a-svfprintf.o)
  .ARM.attributes
-                0x0000000000000834       0x2c /Users/owen/gcc-arm-none-eabi-4_8-2014q1/bin/../lib/gcc/arm-none-eabi/4.8.3/../../../../arm-none-eabi/lib/armv6-m/libg_s.a(lib_a-memmove.o)
+                0x0000000000000843       0x2c /Users/owen/gcc-arm-none-eabi-4_8-2014q1/bin/../lib/gcc/arm-none-eabi/4.8.3/../../../../arm-none-eabi/lib/armv6-m/libg_s.a(lib_a-vfprintf_i.o)
  .ARM.attributes
-                0x0000000000000860       0x2c /Users/owen/gcc-arm-none-eabi-4_8-2014q1/bin/../lib/gcc/arm-none-eabi/4.8.3/../../../../arm-none-eabi/lib/armv6-m/libg_s.a(lib_a-nano-reallocr.o)
+                0x000000000000086f       0x2c /Users/owen/gcc-arm-none-eabi-4_8-2014q1/bin/../lib/gcc/arm-none-eabi/4.8.3/../../../../arm-none-eabi/lib/armv6-m/libg_s.a(lib_a-vsnprintf.o)
  .ARM.attributes
-                0x000000000000088c       0x2c /Users/owen/gcc-arm-none-eabi-4_8-2014q1/bin/../lib/gcc/arm-none-eabi/4.8.3/../../../../arm-none-eabi/lib/armv6-m/libg_s.a(lib_a-nano-msizer.o)
+                0x000000000000089b       0x2c /Users/owen/gcc-arm-none-eabi-4_8-2014q1/bin/../lib/gcc/arm-none-eabi/4.8.3/../../../../arm-none-eabi/lib/armv6-m/libg_s.a(lib_a-memchr-stub.o)
+ .ARM.attributes
+                0x00000000000008c7       0x2c /Users/owen/gcc-arm-none-eabi-4_8-2014q1/bin/../lib/gcc/arm-none-eabi/4.8.3/../../../../arm-none-eabi/lib/armv6-m/libg_s.a(lib_a-memmove.o)
+ .ARM.attributes
+                0x00000000000008f3       0x2c /Users/owen/gcc-arm-none-eabi-4_8-2014q1/bin/../lib/gcc/arm-none-eabi/4.8.3/../../../../arm-none-eabi/lib/armv6-m/libg_s.a(lib_a-nano-reallocr.o)
+ .ARM.attributes
+                0x000000000000091f       0x2c /Users/owen/gcc-arm-none-eabi-4_8-2014q1/bin/../lib/gcc/arm-none-eabi/4.8.3/../../../../arm-none-eabi/lib/armv6-m/libg_s.a(lib_a-nano-msizer.o)
 
 .debug
  *(.debug)
@@ -3319,7 +3601,7 @@ END GROUP
 .debug_sfnames
  *(.debug_sfnames)
 
-.debug_aranges  0x0000000000000000      0xa50
+.debug_aranges  0x0000000000000000      0xb30
  *(.debug_aranges)
  .debug_aranges
                 0x0000000000000000       0x80 ./system/src/stm32f0-stdperiph/stm32f0xx_gpio.o
@@ -3330,231 +3612,255 @@ END GROUP
  .debug_aranges
                 0x0000000000000210      0x1a0 ./system/src/stm32f0-stdperiph/stm32f0xx_usart.o
  .debug_aranges
-                0x00000000000003b0       0x28 ./system/src/newlib/_exit.o
+                0x00000000000003b0       0x28 ./system/src/newlib/_cxx.o
  .debug_aranges
-                0x00000000000003d8       0x20 ./system/src/newlib/_sbrk.o
+                0x00000000000003d8       0x28 ./system/src/newlib/_exit.o
  .debug_aranges
-                0x00000000000003f8       0x40 ./system/src/newlib/_startup.o
+                0x0000000000000400       0x20 ./system/src/newlib/_sbrk.o
  .debug_aranges
-                0x0000000000000438       0xd0 ./system/src/newlib/_syscalls.o
+                0x0000000000000420       0x40 ./system/src/newlib/_startup.o
  .debug_aranges
-                0x0000000000000508       0x28 ./system/src/newlib/assert.o
+                0x0000000000000460       0xd0 ./system/src/newlib/_syscalls.o
  .debug_aranges
-                0x0000000000000530       0x38 ./system/src/diag/Trace.o
+                0x0000000000000530       0x28 ./system/src/newlib/assert.o
  .debug_aranges
-                0x0000000000000568       0x30 ./system/src/diag/trace_impl.o
+                0x0000000000000558       0x38 ./system/src/diag/Trace.o
  .debug_aranges
-                0x0000000000000598       0x20 ./system/src/cortexm/_initialize_hardware.o
+                0x0000000000000590       0x30 ./system/src/diag/trace_impl.o
  .debug_aranges
-                0x00000000000005b8       0x48 ./system/src/cortexm/exception_handlers.o
+                0x00000000000005c0       0x20 ./system/src/cortexm/_initialize_hardware.o
  .debug_aranges
-                0x0000000000000600       0x30 ./system/src/cmsis/system_stm32f0xx.o
+                0x00000000000005e0       0x48 ./system/src/cortexm/exception_handlers.o
  .debug_aranges
-                0x0000000000000630       0x20 ./system/src/cmsis/vectors_stm32f0xx.o
+                0x0000000000000628       0x30 ./system/src/cmsis/system_stm32f0xx.o
  .debug_aranges
-                0x0000000000000650       0xa8 ./src/OSC/OSCData.o
+                0x0000000000000658       0x20 ./system/src/cmsis/vectors_stm32f0xx.o
  .debug_aranges
-                0x00000000000006f8       0x48 ./src/OSC/OSCMatch.o
+                0x0000000000000678       0xa8 ./src/OSC/OSCData.o
  .debug_aranges
-                0x0000000000000740      0x180 ./src/OSC/OSCMessage.o
+                0x0000000000000720       0x48 ./src/OSC/OSCMatch.o
  .debug_aranges
-                0x00000000000008c0       0x38 ./src/OSC/SimpleWriter.o
+                0x0000000000000768      0x180 ./src/OSC/OSCMessage.o
  .debug_aranges
-                0x00000000000008f8       0x20 ./src/BlinkLed.o
+                0x00000000000008e8       0x38 ./src/OSC/SimpleWriter.o
  .debug_aranges
-                0x0000000000000918       0x58 ./src/SLIPEncodedSerial.o
+                0x0000000000000920       0x20 ./src/BlinkLed.o
  .debug_aranges
-                0x0000000000000970       0x48 ./src/Timer.o
+                0x0000000000000940       0x50 ./src/InchieKey.o
  .debug_aranges
-                0x00000000000009b8       0x50 ./src/main.o
+                0x0000000000000990       0x50 ./src/InchieLED.o
  .debug_aranges
-                0x0000000000000a08       0x48 ./src/uart.o
+                0x00000000000009e0       0x58 ./src/SLIPEncodedSerial.o
+ .debug_aranges
+                0x0000000000000a38       0x48 ./src/Timer.o
+ .debug_aranges
+                0x0000000000000a80       0x68 ./src/main.o
+ .debug_aranges
+                0x0000000000000ae8       0x48 ./src/uart.o
 
 .debug_pubnames
  *(.debug_pubnames)
 
-.debug_info     0x0000000000000000     0xedaa
+.debug_info     0x0000000000000000    0x11c28
  *(.debug_info .gnu.linkonce.wi.*)
  .debug_info    0x0000000000000000      0xa38 ./system/src/stm32f0-stdperiph/stm32f0xx_gpio.o
  .debug_info    0x0000000000000a38      0x41c ./system/src/stm32f0-stdperiph/stm32f0xx_misc.o
  .debug_info    0x0000000000000e54      0xf39 ./system/src/stm32f0-stdperiph/stm32f0xx_rcc.o
  .debug_info    0x0000000000001d8d     0x1b10 ./system/src/stm32f0-stdperiph/stm32f0xx_usart.o
- .debug_info    0x000000000000389d      0x100 ./system/src/newlib/_exit.o
- .debug_info    0x000000000000399d      0x125 ./system/src/newlib/_sbrk.o
- .debug_info    0x0000000000003ac2      0x469 ./system/src/newlib/_startup.o
- .debug_info    0x0000000000003f2b      0x8f3 ./system/src/newlib/_syscalls.o
- .debug_info    0x000000000000481e      0x1cd ./system/src/newlib/assert.o
- .debug_info    0x00000000000049eb      0x325 ./system/src/diag/Trace.o
- .debug_info    0x0000000000004d10      0x2e4 ./system/src/diag/trace_impl.o
- .debug_info    0x0000000000004ff4       0x9d ./system/src/cortexm/_initialize_hardware.o
- .debug_info    0x0000000000005091       0xa5 ./system/src/cortexm/exception_handlers.o
- .debug_info    0x0000000000005136      0x309 ./system/src/cmsis/system_stm32f0xx.o
- .debug_info    0x000000000000543f       0x92 ./system/src/cmsis/vectors_stm32f0xx.o
- .debug_info    0x00000000000054d1      0xbed ./src/OSC/OSCData.o
- .debug_info    0x00000000000060be      0x4f4 ./src/OSC/OSCMatch.o
- .debug_info    0x00000000000065b2     0x3c94 ./src/OSC/OSCMessage.o
- .debug_info    0x000000000000a246      0x23a ./src/OSC/SimpleWriter.o
- .debug_info    0x000000000000a480      0x3d3 ./src/BlinkLed.o
- .debug_info    0x000000000000a853      0x6c8 ./src/SLIPEncodedSerial.o
- .debug_info    0x000000000000af1b      0x499 ./src/Timer.o
- .debug_info    0x000000000000b3b4     0x2ea1 ./src/main.o
- .debug_info    0x000000000000e255      0xb55 ./src/uart.o
+ .debug_info    0x000000000000389d      0x4ff ./system/src/newlib/_cxx.o
+ .debug_info    0x0000000000003d9c      0x100 ./system/src/newlib/_exit.o
+ .debug_info    0x0000000000003e9c      0x125 ./system/src/newlib/_sbrk.o
+ .debug_info    0x0000000000003fc1      0x469 ./system/src/newlib/_startup.o
+ .debug_info    0x000000000000442a      0x8f3 ./system/src/newlib/_syscalls.o
+ .debug_info    0x0000000000004d1d      0x1cd ./system/src/newlib/assert.o
+ .debug_info    0x0000000000004eea      0x325 ./system/src/diag/Trace.o
+ .debug_info    0x000000000000520f      0x2e4 ./system/src/diag/trace_impl.o
+ .debug_info    0x00000000000054f3       0x9d ./system/src/cortexm/_initialize_hardware.o
+ .debug_info    0x0000000000005590       0xa5 ./system/src/cortexm/exception_handlers.o
+ .debug_info    0x0000000000005635      0x309 ./system/src/cmsis/system_stm32f0xx.o
+ .debug_info    0x000000000000593e       0x92 ./system/src/cmsis/vectors_stm32f0xx.o
+ .debug_info    0x00000000000059d0      0xbed ./src/OSC/OSCData.o
+ .debug_info    0x00000000000065bd      0x4f4 ./src/OSC/OSCMatch.o
+ .debug_info    0x0000000000006ab1     0x3c94 ./src/OSC/OSCMessage.o
+ .debug_info    0x000000000000a745      0x23a ./src/OSC/SimpleWriter.o
+ .debug_info    0x000000000000a97f      0x36c ./src/BlinkLed.o
+ .debug_info    0x000000000000aceb     0x13c2 ./src/InchieKey.o
+ .debug_info    0x000000000000c0ad     0x1670 ./src/InchieLED.o
+ .debug_info    0x000000000000d71d      0x5a4 ./src/SLIPEncodedSerial.o
+ .debug_info    0x000000000000dcc1      0x499 ./src/Timer.o
+ .debug_info    0x000000000000e15a     0x2f79 ./src/main.o
+ .debug_info    0x00000000000110d3      0xb55 ./src/uart.o
 
-.debug_abbrev   0x0000000000000000     0x2af4
+.debug_abbrev   0x0000000000000000     0x3679
  *(.debug_abbrev)
  .debug_abbrev  0x0000000000000000      0x1db ./system/src/stm32f0-stdperiph/stm32f0xx_gpio.o
  .debug_abbrev  0x00000000000001db      0x16e ./system/src/stm32f0-stdperiph/stm32f0xx_misc.o
  .debug_abbrev  0x0000000000000349      0x23e ./system/src/stm32f0-stdperiph/stm32f0xx_rcc.o
  .debug_abbrev  0x0000000000000587      0x1d2 ./system/src/stm32f0-stdperiph/stm32f0xx_usart.o
- .debug_abbrev  0x0000000000000759       0xa4 ./system/src/newlib/_exit.o
- .debug_abbrev  0x00000000000007fd       0xbb ./system/src/newlib/_sbrk.o
- .debug_abbrev  0x00000000000008b8      0x1da ./system/src/newlib/_startup.o
- .debug_abbrev  0x0000000000000a92      0x178 ./system/src/newlib/_syscalls.o
- .debug_abbrev  0x0000000000000c0a       0xc9 ./system/src/newlib/assert.o
- .debug_abbrev  0x0000000000000cd3      0x178 ./system/src/diag/Trace.o
- .debug_abbrev  0x0000000000000e4b      0x1a3 ./system/src/diag/trace_impl.o
- .debug_abbrev  0x0000000000000fee       0x63 ./system/src/cortexm/_initialize_hardware.o
- .debug_abbrev  0x0000000000001051       0x65 ./system/src/cortexm/exception_handlers.o
- .debug_abbrev  0x00000000000010b6      0x146 ./system/src/cmsis/system_stm32f0xx.o
- .debug_abbrev  0x00000000000011fc       0x92 ./system/src/cmsis/vectors_stm32f0xx.o
- .debug_abbrev  0x000000000000128e      0x2d5 ./src/OSC/OSCData.o
- .debug_abbrev  0x0000000000001563      0x17c ./src/OSC/OSCMatch.o
- .debug_abbrev  0x00000000000016df      0x54d ./src/OSC/OSCMessage.o
- .debug_abbrev  0x0000000000001c2c      0x162 ./src/OSC/SimpleWriter.o
- .debug_abbrev  0x0000000000001d8e      0x14b ./src/BlinkLed.o
- .debug_abbrev  0x0000000000001ed9      0x2b7 ./src/SLIPEncodedSerial.o
- .debug_abbrev  0x0000000000002190      0x1cf ./src/Timer.o
- .debug_abbrev  0x000000000000235f      0x5ab ./src/main.o
- .debug_abbrev  0x000000000000290a      0x1ea ./src/uart.o
+ .debug_abbrev  0x0000000000000759      0x1a2 ./system/src/newlib/_cxx.o
+ .debug_abbrev  0x00000000000008fb       0xa4 ./system/src/newlib/_exit.o
+ .debug_abbrev  0x000000000000099f       0xbb ./system/src/newlib/_sbrk.o
+ .debug_abbrev  0x0000000000000a5a      0x1da ./system/src/newlib/_startup.o
+ .debug_abbrev  0x0000000000000c34      0x178 ./system/src/newlib/_syscalls.o
+ .debug_abbrev  0x0000000000000dac       0xc9 ./system/src/newlib/assert.o
+ .debug_abbrev  0x0000000000000e75      0x178 ./system/src/diag/Trace.o
+ .debug_abbrev  0x0000000000000fed      0x1a3 ./system/src/diag/trace_impl.o
+ .debug_abbrev  0x0000000000001190       0x63 ./system/src/cortexm/_initialize_hardware.o
+ .debug_abbrev  0x00000000000011f3       0x65 ./system/src/cortexm/exception_handlers.o
+ .debug_abbrev  0x0000000000001258      0x146 ./system/src/cmsis/system_stm32f0xx.o
+ .debug_abbrev  0x000000000000139e       0x92 ./system/src/cmsis/vectors_stm32f0xx.o
+ .debug_abbrev  0x0000000000001430      0x2d5 ./src/OSC/OSCData.o
+ .debug_abbrev  0x0000000000001705      0x17c ./src/OSC/OSCMatch.o
+ .debug_abbrev  0x0000000000001881      0x54d ./src/OSC/OSCMessage.o
+ .debug_abbrev  0x0000000000001dce      0x162 ./src/OSC/SimpleWriter.o
+ .debug_abbrev  0x0000000000001f30      0x14b ./src/BlinkLed.o
+ .debug_abbrev  0x000000000000207b      0x48b ./src/InchieKey.o
+ .debug_abbrev  0x0000000000002506      0x47a ./src/InchieLED.o
+ .debug_abbrev  0x0000000000002980      0x265 ./src/SLIPEncodedSerial.o
+ .debug_abbrev  0x0000000000002be5      0x1cf ./src/Timer.o
+ .debug_abbrev  0x0000000000002db4      0x6db ./src/main.o
+ .debug_abbrev  0x000000000000348f      0x1ea ./src/uart.o
 
-.debug_line     0x0000000000000000     0x7491
+.debug_line     0x0000000000000000     0x84a3
  *(.debug_line)
  .debug_line    0x0000000000000000      0x628 ./system/src/stm32f0-stdperiph/stm32f0xx_gpio.o
  .debug_line    0x0000000000000628      0x47f ./system/src/stm32f0-stdperiph/stm32f0xx_misc.o
  .debug_line    0x0000000000000aa7      0x931 ./system/src/stm32f0-stdperiph/stm32f0xx_rcc.o
  .debug_line    0x00000000000013d8      0xb57 ./system/src/stm32f0-stdperiph/stm32f0xx_usart.o
- .debug_line    0x0000000000001f2f      0x272 ./system/src/newlib/_exit.o
- .debug_line    0x00000000000021a1      0x224 ./system/src/newlib/_sbrk.o
- .debug_line    0x00000000000023c5      0x2e7 ./system/src/newlib/_startup.o
- .debug_line    0x00000000000026ac      0x495 ./system/src/newlib/_syscalls.o
- .debug_line    0x0000000000002b41      0x2a9 ./system/src/newlib/assert.o
- .debug_line    0x0000000000002dea      0x331 ./system/src/diag/Trace.o
- .debug_line    0x000000000000311b      0x56f ./system/src/diag/trace_impl.o
- .debug_line    0x000000000000368a      0x438 ./system/src/cortexm/_initialize_hardware.o
- .debug_line    0x0000000000003ac2       0x97 ./system/src/cortexm/exception_handlers.o
- .debug_line    0x0000000000003b59      0x489 ./system/src/cmsis/system_stm32f0xx.o
- .debug_line    0x0000000000003fe2       0x89 ./system/src/cmsis/vectors_stm32f0xx.o
- .debug_line    0x000000000000406b      0x472 ./src/OSC/OSCData.o
- .debug_line    0x00000000000044dd      0x483 ./src/OSC/OSCMatch.o
- .debug_line    0x0000000000004960      0x9b9 ./src/OSC/OSCMessage.o
- .debug_line    0x0000000000005319      0x28a ./src/OSC/SimpleWriter.o
- .debug_line    0x00000000000055a3      0x426 ./src/BlinkLed.o
- .debug_line    0x00000000000059c9      0x544 ./src/SLIPEncodedSerial.o
- .debug_line    0x0000000000005f0d      0x4c9 ./src/Timer.o
- .debug_line    0x00000000000063d6      0xbfb ./src/main.o
- .debug_line    0x0000000000006fd1      0x4c0 ./src/uart.o
+ .debug_line    0x0000000000001f2f      0x36a ./system/src/newlib/_cxx.o
+ .debug_line    0x0000000000002299      0x272 ./system/src/newlib/_exit.o
+ .debug_line    0x000000000000250b      0x224 ./system/src/newlib/_sbrk.o
+ .debug_line    0x000000000000272f      0x2e7 ./system/src/newlib/_startup.o
+ .debug_line    0x0000000000002a16      0x495 ./system/src/newlib/_syscalls.o
+ .debug_line    0x0000000000002eab      0x2a9 ./system/src/newlib/assert.o
+ .debug_line    0x0000000000003154      0x331 ./system/src/diag/Trace.o
+ .debug_line    0x0000000000003485      0x56f ./system/src/diag/trace_impl.o
+ .debug_line    0x00000000000039f4      0x438 ./system/src/cortexm/_initialize_hardware.o
+ .debug_line    0x0000000000003e2c       0x97 ./system/src/cortexm/exception_handlers.o
+ .debug_line    0x0000000000003ec3      0x489 ./system/src/cmsis/system_stm32f0xx.o
+ .debug_line    0x000000000000434c       0x89 ./system/src/cmsis/vectors_stm32f0xx.o
+ .debug_line    0x00000000000043d5      0x472 ./src/OSC/OSCData.o
+ .debug_line    0x0000000000004847      0x483 ./src/OSC/OSCMatch.o
+ .debug_line    0x0000000000004cca      0x9b9 ./src/OSC/OSCMessage.o
+ .debug_line    0x0000000000005683      0x28a ./src/OSC/SimpleWriter.o
+ .debug_line    0x000000000000590d      0x421 ./src/BlinkLed.o
+ .debug_line    0x0000000000005d2e      0x616 ./src/InchieKey.o
+ .debug_line    0x0000000000006344      0x62a ./src/InchieLED.o
+ .debug_line    0x000000000000696e      0x551 ./src/SLIPEncodedSerial.o
+ .debug_line    0x0000000000006ebf      0x4c9 ./src/Timer.o
+ .debug_line    0x0000000000007388      0xc5b ./src/main.o
+ .debug_line    0x0000000000007fe3      0x4c0 ./src/uart.o
 
-.debug_frame    0x0000000000000000     0x1f24
+.debug_frame    0x0000000000000000     0x20fc
  *(.debug_frame)
  .debug_frame   0x0000000000000000      0x168 ./system/src/stm32f0-stdperiph/stm32f0xx_gpio.o
  .debug_frame   0x0000000000000168       0x60 ./system/src/stm32f0-stdperiph/stm32f0xx_misc.o
  .debug_frame   0x00000000000001c8      0x3f8 ./system/src/stm32f0-stdperiph/stm32f0xx_rcc.o
  .debug_frame   0x00000000000005c0      0x558 ./system/src/stm32f0-stdperiph/stm32f0xx_usart.o
- .debug_frame   0x0000000000000b18       0x38 ./system/src/newlib/_exit.o
- .debug_frame   0x0000000000000b50       0x28 ./system/src/newlib/_sbrk.o
- .debug_frame   0x0000000000000b78       0x84 ./system/src/newlib/_startup.o
- .debug_frame   0x0000000000000bfc      0x230 ./system/src/newlib/_syscalls.o
- .debug_frame   0x0000000000000e2c       0x48 ./system/src/newlib/assert.o
- .debug_frame   0x0000000000000e74       0x80 ./system/src/diag/Trace.o
- .debug_frame   0x0000000000000ef4       0x64 ./system/src/diag/trace_impl.o
- .debug_frame   0x0000000000000f58       0x28 ./system/src/cortexm/_initialize_hardware.o
- .debug_frame   0x0000000000000f80       0x78 ./system/src/cortexm/exception_handlers.o
- .debug_frame   0x0000000000000ff8       0x54 ./system/src/cmsis/system_stm32f0xx.o
- .debug_frame   0x000000000000104c       0x20 ./system/src/cmsis/vectors_stm32f0xx.o
- .debug_frame   0x000000000000106c      0x190 ./src/OSC/OSCData.o
- .debug_frame   0x00000000000011fc       0xcc ./src/OSC/OSCMatch.o
- .debug_frame   0x00000000000012c8      0x4cc ./src/OSC/OSCMessage.o
- .debug_frame   0x0000000000001794       0x5c ./src/OSC/SimpleWriter.o
- .debug_frame   0x00000000000017f0       0x30 ./src/BlinkLed.o
- .debug_frame   0x0000000000001820       0xe4 ./src/SLIPEncodedSerial.o
- .debug_frame   0x0000000000001904       0x80 ./src/Timer.o
- .debug_frame   0x0000000000001984       0xc4 ./src/main.o
- .debug_frame   0x0000000000001a48       0xb4 ./src/uart.o
- .debug_frame   0x0000000000001afc       0x28 /Users/owen/gcc-arm-none-eabi-4_8-2014q1/bin/../lib/gcc/arm-none-eabi/4.8.3/../../../../arm-none-eabi/lib/armv6-m/libstdc++_s.a(del_op.o)
- .debug_frame   0x0000000000001b24       0x28 /Users/owen/gcc-arm-none-eabi-4_8-2014q1/bin/../lib/gcc/arm-none-eabi/4.8.3/../../../../arm-none-eabi/lib/armv6-m/libstdc++_s.a(new_op.o)
- .debug_frame   0x0000000000001b4c       0x20 /Users/owen/gcc-arm-none-eabi-4_8-2014q1/bin/../lib/gcc/arm-none-eabi/4.8.3/../../../../arm-none-eabi/lib/armv6-m/libstdc++_s.a(new_handler.o)
- .debug_frame   0x0000000000001b6c       0x20 /Users/owen/gcc-arm-none-eabi-4_8-2014q1/bin/../lib/gcc/arm-none-eabi/4.8.3/armv6-m/libgcc.a(_udivsi3.o)
- .debug_frame   0x0000000000001b8c       0x20 /Users/owen/gcc-arm-none-eabi-4_8-2014q1/bin/../lib/gcc/arm-none-eabi/4.8.3/../../../../arm-none-eabi/lib/armv6-m/libg_s.a(lib_a-errno.o)
- .debug_frame   0x0000000000001bac       0x40 /Users/owen/gcc-arm-none-eabi-4_8-2014q1/bin/../lib/gcc/arm-none-eabi/4.8.3/../../../../arm-none-eabi/lib/armv6-m/libg_s.a(lib_a-malloc.o)
- .debug_frame   0x0000000000001bec       0x28 /Users/owen/gcc-arm-none-eabi-4_8-2014q1/bin/../lib/gcc/arm-none-eabi/4.8.3/../../../../arm-none-eabi/lib/armv6-m/libg_s.a(lib_a-memcpy-stub.o)
- .debug_frame   0x0000000000001c14       0x2c /Users/owen/gcc-arm-none-eabi-4_8-2014q1/bin/../lib/gcc/arm-none-eabi/4.8.3/../../../../arm-none-eabi/lib/armv6-m/libg_s.a(lib_a-nano-freer.o)
- .debug_frame   0x0000000000001c40       0x2c /Users/owen/gcc-arm-none-eabi-4_8-2014q1/bin/../lib/gcc/arm-none-eabi/4.8.3/../../../../arm-none-eabi/lib/armv6-m/libg_s.a(lib_a-nano-mallocr.o)
- .debug_frame   0x0000000000001c6c       0x28 /Users/owen/gcc-arm-none-eabi-4_8-2014q1/bin/../lib/gcc/arm-none-eabi/4.8.3/../../../../arm-none-eabi/lib/armv6-m/libg_s.a(lib_a-realloc.o)
- .debug_frame   0x0000000000001c94       0x2c /Users/owen/gcc-arm-none-eabi-4_8-2014q1/bin/../lib/gcc/arm-none-eabi/4.8.3/../../../../arm-none-eabi/lib/armv6-m/libg_s.a(lib_a-sbrkr.o)
- .debug_frame   0x0000000000001cc0       0x4c /Users/owen/gcc-arm-none-eabi-4_8-2014q1/bin/../lib/gcc/arm-none-eabi/4.8.3/../../../../arm-none-eabi/lib/armv6-m/libg_s.a(lib_a-sprintf.o)
- .debug_frame   0x0000000000001d0c       0x20 /Users/owen/gcc-arm-none-eabi-4_8-2014q1/bin/../lib/gcc/arm-none-eabi/4.8.3/../../../../arm-none-eabi/lib/armv6-m/libg_s.a(lib_a-strcpy.o)
- .debug_frame   0x0000000000001d2c       0x20 /Users/owen/gcc-arm-none-eabi-4_8-2014q1/bin/../lib/gcc/arm-none-eabi/4.8.3/../../../../arm-none-eabi/lib/armv6-m/libg_s.a(lib_a-strlen.o)
- .debug_frame   0x0000000000001d4c       0x28 /Users/owen/gcc-arm-none-eabi-4_8-2014q1/bin/../lib/gcc/arm-none-eabi/4.8.3/../../../../arm-none-eabi/lib/armv6-m/libg_s.a(lib_a-strncmp.o)
- .debug_frame   0x0000000000001d74       0x74 /Users/owen/gcc-arm-none-eabi-4_8-2014q1/bin/../lib/gcc/arm-none-eabi/4.8.3/../../../../arm-none-eabi/lib/armv6-m/libg_s.a(lib_a-svfprintf.o)
- .debug_frame   0x0000000000001de8       0x54 /Users/owen/gcc-arm-none-eabi-4_8-2014q1/bin/../lib/gcc/arm-none-eabi/4.8.3/../../../../arm-none-eabi/lib/armv6-m/libg_s.a(lib_a-vfprintf_i.o)
- .debug_frame   0x0000000000001e3c       0x4c /Users/owen/gcc-arm-none-eabi-4_8-2014q1/bin/../lib/gcc/arm-none-eabi/4.8.3/../../../../arm-none-eabi/lib/armv6-m/libg_s.a(lib_a-vsnprintf.o)
- .debug_frame   0x0000000000001e88       0x20 /Users/owen/gcc-arm-none-eabi-4_8-2014q1/bin/../lib/gcc/arm-none-eabi/4.8.3/../../../../arm-none-eabi/lib/armv6-m/libg_s.a(lib_a-memchr-stub.o)
- .debug_frame   0x0000000000001ea8       0x2c /Users/owen/gcc-arm-none-eabi-4_8-2014q1/bin/../lib/gcc/arm-none-eabi/4.8.3/../../../../arm-none-eabi/lib/armv6-m/libg_s.a(lib_a-memmove.o)
- .debug_frame   0x0000000000001ed4       0x30 /Users/owen/gcc-arm-none-eabi-4_8-2014q1/bin/../lib/gcc/arm-none-eabi/4.8.3/../../../../arm-none-eabi/lib/armv6-m/libg_s.a(lib_a-nano-reallocr.o)
- .debug_frame   0x0000000000001f04       0x20 /Users/owen/gcc-arm-none-eabi-4_8-2014q1/bin/../lib/gcc/arm-none-eabi/4.8.3/../../../../arm-none-eabi/lib/armv6-m/libg_s.a(lib_a-nano-msizer.o)
+ .debug_frame   0x0000000000000b18       0x40 ./system/src/newlib/_cxx.o
+ .debug_frame   0x0000000000000b58       0x38 ./system/src/newlib/_exit.o
+ .debug_frame   0x0000000000000b90       0x28 ./system/src/newlib/_sbrk.o
+ .debug_frame   0x0000000000000bb8       0x84 ./system/src/newlib/_startup.o
+ .debug_frame   0x0000000000000c3c      0x230 ./system/src/newlib/_syscalls.o
+ .debug_frame   0x0000000000000e6c       0x48 ./system/src/newlib/assert.o
+ .debug_frame   0x0000000000000eb4       0x80 ./system/src/diag/Trace.o
+ .debug_frame   0x0000000000000f34       0x64 ./system/src/diag/trace_impl.o
+ .debug_frame   0x0000000000000f98       0x28 ./system/src/cortexm/_initialize_hardware.o
+ .debug_frame   0x0000000000000fc0       0x78 ./system/src/cortexm/exception_handlers.o
+ .debug_frame   0x0000000000001038       0x54 ./system/src/cmsis/system_stm32f0xx.o
+ .debug_frame   0x000000000000108c       0x20 ./system/src/cmsis/vectors_stm32f0xx.o
+ .debug_frame   0x00000000000010ac      0x190 ./src/OSC/OSCData.o
+ .debug_frame   0x000000000000123c       0xcc ./src/OSC/OSCMatch.o
+ .debug_frame   0x0000000000001308      0x4cc ./src/OSC/OSCMessage.o
+ .debug_frame   0x00000000000017d4       0x5c ./src/OSC/SimpleWriter.o
+ .debug_frame   0x0000000000001830       0x2c ./src/BlinkLed.o
+ .debug_frame   0x000000000000185c       0xa0 ./src/InchieKey.o
+ .debug_frame   0x00000000000018fc       0xac ./src/InchieLED.o
+ .debug_frame   0x00000000000019a8       0xec ./src/SLIPEncodedSerial.o
+ .debug_frame   0x0000000000001a94       0x80 ./src/Timer.o
+ .debug_frame   0x0000000000001b14      0x10c ./src/main.o
+ .debug_frame   0x0000000000001c20       0xb4 ./src/uart.o
+ .debug_frame   0x0000000000001cd4       0x28 /Users/owen/gcc-arm-none-eabi-4_8-2014q1/bin/../lib/gcc/arm-none-eabi/4.8.3/../../../../arm-none-eabi/lib/armv6-m/libstdc++_s.a(del_op.o)
+ .debug_frame   0x0000000000001cfc       0x28 /Users/owen/gcc-arm-none-eabi-4_8-2014q1/bin/../lib/gcc/arm-none-eabi/4.8.3/../../../../arm-none-eabi/lib/armv6-m/libstdc++_s.a(new_op.o)
+ .debug_frame   0x0000000000001d24       0x20 /Users/owen/gcc-arm-none-eabi-4_8-2014q1/bin/../lib/gcc/arm-none-eabi/4.8.3/../../../../arm-none-eabi/lib/armv6-m/libstdc++_s.a(new_handler.o)
+ .debug_frame   0x0000000000001d44       0x20 /Users/owen/gcc-arm-none-eabi-4_8-2014q1/bin/../lib/gcc/arm-none-eabi/4.8.3/armv6-m/libgcc.a(_udivsi3.o)
+ .debug_frame   0x0000000000001d64       0x20 /Users/owen/gcc-arm-none-eabi-4_8-2014q1/bin/../lib/gcc/arm-none-eabi/4.8.3/../../../../arm-none-eabi/lib/armv6-m/libg_s.a(lib_a-errno.o)
+ .debug_frame   0x0000000000001d84       0x40 /Users/owen/gcc-arm-none-eabi-4_8-2014q1/bin/../lib/gcc/arm-none-eabi/4.8.3/../../../../arm-none-eabi/lib/armv6-m/libg_s.a(lib_a-malloc.o)
+ .debug_frame   0x0000000000001dc4       0x28 /Users/owen/gcc-arm-none-eabi-4_8-2014q1/bin/../lib/gcc/arm-none-eabi/4.8.3/../../../../arm-none-eabi/lib/armv6-m/libg_s.a(lib_a-memcpy-stub.o)
+ .debug_frame   0x0000000000001dec       0x2c /Users/owen/gcc-arm-none-eabi-4_8-2014q1/bin/../lib/gcc/arm-none-eabi/4.8.3/../../../../arm-none-eabi/lib/armv6-m/libg_s.a(lib_a-nano-freer.o)
+ .debug_frame   0x0000000000001e18       0x2c /Users/owen/gcc-arm-none-eabi-4_8-2014q1/bin/../lib/gcc/arm-none-eabi/4.8.3/../../../../arm-none-eabi/lib/armv6-m/libg_s.a(lib_a-nano-mallocr.o)
+ .debug_frame   0x0000000000001e44       0x28 /Users/owen/gcc-arm-none-eabi-4_8-2014q1/bin/../lib/gcc/arm-none-eabi/4.8.3/../../../../arm-none-eabi/lib/armv6-m/libg_s.a(lib_a-realloc.o)
+ .debug_frame   0x0000000000001e6c       0x2c /Users/owen/gcc-arm-none-eabi-4_8-2014q1/bin/../lib/gcc/arm-none-eabi/4.8.3/../../../../arm-none-eabi/lib/armv6-m/libg_s.a(lib_a-sbrkr.o)
+ .debug_frame   0x0000000000001e98       0x4c /Users/owen/gcc-arm-none-eabi-4_8-2014q1/bin/../lib/gcc/arm-none-eabi/4.8.3/../../../../arm-none-eabi/lib/armv6-m/libg_s.a(lib_a-sprintf.o)
+ .debug_frame   0x0000000000001ee4       0x20 /Users/owen/gcc-arm-none-eabi-4_8-2014q1/bin/../lib/gcc/arm-none-eabi/4.8.3/../../../../arm-none-eabi/lib/armv6-m/libg_s.a(lib_a-strcpy.o)
+ .debug_frame   0x0000000000001f04       0x20 /Users/owen/gcc-arm-none-eabi-4_8-2014q1/bin/../lib/gcc/arm-none-eabi/4.8.3/../../../../arm-none-eabi/lib/armv6-m/libg_s.a(lib_a-strlen.o)
+ .debug_frame   0x0000000000001f24       0x28 /Users/owen/gcc-arm-none-eabi-4_8-2014q1/bin/../lib/gcc/arm-none-eabi/4.8.3/../../../../arm-none-eabi/lib/armv6-m/libg_s.a(lib_a-strncmp.o)
+ .debug_frame   0x0000000000001f4c       0x74 /Users/owen/gcc-arm-none-eabi-4_8-2014q1/bin/../lib/gcc/arm-none-eabi/4.8.3/../../../../arm-none-eabi/lib/armv6-m/libg_s.a(lib_a-svfprintf.o)
+ .debug_frame   0x0000000000001fc0       0x54 /Users/owen/gcc-arm-none-eabi-4_8-2014q1/bin/../lib/gcc/arm-none-eabi/4.8.3/../../../../arm-none-eabi/lib/armv6-m/libg_s.a(lib_a-vfprintf_i.o)
+ .debug_frame   0x0000000000002014       0x4c /Users/owen/gcc-arm-none-eabi-4_8-2014q1/bin/../lib/gcc/arm-none-eabi/4.8.3/../../../../arm-none-eabi/lib/armv6-m/libg_s.a(lib_a-vsnprintf.o)
+ .debug_frame   0x0000000000002060       0x20 /Users/owen/gcc-arm-none-eabi-4_8-2014q1/bin/../lib/gcc/arm-none-eabi/4.8.3/../../../../arm-none-eabi/lib/armv6-m/libg_s.a(lib_a-memchr-stub.o)
+ .debug_frame   0x0000000000002080       0x2c /Users/owen/gcc-arm-none-eabi-4_8-2014q1/bin/../lib/gcc/arm-none-eabi/4.8.3/../../../../arm-none-eabi/lib/armv6-m/libg_s.a(lib_a-memmove.o)
+ .debug_frame   0x00000000000020ac       0x30 /Users/owen/gcc-arm-none-eabi-4_8-2014q1/bin/../lib/gcc/arm-none-eabi/4.8.3/../../../../arm-none-eabi/lib/armv6-m/libg_s.a(lib_a-nano-reallocr.o)
+ .debug_frame   0x00000000000020dc       0x20 /Users/owen/gcc-arm-none-eabi-4_8-2014q1/bin/../lib/gcc/arm-none-eabi/4.8.3/../../../../arm-none-eabi/lib/armv6-m/libg_s.a(lib_a-nano-msizer.o)
 
-.debug_str      0x0000000000000000    0x4b082
+.debug_str      0x0000000000000000    0x4b381
  *(.debug_str)
- .debug_str     0x0000000000000000    0x3eec8 ./system/src/stm32f0-stdperiph/stm32f0xx_gpio.o
+ .debug_str     0x0000000000000000    0x3ee71 ./system/src/stm32f0-stdperiph/stm32f0xx_gpio.o
                                       0x3f085 (size before relaxing)
- .debug_str     0x000000000003eec8      0x160 ./system/src/stm32f0-stdperiph/stm32f0xx_misc.o
+ .debug_str     0x000000000003ee71      0x160 ./system/src/stm32f0-stdperiph/stm32f0xx_misc.o
                                       0x3eec9 (size before relaxing)
- .debug_str     0x000000000003f028      0x635 ./system/src/stm32f0-stdperiph/stm32f0xx_rcc.o
+ .debug_str     0x000000000003efd1      0x635 ./system/src/stm32f0-stdperiph/stm32f0xx_rcc.o
                                       0x3f40b (size before relaxing)
- .debug_str     0x000000000003f65d      0x80e ./system/src/stm32f0-stdperiph/stm32f0xx_usart.o
+ .debug_str     0x000000000003f606      0x80e ./system/src/stm32f0-stdperiph/stm32f0xx_usart.o
                                       0x3f6b3 (size before relaxing)
- .debug_str     0x000000000003fe6b     0x27e8 ./system/src/newlib/_exit.o
+ .debug_str     0x000000000003fe14     0x3bd7 ./system/src/newlib/_cxx.o
+                                       0x6033 (size before relaxing)
+ .debug_str     0x00000000000439eb       0x58 ./system/src/newlib/_exit.o
                                        0x4dd8 (size before relaxing)
- .debug_str     0x0000000000042653      0x4d6 ./system/src/newlib/_sbrk.o
+ .debug_str     0x0000000000043a43      0x4d6 ./system/src/newlib/_sbrk.o
                                        0x438e (size before relaxing)
- .debug_str     0x0000000000042b29      0x246 ./system/src/newlib/_startup.o
+ .debug_str     0x0000000000043f19      0x246 ./system/src/newlib/_startup.o
                                        0x3dfe (size before relaxing)
- .debug_str     0x0000000000042d6f      0xe2f ./system/src/newlib/_syscalls.o
+ .debug_str     0x000000000004415f      0xe2f ./system/src/newlib/_syscalls.o
                                        0x524d (size before relaxing)
- .debug_str     0x0000000000043b9e       0xd0 ./system/src/newlib/assert.o
+ .debug_str     0x0000000000044f8e       0xd0 ./system/src/newlib/assert.o
                                        0x579b (size before relaxing)
- .debug_str     0x0000000000043c6e     0x1782 ./system/src/diag/Trace.o
+ .debug_str     0x000000000004505e     0x1782 ./system/src/diag/Trace.o
                                        0x64bf (size before relaxing)
- .debug_str     0x00000000000453f0      0x372 ./system/src/diag/trace_impl.o
+ .debug_str     0x00000000000467e0      0x372 ./system/src/diag/trace_impl.o
                                       0x40bed (size before relaxing)
- .debug_str     0x0000000000045762       0x38 ./system/src/cortexm/_initialize_hardware.o
+ .debug_str     0x0000000000046b52       0x38 ./system/src/cortexm/_initialize_hardware.o
                                       0x3ed50 (size before relaxing)
- .debug_str     0x000000000004579a       0xa1 ./system/src/cortexm/exception_handlers.o
+ .debug_str     0x0000000000046b8a       0xa1 ./system/src/cortexm/exception_handlers.o
                                        0x23d3 (size before relaxing)
- .debug_str     0x000000000004583b       0x7d ./system/src/cmsis/system_stm32f0xx.o
+ .debug_str     0x0000000000046c2b       0x7d ./system/src/cmsis/system_stm32f0xx.o
                                       0x3ee50 (size before relaxing)
- .debug_str     0x00000000000458b8       0x56 ./system/src/cmsis/vectors_stm32f0xx.o
+ .debug_str     0x0000000000046ca8       0x56 ./system/src/cmsis/vectors_stm32f0xx.o
                                        0x23b6 (size before relaxing)
- .debug_str     0x000000000004590e     0x14f5 ./src/OSC/OSCData.o
+ .debug_str     0x0000000000046cfe     0x121f ./src/OSC/OSCData.o
                                        0x66ab (size before relaxing)
- .debug_str     0x0000000000046e03      0x16b ./src/OSC/OSCMatch.o
+ .debug_str     0x0000000000047f1d      0x16b ./src/OSC/OSCMatch.o
                                        0x4b4e (size before relaxing)
- .debug_str     0x0000000000046f6e      0x999 ./src/OSC/OSCMessage.o
+ .debug_str     0x0000000000048088      0x991 ./src/OSC/OSCMessage.o
                                        0x7b45 (size before relaxing)
- .debug_str     0x0000000000047907       0x1c ./src/OSC/SimpleWriter.o
+ .debug_str     0x0000000000048a19       0x1c ./src/OSC/SimpleWriter.o
                                        0x5125 (size before relaxing)
- .debug_str     0x0000000000047923      0x1b9 ./src/BlinkLed.o
-                                      0x3f0b1 (size before relaxing)
- .debug_str     0x0000000000047adc      0x2c5 ./src/SLIPEncodedSerial.o
-                                      0x3f2e8 (size before relaxing)
- .debug_str     0x0000000000047da1      0x270 ./src/Timer.o
+ .debug_str     0x0000000000048a35       0x90 ./src/BlinkLed.o
+                                      0x3ef88 (size before relaxing)
+ .debug_str     0x0000000000048ac5      0x1fa ./src/InchieKey.o
+                                      0x43035 (size before relaxing)
+ .debug_str     0x0000000000048cbf      0x1d8 ./src/InchieLED.o
+                                      0x430e1 (size before relaxing)
+ .debug_str     0x0000000000048e97      0x2a9 ./src/SLIPEncodedSerial.o
+                                      0x3f147 (size before relaxing)
+ .debug_str     0x0000000000049140      0x270 ./src/Timer.o
                                       0x3f069 (size before relaxing)
- .debug_str     0x0000000000048011     0x2fef ./src/main.o
-                                      0x46e4b (size before relaxing)
- .debug_str     0x000000000004b000       0x82 ./src/uart.o
-                                      0x3f4ff (size before relaxing)
+ .debug_str     0x00000000000493b0     0x1f4f ./src/main.o
+                                      0x46e11 (size before relaxing)
+ .debug_str     0x000000000004b2ff       0x82 ./src/uart.o
+                                      0x3f3d6 (size before relaxing)
 
-.debug_loc      0x0000000000000000     0x6649
+.debug_loc      0x0000000000000000     0x6932
  *(.debug_loc)
  .debug_loc     0x0000000000000000      0x4e1 ./system/src/stm32f0-stdperiph/stm32f0xx_gpio.o
  .debug_loc     0x00000000000004e1       0xeb ./system/src/stm32f0-stdperiph/stm32f0xx_misc.o
@@ -3571,10 +3877,12 @@ END GROUP
  .debug_loc     0x0000000000003721      0x67e ./src/OSC/OSCMatch.o
  .debug_loc     0x0000000000003d9f     0x23f5 ./src/OSC/OSCMessage.o
  .debug_loc     0x0000000000006194       0x96 ./src/OSC/SimpleWriter.o
- .debug_loc     0x000000000000622a      0x299 ./src/SLIPEncodedSerial.o
- .debug_loc     0x00000000000064c3       0x59 ./src/Timer.o
- .debug_loc     0x000000000000651c       0xef ./src/main.o
- .debug_loc     0x000000000000660b       0x3e ./src/uart.o
+ .debug_loc     0x000000000000622a      0x112 ./src/InchieKey.o
+ .debug_loc     0x000000000000633c      0x15c ./src/InchieLED.o
+ .debug_loc     0x0000000000006498      0x291 ./src/SLIPEncodedSerial.o
+ .debug_loc     0x0000000000006729       0x59 ./src/Timer.o
+ .debug_loc     0x0000000000006782      0x172 ./src/main.o
+ .debug_loc     0x00000000000068f4       0x3e ./src/uart.o
 
 .debug_macinfo
  *(.debug_macinfo)
@@ -3592,33 +3900,36 @@ END GROUP
  *(.debug_varnames)
 OUTPUT(InchieBase.elf elf32-littlearm)
 
-.debug_ranges   0x0000000000000000      0xa28
+.debug_ranges   0x0000000000000000      0xad8
  .debug_ranges  0x0000000000000000       0x70 ./system/src/stm32f0-stdperiph/stm32f0xx_gpio.o
  .debug_ranges  0x0000000000000070       0x20 ./system/src/stm32f0-stdperiph/stm32f0xx_misc.o
  .debug_ranges  0x0000000000000090      0x150 ./system/src/stm32f0-stdperiph/stm32f0xx_rcc.o
  .debug_ranges  0x00000000000001e0      0x190 ./system/src/stm32f0-stdperiph/stm32f0xx_usart.o
- .debug_ranges  0x0000000000000370       0x18 ./system/src/newlib/_exit.o
- .debug_ranges  0x0000000000000388       0x10 ./system/src/newlib/_sbrk.o
- .debug_ranges  0x0000000000000398       0x48 ./system/src/newlib/_startup.o
- .debug_ranges  0x00000000000003e0       0xc0 ./system/src/newlib/_syscalls.o
- .debug_ranges  0x00000000000004a0       0x18 ./system/src/newlib/assert.o
- .debug_ranges  0x00000000000004b8       0x28 ./system/src/diag/Trace.o
- .debug_ranges  0x00000000000004e0       0x38 ./system/src/diag/trace_impl.o
- .debug_ranges  0x0000000000000518       0x10 ./system/src/cortexm/_initialize_hardware.o
- .debug_ranges  0x0000000000000528       0x38 ./system/src/cortexm/exception_handlers.o
- .debug_ranges  0x0000000000000560       0x20 ./system/src/cmsis/system_stm32f0xx.o
- .debug_ranges  0x0000000000000580       0x10 ./system/src/cmsis/vectors_stm32f0xx.o
- .debug_ranges  0x0000000000000590       0x98 ./src/OSC/OSCData.o
- .debug_ranges  0x0000000000000628       0x88 ./src/OSC/OSCMatch.o
- .debug_ranges  0x00000000000006b0      0x230 ./src/OSC/OSCMessage.o
- .debug_ranges  0x00000000000008e0       0x28 ./src/OSC/SimpleWriter.o
- .debug_ranges  0x0000000000000908       0x10 ./src/BlinkLed.o
- .debug_ranges  0x0000000000000918       0x60 ./src/SLIPEncodedSerial.o
- .debug_ranges  0x0000000000000978       0x38 ./src/Timer.o
- .debug_ranges  0x00000000000009b0       0x40 ./src/main.o
- .debug_ranges  0x00000000000009f0       0x38 ./src/uart.o
+ .debug_ranges  0x0000000000000370       0x18 ./system/src/newlib/_cxx.o
+ .debug_ranges  0x0000000000000388       0x18 ./system/src/newlib/_exit.o
+ .debug_ranges  0x00000000000003a0       0x10 ./system/src/newlib/_sbrk.o
+ .debug_ranges  0x00000000000003b0       0x48 ./system/src/newlib/_startup.o
+ .debug_ranges  0x00000000000003f8       0xc0 ./system/src/newlib/_syscalls.o
+ .debug_ranges  0x00000000000004b8       0x18 ./system/src/newlib/assert.o
+ .debug_ranges  0x00000000000004d0       0x28 ./system/src/diag/Trace.o
+ .debug_ranges  0x00000000000004f8       0x38 ./system/src/diag/trace_impl.o
+ .debug_ranges  0x0000000000000530       0x10 ./system/src/cortexm/_initialize_hardware.o
+ .debug_ranges  0x0000000000000540       0x38 ./system/src/cortexm/exception_handlers.o
+ .debug_ranges  0x0000000000000578       0x20 ./system/src/cmsis/system_stm32f0xx.o
+ .debug_ranges  0x0000000000000598       0x10 ./system/src/cmsis/vectors_stm32f0xx.o
+ .debug_ranges  0x00000000000005a8       0x98 ./src/OSC/OSCData.o
+ .debug_ranges  0x0000000000000640       0x88 ./src/OSC/OSCMatch.o
+ .debug_ranges  0x00000000000006c8      0x230 ./src/OSC/OSCMessage.o
+ .debug_ranges  0x00000000000008f8       0x28 ./src/OSC/SimpleWriter.o
+ .debug_ranges  0x0000000000000920       0x10 ./src/BlinkLed.o
+ .debug_ranges  0x0000000000000930       0x40 ./src/InchieKey.o
+ .debug_ranges  0x0000000000000970       0x40 ./src/InchieLED.o
+ .debug_ranges  0x00000000000009b0       0x60 ./src/SLIPEncodedSerial.o
+ .debug_ranges  0x0000000000000a10       0x38 ./src/Timer.o
+ .debug_ranges  0x0000000000000a48       0x58 ./src/main.o
+ .debug_ranges  0x0000000000000aa0       0x38 ./src/uart.o
 
-.debug_macro    0x0000000000000000     0x50cf
+.debug_macro    0x0000000000000000     0x6fb0
  .debug_macro   0x0000000000000000      0x174 ./system/src/stm32f0-stdperiph/stm32f0xx_gpio.o
  .debug_macro   0x0000000000000174      0x17f ./system/src/stm32f0-stdperiph/stm32f0xx_gpio.o
  .debug_macro   0x00000000000002f3      0x174 ./system/src/stm32f0-stdperiph/stm32f0xx_misc.o
@@ -3627,92 +3938,118 @@ OUTPUT(InchieBase.elf elf32-littlearm)
  .debug_macro   0x000000000000062d      0x4dd ./system/src/stm32f0-stdperiph/stm32f0xx_rcc.o
  .debug_macro   0x0000000000000b0a      0x18c ./system/src/stm32f0-stdperiph/stm32f0xx_usart.o
  .debug_macro   0x0000000000000c96      0x34d ./system/src/stm32f0-stdperiph/stm32f0xx_usart.o
- .debug_macro   0x0000000000000fe3      0x11b ./system/src/newlib/_exit.o
- .debug_macro   0x00000000000010fe       0xa3 ./system/src/newlib/_exit.o
- .debug_macro   0x00000000000011a1      0x10e ./system/src/newlib/_exit.o
- .debug_macro   0x00000000000012af       0x86 ./system/src/newlib/_exit.o
- .debug_macro   0x0000000000001335       0x43 ./system/src/newlib/_exit.o
- .debug_macro   0x0000000000001378       0x10 ./system/src/newlib/_exit.o
- .debug_macro   0x0000000000001388       0x35 ./system/src/newlib/_exit.o
- .debug_macro   0x00000000000013bd       0xd1 ./system/src/newlib/_sbrk.o
- .debug_macro   0x000000000000148e       0x19 ./system/src/newlib/_sbrk.o
- .debug_macro   0x00000000000014a7      0x16d ./system/src/newlib/_sbrk.o
- .debug_macro   0x0000000000001614       0x10 ./system/src/newlib/_sbrk.o
- .debug_macro   0x0000000000001624      0x23b ./system/src/newlib/_sbrk.o
- .debug_macro   0x000000000000185f       0xe7 ./system/src/newlib/_startup.o
- .debug_macro   0x0000000000001946      0x169 ./system/src/newlib/_syscalls.o
- .debug_macro   0x0000000000001aaf       0x1c ./system/src/newlib/_syscalls.o
- .debug_macro   0x0000000000001acb       0x10 ./system/src/newlib/_syscalls.o
- .debug_macro   0x0000000000001adb       0x10 ./system/src/newlib/_syscalls.o
- .debug_macro   0x0000000000001aeb       0x10 ./system/src/newlib/_syscalls.o
- .debug_macro   0x0000000000001afb       0x35 ./system/src/newlib/_syscalls.o
- .debug_macro   0x0000000000001b30      0x120 ./system/src/newlib/_syscalls.o
- .debug_macro   0x0000000000001c50       0x22 ./system/src/newlib/_syscalls.o
- .debug_macro   0x0000000000001c72       0x2b ./system/src/newlib/_syscalls.o
- .debug_macro   0x0000000000001c9d      0x118 ./system/src/newlib/_syscalls.o
- .debug_macro   0x0000000000001db5      0x13a ./system/src/newlib/_syscalls.o
- .debug_macro   0x0000000000001eef       0x16 ./system/src/newlib/_syscalls.o
- .debug_macro   0x0000000000001f05      0x137 ./system/src/newlib/assert.o
- .debug_macro   0x000000000000203c       0x1c ./system/src/newlib/assert.o
- .debug_macro   0x0000000000002058      0x20f ./system/src/newlib/assert.o
- .debug_macro   0x0000000000002267      0x15a ./system/src/diag/Trace.o
- .debug_macro   0x00000000000023c1       0x16 ./system/src/diag/Trace.o
- .debug_macro   0x00000000000023d7       0x97 ./system/src/diag/Trace.o
- .debug_macro   0x000000000000246e       0x10 ./system/src/diag/Trace.o
- .debug_macro   0x000000000000247e       0xf6 ./system/src/diag/Trace.o
- .debug_macro   0x0000000000002574       0x16 ./system/src/diag/Trace.o
- .debug_macro   0x000000000000258a      0x16c ./system/src/diag/Trace.o
- .debug_macro   0x00000000000026f6       0x52 ./system/src/diag/Trace.o
- .debug_macro   0x0000000000002748      0x283 ./system/src/diag/Trace.o
- .debug_macro   0x00000000000029cb       0x10 ./system/src/diag/Trace.o
- .debug_macro   0x00000000000029db       0x1f ./system/src/diag/Trace.o
- .debug_macro   0x00000000000029fa      0x238 ./system/src/diag/trace_impl.o
- .debug_macro   0x0000000000002c32       0x22 ./system/src/diag/trace_impl.o
- .debug_macro   0x0000000000002c54      0x174 ./system/src/cortexm/_initialize_hardware.o
- .debug_macro   0x0000000000002dc8       0x1b ./system/src/cortexm/exception_handlers.o
- .debug_macro   0x0000000000002de3      0x16a ./system/src/cmsis/system_stm32f0xx.o
- .debug_macro   0x0000000000002f4d       0x1b ./system/src/cmsis/vectors_stm32f0xx.o
- .debug_macro   0x0000000000002f68      0x147 ./src/OSC/OSCData.o
- .debug_macro   0x00000000000030af       0x1c ./src/OSC/OSCData.o
- .debug_macro   0x00000000000030cb       0x10 ./src/OSC/OSCData.o
- .debug_macro   0x00000000000030db      0x452 ./src/OSC/OSCData.o
- .debug_macro   0x000000000000352d      0x2ad ./src/OSC/OSCData.o
- .debug_macro   0x00000000000037da       0xe5 ./src/OSC/OSCMatch.o
- .debug_macro   0x00000000000038bf       0x16 ./src/OSC/OSCMatch.o
- .debug_macro   0x00000000000038d5      0x1bb ./src/OSC/OSCMessage.o
- .debug_macro   0x0000000000003a90       0x97 ./src/OSC/OSCMessage.o
- .debug_macro   0x0000000000003b27       0xfd ./src/OSC/OSCMessage.o
- .debug_macro   0x0000000000003c24      0x119 ./src/OSC/SimpleWriter.o
- .debug_macro   0x0000000000003d3d      0x179 ./src/BlinkLed.o
- .debug_macro   0x0000000000003eb6       0x34 ./src/BlinkLed.o
- .debug_macro   0x0000000000003eea      0x18f ./src/SLIPEncodedSerial.o
- .debug_macro   0x0000000000004079       0x10 ./src/SLIPEncodedSerial.o
- .debug_macro   0x0000000000004089      0x242 ./src/SLIPEncodedSerial.o
- .debug_macro   0x00000000000042cb       0x16 ./src/SLIPEncodedSerial.o
- .debug_macro   0x00000000000042e1       0x3a ./src/SLIPEncodedSerial.o
- .debug_macro   0x000000000000431b      0x18e ./src/Timer.o
- .debug_macro   0x00000000000044a9      0x56f ./src/main.o
- .debug_macro   0x0000000000004a18       0x1c ./src/main.o
- .debug_macro   0x0000000000004a34       0x6e ./src/main.o
- .debug_macro   0x0000000000004aa2       0x28 ./src/main.o
- .debug_macro   0x0000000000004aca       0x11 ./src/main.o
- .debug_macro   0x0000000000004adb       0x12 ./src/main.o
- .debug_macro   0x0000000000004aed       0x82 ./src/main.o
- .debug_macro   0x0000000000004b6f       0x18 ./src/main.o
- .debug_macro   0x0000000000004b87       0x12 ./src/main.o
- .debug_macro   0x0000000000004b99       0x22 ./src/main.o
- .debug_macro   0x0000000000004bbb       0x3c ./src/main.o
- .debug_macro   0x0000000000004bf7       0x38 ./src/main.o
- .debug_macro   0x0000000000004c2f      0x15e ./src/main.o
- .debug_macro   0x0000000000004d8d       0x46 ./src/main.o
- .debug_macro   0x0000000000004dd3       0x10 ./src/main.o
- .debug_macro   0x0000000000004de3       0x2e ./src/main.o
- .debug_macro   0x0000000000004e11       0x16 ./src/main.o
- .debug_macro   0x0000000000004e27       0x52 ./src/main.o
- .debug_macro   0x0000000000004e79       0x5e ./src/main.o
- .debug_macro   0x0000000000004ed7       0x11 ./src/main.o
- .debug_macro   0x0000000000004ee8       0x2f ./src/main.o
- .debug_macro   0x0000000000004f17       0x10 ./src/main.o
- .debug_macro   0x0000000000004f27       0x10 ./src/main.o
- .debug_macro   0x0000000000004f37       0x1c ./src/main.o
- .debug_macro   0x0000000000004f53      0x17c ./src/uart.o
+ .debug_macro   0x0000000000000fe3      0x148 ./system/src/newlib/_cxx.o
+ .debug_macro   0x000000000000112b      0x844 ./system/src/newlib/_cxx.o
+ .debug_macro   0x000000000000196f       0xef ./system/src/newlib/_cxx.o
+ .debug_macro   0x0000000000001a5e      0x322 ./system/src/newlib/_cxx.o
+ .debug_macro   0x0000000000001d80       0x58 ./system/src/newlib/_cxx.o
+ .debug_macro   0x0000000000001dd8       0x35 ./system/src/newlib/_cxx.o
+ .debug_macro   0x0000000000001e0d       0xa3 ./system/src/newlib/_cxx.o
+ .debug_macro   0x0000000000001eb0       0x16 ./system/src/newlib/_cxx.o
+ .debug_macro   0x0000000000001ec6      0x10e ./system/src/newlib/_cxx.o
+ .debug_macro   0x0000000000001fd4       0x8d ./system/src/newlib/_cxx.o
+ .debug_macro   0x0000000000002061       0x4a ./system/src/newlib/_cxx.o
+ .debug_macro   0x00000000000020ab       0x52 ./system/src/newlib/_cxx.o
+ .debug_macro   0x00000000000020fd       0x16 ./system/src/newlib/_cxx.o
+ .debug_macro   0x0000000000002113       0x43 ./system/src/newlib/_cxx.o
+ .debug_macro   0x0000000000002156      0x180 ./system/src/newlib/_cxx.o
+ .debug_macro   0x00000000000022d6       0x16 ./system/src/newlib/_cxx.o
+ .debug_macro   0x00000000000022ec       0x29 ./system/src/newlib/_cxx.o
+ .debug_macro   0x0000000000002315       0xac ./system/src/newlib/_cxx.o
+ .debug_macro   0x00000000000023c1       0x10 ./system/src/newlib/_cxx.o
+ .debug_macro   0x00000000000023d1       0x22 ./system/src/newlib/_cxx.o
+ .debug_macro   0x00000000000023f3       0xbd ./system/src/newlib/_cxx.o
+ .debug_macro   0x00000000000024b0       0x16 ./system/src/newlib/_cxx.o
+ .debug_macro   0x00000000000024c6       0x35 ./system/src/newlib/_cxx.o
+ .debug_macro   0x00000000000024fb      0x48e ./system/src/newlib/_cxx.o
+ .debug_macro   0x0000000000002989      0x11b ./system/src/newlib/_exit.o
+ .debug_macro   0x0000000000002aa4       0xa3 ./system/src/newlib/_exit.o
+ .debug_macro   0x0000000000002b47      0x10e ./system/src/newlib/_exit.o
+ .debug_macro   0x0000000000002c55       0x86 ./system/src/newlib/_exit.o
+ .debug_macro   0x0000000000002cdb       0x43 ./system/src/newlib/_exit.o
+ .debug_macro   0x0000000000002d1e       0x10 ./system/src/newlib/_exit.o
+ .debug_macro   0x0000000000002d2e       0x35 ./system/src/newlib/_exit.o
+ .debug_macro   0x0000000000002d63       0xd1 ./system/src/newlib/_sbrk.o
+ .debug_macro   0x0000000000002e34       0x19 ./system/src/newlib/_sbrk.o
+ .debug_macro   0x0000000000002e4d      0x16d ./system/src/newlib/_sbrk.o
+ .debug_macro   0x0000000000002fba       0x10 ./system/src/newlib/_sbrk.o
+ .debug_macro   0x0000000000002fca      0x23b ./system/src/newlib/_sbrk.o
+ .debug_macro   0x0000000000003205       0xe7 ./system/src/newlib/_startup.o
+ .debug_macro   0x00000000000032ec      0x169 ./system/src/newlib/_syscalls.o
+ .debug_macro   0x0000000000003455       0x1c ./system/src/newlib/_syscalls.o
+ .debug_macro   0x0000000000003471       0x10 ./system/src/newlib/_syscalls.o
+ .debug_macro   0x0000000000003481       0x10 ./system/src/newlib/_syscalls.o
+ .debug_macro   0x0000000000003491       0x10 ./system/src/newlib/_syscalls.o
+ .debug_macro   0x00000000000034a1       0x35 ./system/src/newlib/_syscalls.o
+ .debug_macro   0x00000000000034d6      0x120 ./system/src/newlib/_syscalls.o
+ .debug_macro   0x00000000000035f6       0x22 ./system/src/newlib/_syscalls.o
+ .debug_macro   0x0000000000003618       0x2b ./system/src/newlib/_syscalls.o
+ .debug_macro   0x0000000000003643      0x118 ./system/src/newlib/_syscalls.o
+ .debug_macro   0x000000000000375b      0x13a ./system/src/newlib/_syscalls.o
+ .debug_macro   0x0000000000003895       0x16 ./system/src/newlib/_syscalls.o
+ .debug_macro   0x00000000000038ab      0x137 ./system/src/newlib/assert.o
+ .debug_macro   0x00000000000039e2       0x1c ./system/src/newlib/assert.o
+ .debug_macro   0x00000000000039fe      0x20f ./system/src/newlib/assert.o
+ .debug_macro   0x0000000000003c0d      0x15a ./system/src/diag/Trace.o
+ .debug_macro   0x0000000000003d67       0x16 ./system/src/diag/Trace.o
+ .debug_macro   0x0000000000003d7d       0x97 ./system/src/diag/Trace.o
+ .debug_macro   0x0000000000003e14       0x10 ./system/src/diag/Trace.o
+ .debug_macro   0x0000000000003e24       0xf6 ./system/src/diag/Trace.o
+ .debug_macro   0x0000000000003f1a       0x16 ./system/src/diag/Trace.o
+ .debug_macro   0x0000000000003f30      0x16c ./system/src/diag/Trace.o
+ .debug_macro   0x000000000000409c       0x52 ./system/src/diag/Trace.o
+ .debug_macro   0x00000000000040ee      0x283 ./system/src/diag/Trace.o
+ .debug_macro   0x0000000000004371       0x10 ./system/src/diag/Trace.o
+ .debug_macro   0x0000000000004381       0x1f ./system/src/diag/Trace.o
+ .debug_macro   0x00000000000043a0      0x238 ./system/src/diag/trace_impl.o
+ .debug_macro   0x00000000000045d8       0x22 ./system/src/diag/trace_impl.o
+ .debug_macro   0x00000000000045fa      0x174 ./system/src/cortexm/_initialize_hardware.o
+ .debug_macro   0x000000000000476e       0x1b ./system/src/cortexm/exception_handlers.o
+ .debug_macro   0x0000000000004789      0x16a ./system/src/cmsis/system_stm32f0xx.o
+ .debug_macro   0x00000000000048f3       0x1b ./system/src/cmsis/vectors_stm32f0xx.o
+ .debug_macro   0x000000000000490e      0x147 ./src/OSC/OSCData.o
+ .debug_macro   0x0000000000004a55       0x1c ./src/OSC/OSCData.o
+ .debug_macro   0x0000000000004a71       0x10 ./src/OSC/OSCData.o
+ .debug_macro   0x0000000000004a81      0x452 ./src/OSC/OSCData.o
+ .debug_macro   0x0000000000004ed3      0x2ad ./src/OSC/OSCData.o
+ .debug_macro   0x0000000000005180       0xe5 ./src/OSC/OSCMatch.o
+ .debug_macro   0x0000000000005265       0x16 ./src/OSC/OSCMatch.o
+ .debug_macro   0x000000000000527b      0x1bb ./src/OSC/OSCMessage.o
+ .debug_macro   0x0000000000005436       0x97 ./src/OSC/OSCMessage.o
+ .debug_macro   0x00000000000054cd       0xfd ./src/OSC/OSCMessage.o
+ .debug_macro   0x00000000000055ca      0x119 ./src/OSC/SimpleWriter.o
+ .debug_macro   0x00000000000056e3      0x179 ./src/BlinkLed.o
+ .debug_macro   0x000000000000585c       0x10 ./src/BlinkLed.o
+ .debug_macro   0x000000000000586c      0x2ab ./src/InchieKey.o
+ .debug_macro   0x0000000000005b17      0x242 ./src/InchieKey.o
+ .debug_macro   0x0000000000005d59       0x16 ./src/InchieKey.o
+ .debug_macro   0x0000000000005d6f      0x2c6 ./src/InchieLED.o
+ .debug_macro   0x0000000000006035      0x18f ./src/SLIPEncodedSerial.o
+ .debug_macro   0x00000000000061c4       0x10 ./src/SLIPEncodedSerial.o
+ .debug_macro   0x00000000000061d4       0x16 ./src/SLIPEncodedSerial.o
+ .debug_macro   0x00000000000061ea      0x18e ./src/Timer.o
+ .debug_macro   0x0000000000006378      0x581 ./src/main.o
+ .debug_macro   0x00000000000068f9       0x1c ./src/main.o
+ .debug_macro   0x0000000000006915       0x6e ./src/main.o
+ .debug_macro   0x0000000000006983       0x28 ./src/main.o
+ .debug_macro   0x00000000000069ab       0x11 ./src/main.o
+ .debug_macro   0x00000000000069bc       0x12 ./src/main.o
+ .debug_macro   0x00000000000069ce       0x82 ./src/main.o
+ .debug_macro   0x0000000000006a50       0x18 ./src/main.o
+ .debug_macro   0x0000000000006a68       0x12 ./src/main.o
+ .debug_macro   0x0000000000006a7a       0x22 ./src/main.o
+ .debug_macro   0x0000000000006a9c       0x3c ./src/main.o
+ .debug_macro   0x0000000000006ad8       0x38 ./src/main.o
+ .debug_macro   0x0000000000006b10      0x15e ./src/main.o
+ .debug_macro   0x0000000000006c6e       0x46 ./src/main.o
+ .debug_macro   0x0000000000006cb4       0x10 ./src/main.o
+ .debug_macro   0x0000000000006cc4       0x2e ./src/main.o
+ .debug_macro   0x0000000000006cf2       0x16 ./src/main.o
+ .debug_macro   0x0000000000006d08       0x52 ./src/main.o
+ .debug_macro   0x0000000000006d5a       0x5e ./src/main.o
+ .debug_macro   0x0000000000006db8       0x11 ./src/main.o
+ .debug_macro   0x0000000000006dc9       0x2f ./src/main.o
+ .debug_macro   0x0000000000006df8       0x10 ./src/main.o
+ .debug_macro   0x0000000000006e08       0x10 ./src/main.o
+ .debug_macro   0x0000000000006e18       0x1c ./src/main.o
+ .debug_macro   0x0000000000006e34      0x17c ./src/uart.o
