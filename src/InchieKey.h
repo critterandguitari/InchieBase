@@ -11,26 +11,39 @@
 
 
 #include <stdint.h>
-#include "Inchie.h"
+#include <stdio.h>
+#include "OSC/OSCMessage.h"
+#include "SLIPEncodedSerial.h"
+#include "OSC/SimpleWriter.h"
 
 #include "stm32f0xx.h"
 
-class InchieKey : public Inchie {
+class InchieKey {
 
 private:
 
 public:
-	virtual ~InchieKey() {};
+	InchieKey(SimpleWriter &buf, SLIPEncodedSerial &up, SLIPEncodedSerial &down);
+	~InchieKey() {};
 
-	//char const * type = "type";
+	// for communication
+	SimpleWriter &oscBuf;
+	SLIPEncodedSerial &upstream;
+	SLIPEncodedSerial &downstream;
+
+	// for address
+	char const * type = "key";
+	int index = 0;
+	char address[16];
 
 	// every inchie must have these three fucntions
-	virtual void init (void);
-	virtual void respond (OSCMessage &msg);
-	virtual bool perform (OSCMessage &msg);
+	void init (void);
+	void respond (OSCMessage &msg);
+	void perform (void);
 
-	uint8_t state = 0;
-	uint8_t stateLast = 0;
+	// specific for this inchie
+	uint8_t keyState = 0;
+	uint8_t keyStateLast = 0;
 
 };
 

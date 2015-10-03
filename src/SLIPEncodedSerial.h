@@ -42,7 +42,7 @@ public:
     //SLIP specific method which begins a transmitted packet
 	void beginPacket();
 	
-	//SLIP specific method which ends a transmittedpacket
+	//SLIP specific method which ends a transmitted packet
 	void endPacket();
    
     void encode(const uint8_t *buf, int size);

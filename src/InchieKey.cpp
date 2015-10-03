@@ -11,7 +11,13 @@ extern "C" {
 #include "BlinkLed.h"
 }
 
-//InchieKey::~InchieKey(void) {};
+InchieKey::InchieKey(SimpleWriter &buf, SLIPEncodedSerial &up, SLIPEncodedSerial &down)
+: oscBuf(buf), upstream(up), downstream(down)
+{
+	index = 0;
+	keyState = 0;
+	keyStateLast = 0;
+}
 
 void InchieKey::init (void){
 	GPIO_InitTypeDef  GPIO_InitStructure;
@@ -32,22 +38,23 @@ void InchieKey::respond (OSCMessage &msg){
 
 }
 
-bool InchieKey::perform (OSCMessage &msg){
+void InchieKey::perform (void){
+
+	keyState = (GPIO_ReadInputDataBit(GPIOA, GPIO_Pin_1)) ? 0 : 1;
 
 
-	state = (GPIO_ReadInputDataBit(GPIOA, GPIO_Pin_1)) ? 0 : 1;
-	if (state) LEDON;
-	else LEDOFF;
-	return false;
-	/*if (state != stateLast){
-		stateLast = state;
-		msg.add(state);
-		if (state) LEDON;
+	if (keyState != keyStateLast){
+		keyStateLast = keyState;
+
+	    sprintf(address, "/%s/%d", type, index);
+	    OSCMessage msgOut(address);
+		msgOut.add(keyState);
+	    msgOut.send(oscBuf);
+		upstream.sendPacket(oscBuf.buffer, oscBuf.length);
+
+		if (keyState) LEDON;
 		else LEDOFF;
-		return true;
-	} else {
-		return false;
-	}*/
+	}
 }
 
 

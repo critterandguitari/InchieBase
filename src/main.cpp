@@ -30,35 +30,26 @@ SLIPEncodedSerial upstream(&uart_upstream);
 SLIPEncodedSerial downstream(&uart_downstream);
 SimpleWriter oscBuf;
 
-// declaration of independence
-int inchieIndex = 0;   // or would be controlElement.index
-char const * inchieType = "key";   // or would be controlElement.type
-char inchieAddress[16];
-
 // create inchie object and initialize
-InchieLED inchieKey;
-Inchie& inchie = inchieKey;
-
-//InchieLED inchieLED;
-//Inchie& inchie = inchieLED;
+InchieKey inchie(oscBuf, upstream, downstream);
 
 /// main callbacks
 void reset(OSCMessage &msg){
-	inchieIndex = 0;
+	inchie.index = 0;
 	inchie.init();
 }
 
 void renumber(OSCMessage &msg){
 
 	// send out my type
-    sprintf(inchieAddress, "/%s", inchieType);
-    OSCMessage msgOut(inchieAddress);
+    sprintf(inchie.address, "/%s", inchie.type);
+    OSCMessage msgOut(inchie.address);
     msgOut.send(oscBuf);
 	downstream.sendPacket(oscBuf.buffer, oscBuf.length);
 }
 
 void incIndex(OSCMessage &msg){
-	inchieIndex++;
+	inchie.index++;
 }
 
 void respond(OSCMessage &msg){
@@ -67,21 +58,17 @@ void respond(OSCMessage &msg){
 
 int main(int argc, char* argv[]) {
 
-	inchie.init();
-
-	OSCMessage msgIn;
-
+	// init system stuff
 	uart_init();
 	blink_led_init();
 	timer_start();
 
-	LEDOFF;
-    timer_sleep(1000);
-    LEDON;
-    timer_sleep(1000);
-    LEDOFF;
-    timer_sleep(1000);
-    LEDON;
+	// init the inchie
+	inchie.init();
+
+	OSCMessage msgIn;
+
+	LEDOFF;timer_sleep(1000);LEDON;timer_sleep(1000);LEDOFF;timer_sleep(1000);LEDON;
 
 	while (1) {
 		if (upstream.recvPacket()) {
@@ -121,11 +108,11 @@ int main(int argc, char* argv[]) {
                 msgIn.send(oscBuf);
                 downstream.sendPacket(oscBuf.buffer, oscBuf.length);
 
-                sprintf(inchieAddress, "/%s/%d", inchieType, inchieIndex);
-                msgIn.dispatch(inchieAddress, respond, 0);
+                sprintf(inchie.address, "/%s/%d", inchie.type, inchie.index);
+                msgIn.dispatch(inchie.address, respond, 0);
 
-                sprintf(inchieAddress, "/%s", inchieType);
-                msgIn.dispatch(inchieAddress, incIndex, 0);
+                sprintf(inchie.address, "/%s", inchie.type);
+                msgIn.dispatch(inchie.address, incIndex, 0);
 
                 msgIn.dispatch("/renumber", renumber, 0);
 
@@ -154,17 +141,8 @@ int main(int argc, char* argv[]) {
                 msgIn.empty(); // free space occupied by message
             }
         }
-
-    	if (GPIO_ReadInputDataBit(GPIOA, GPIO_Pin_1)) LEDON;
-    	else LEDOFF;
-
-      /*  sprintf(inchieAddress, "/%s/%d", inchieType, inchieIndex);
-	    OSCMessage msgOut(inchieAddress);
 		// do stuff, possibly send message out
-        if (inchie.perform(msgOut)) {
-    	    //msgOut.send(oscBuf);
-    		//upstream.sendPacket(oscBuf.buffer, oscBuf.length);
-        }*/
+	    inchie.perform();
 
 	} // Infinite loop, never return.
 }

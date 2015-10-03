@@ -10,13 +10,22 @@
 
 #include <stdint.h>
 #include "OSC/OSCMessage.h"
+#include "SLIPEncodedSerial.h"
+#include "OSC/SimpleWriter.h"
 
 class Inchie {
 
 private:
 
 public:
+
+	Inchie(SimpleWriter &buf);
 	virtual ~Inchie() {};
+
+	//SLIPEncodedSerial &upstream;
+	//SLIPEncodedSerial &downstream;
+	SimpleWriter &oscBuf;
+
 
 	// every inchie must have these three fucntions
 	virtual void init (void) =0;
