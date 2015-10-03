@@ -64,7 +64,6 @@ void InchiePot::init (void){
 	/* ADC1 regular Software Start Conv */
 	ADC_StartOfConversion(ADC1);
 
-
 }
 
 void InchiePot::respond (OSCMessage &msg){
@@ -73,7 +72,7 @@ void InchiePot::respond (OSCMessage &msg){
 
 void InchiePot::perform (void){
 
-	if (stopwatchReport() >= 50){
+	if (stopwatchReport() >= 10){
 		LEDON;
 		stopwatchReStart();
 

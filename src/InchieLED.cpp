@@ -14,7 +14,11 @@
 #define AUX_LED_RED_OFF GPIO_SetBits(GPIOB, GPIO_Pin_1)
 #define AUX_LED_GREEN_OFF GPIO_SetBits(GPIOA, GPIO_Pin_7)
 
-//InchieLED::~InchieLED(void) {};
+InchieLED::InchieLED(SimpleWriter &buf, SLIPEncodedSerial &up, SLIPEncodedSerial &down)
+: oscBuf(buf), upstream(up), downstream(down)
+{
+	index = 0;
+}
 
 void InchieLED::init (void){
     GPIO_InitTypeDef GPIO_InitStructure;
@@ -98,7 +102,7 @@ void InchieLED::respond (OSCMessage &msg){
 	}
 }
 
-bool InchieLED::perform (OSCMessage &msg){
+void InchieLED::perform (void){
 
 }
 

@@ -15,19 +15,30 @@
 
 #include "stm32f0xx.h"
 
-class InchieLED : public Inchie {
+class InchieLED  {
 
 private:
 
 public:
-	virtual ~InchieLED() {};
+	InchieLED(SimpleWriter &buf, SLIPEncodedSerial &up, SLIPEncodedSerial &down);
+	~InchieLED() {};
 
-	//char const * type = "type";
+	// for communication
+	SimpleWriter &oscBuf;
+	SLIPEncodedSerial &upstream;
+	SLIPEncodedSerial &downstream;
+
+	// for address
+	char const * type = "led";
+	int index = 0;
+	char address[16];
 
 	// every inchie must have these three fucntions
-	virtual void init (void);
-	virtual void respond (OSCMessage &msg);
-	virtual bool perform (OSCMessage &msg);
+	void init (void);
+	void respond (OSCMessage &msg);
+	void perform (void);
+
+	// specific for this inchie
 
 };
 

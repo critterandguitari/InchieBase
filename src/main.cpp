@@ -21,6 +21,7 @@ extern "C" {
 #include "InchieLED.h"
 #include "InchieKey.h"
 #include "InchiePot.h"
+#include "InchieTest.h"
 
 // uart buffers
 extern hardware_uart uart_upstream;
@@ -32,7 +33,8 @@ SLIPEncodedSerial downstream(&uart_downstream);
 SimpleWriter oscBuf;
 
 // create inchie object and initialize
-InchiePot inchie(oscBuf, upstream, downstream);
+//InchiePot inchie(oscBuf, upstream, downstream);
+InchieTest inchie(oscBuf, upstream, downstream);
 
 /// main callbacks
 void reset(OSCMessage &msg) {
@@ -57,6 +59,18 @@ void respond(OSCMessage &msg) {
 	inchie.respond(msg);
 }
 
+void reportStat(OSCMessage &msg){
+	LEDON;
+    OSCMessage msgOut("/stat");
+	//msgOut.add((int)(downstream.uart->rx_buf_head - downstream.uart->rx_buf_tail));
+	msgOut.add((int)downstream.uart->rx_buf_head);
+	msgOut.add((int)downstream.uart->rx_buf_tail);
+    msgOut.send(oscBuf);
+	upstream.sendPacket(oscBuf.buffer, oscBuf.length);
+	msgOut.empty();
+	LEDOFF;
+}
+
 int main(int argc, char* argv[]) {
 
 	// init system stuff
@@ -70,11 +84,11 @@ int main(int argc, char* argv[]) {
 	OSCMessage msgIn;
 
 	LEDOFF;
-	timer_sleep(1000);
+	timer_sleep(100);
 	LEDON;
-	timer_sleep(1000);
+	timer_sleep(100);
 	LEDOFF;
-	timer_sleep(1000);
+	timer_sleep(100);
 	LEDON;
 
 	stopwatchReStart();
@@ -125,6 +139,8 @@ int main(int argc, char* argv[]) {
 				msgIn.dispatch("/renumber", renumber, 0);
 
 				msgIn.dispatch("/resetindex", reset, 0);
+
+				msgIn.dispatch("/stat", reportStat, 0);
 
 				msgIn.empty(); // free space occupied by message
 
