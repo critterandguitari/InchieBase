@@ -34,7 +34,7 @@ SimpleWriter oscBuf;
 
 // create inchie object and initialize
 //InchiePot inchie(oscBuf, upstream, downstream);
-InchiePot inchie(oscBuf, upstream, downstream);
+InchieKey inchie(oscBuf, upstream, downstream);
 
 /// main callbacks
 void reset(OSCMessage &msg) {
@@ -169,6 +169,8 @@ int main(int argc, char* argv[]) {
 		// do stuff, possibly send message out
 		inchie.perform();
 
+		//	service the tx buffer
+		uart_service_tx();
 	} // Infinite loop, never return.
 }
 

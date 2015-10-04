@@ -27,7 +27,7 @@ src/Timer.o: ../src/Timer.c ../src/Timer.h \
  ../system/include/stm32f0-stdperiph/stm32f0xx_tim.h \
  ../system/include/stm32f0-stdperiph/stm32f0xx_usart.h \
  ../system/include/stm32f0-stdperiph/stm32f0xx_wwdg.h \
- ../system/include/stm32f0-stdperiph/stm32f0xx_misc.h \
+ ../system/include/stm32f0-stdperiph/stm32f0xx_misc.h ../src/uart.h \
  ../system/include/cortexm/ExceptionHandlers.h
 
 ../src/Timer.h:
@@ -93,5 +93,7 @@ src/Timer.o: ../src/Timer.c ../src/Timer.h \
 ../system/include/stm32f0-stdperiph/stm32f0xx_wwdg.h:
 
 ../system/include/stm32f0-stdperiph/stm32f0xx_misc.h:
+
+../src/uart.h:
 
 ../system/include/cortexm/ExceptionHandlers.h:

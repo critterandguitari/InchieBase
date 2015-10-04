@@ -29,6 +29,8 @@ typedef struct {
 
 void uart_init(void);
 
+void uart_service_tx(void);
+
 void uart1_tx_it_en(uint8_t);
 void uart2_tx_it_en(uint8_t);
 

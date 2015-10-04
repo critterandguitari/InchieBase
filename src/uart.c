@@ -16,14 +16,37 @@ hardware_uart uart_upstream;
 hardware_uart uart_downstream;
 
 void uart1_tx_it_en(uint8_t tx){
-   // USART_ITConfig(USART1, USART_IT_TXE, ENABLE); // turn on tx interrupt
+	//USART_ITConfig(USART1, USART_IT_TXE, ENABLE); // turn on tx interrupt
 
-	while(USART_GetFlagStatus(USART1, USART_FLAG_TXE) == RESET);
-	USART_SendData(USART1, (uint16_t)tx); // Transmit the character
+	//while(USART_GetFlagStatus(USART1, USART_FLAG_TXE) == RESET);
+	//USART_SendData(USART1, (uint16_t)tx); // Transmit the character
 }
 
 void uart2_tx_it_en(uint8_t tx){
-    USART_ITConfig(USART2, USART_IT_TXE, ENABLE); // turn on tx interrupt
+   // USART_ITConfig(USART2, USART_IT_TXE, ENABLE); // turn on tx interrupt
+}
+
+void uart_service_tx(void){
+	if (USART_GetFlagStatus(USART2, USART_FLAG_TXE) != RESET) {
+		uint8_t tx;
+
+		if (uart_downstream.tx_buf_head != uart_downstream.tx_buf_tail){
+			tx = uart_downstream.tx_buf[uart_downstream.tx_buf_tail++];
+			uart_downstream.tx_buf_tail %= UART_BUFFER_SIZE;
+			USART_SendData(USART2, (uint16_t)tx); // Transmit the character
+		}
+	}
+
+	if (USART_GetFlagStatus(USART1, USART_FLAG_TXE) != RESET) {
+		uint8_t tx;
+
+		if (uart_upstream.tx_buf_head != uart_upstream.tx_buf_tail){
+			tx = uart_upstream.tx_buf[uart_upstream.tx_buf_tail++];
+			if (uart_upstream.tx_buf_tail >= UART_BUFFER_SIZE)
+				uart_upstream.tx_buf_tail = 0;
+			USART_SendData(USART1, (uint16_t)tx); // Transmit the character
+		}
+	}
 }
 
 void uart_init(void){
@@ -114,7 +137,6 @@ void uart_init(void){
 
      // setup irq
      USART_ITConfig(USART1, USART_IT_RXNE, ENABLE); // enable the USART1 receive interrupt
-     USART_ITConfig(USART1, USART_IT_TXE, ENABLE);
 
      // Enable USART1 IRQ
      NVIC_InitStructure.NVIC_IRQChannel = USART1_IRQn;
@@ -145,7 +167,7 @@ void USART2_IRQHandler(void) {
         uart_downstream.rx_buf_head %= UART_BUFFER_SIZE;  //
     }
 
-    if (USART_GetITStatus(USART2, USART_IT_TXE) != RESET) {
+ /*   if (USART_GetITStatus(USART2, USART_IT_TXE) != RESET) {
         uint8_t tx;
 
         if (uart_downstream.tx_buf_head != uart_downstream.tx_buf_tail){
@@ -156,7 +178,8 @@ void USART2_IRQHandler(void) {
         else {
             USART_ITConfig(USART2, USART_IT_TXE, DISABLE); // Suppress interrupt when nothing to send
         }
-    }
+    }*/
+
 }
 
 //uint8_t last_sent[3];
@@ -169,16 +192,17 @@ void USART1_IRQHandler(void) {
         uart_upstream.rx_buf_head %= UART_BUFFER_SIZE;  //
     }
 
-    if (USART_GetITStatus(USART1, USART_IT_TXE) != RESET) {
+   /* if (USART_GetITStatus(USART1, USART_IT_TXE) != RESET) {
         uint8_t tx;
 
         if (uart_upstream.tx_buf_head != uart_upstream.tx_buf_tail){
             tx = uart_upstream.tx_buf[uart_upstream.tx_buf_tail++];
-            uart_upstream.tx_buf_tail %= UART_BUFFER_SIZE;
+            if (uart_upstream.tx_buf_tail >= UART_BUFFER_SIZE)
+            	uart_upstream.tx_buf_tail = 0;
             USART_SendData(USART1, (uint16_t)tx); // Transmit the character
         }
         else {
             USART_ITConfig(USART1, USART_IT_TXE, DISABLE); // Suppress interrupt when nothing to send
         }
-    }
+    }*/
 }

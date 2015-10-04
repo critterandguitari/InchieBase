@@ -4,6 +4,7 @@
 //
 
 #include "Timer.h"
+#include "uart.h"
 #include "cortexm/ExceptionHandlers.h"
 
 // ----------------------------------------------------------------------------
@@ -65,6 +66,7 @@ void
 SysTick_Handler (void)
 {
   timer_tick ();
+ // uart_service_tx();
 }
 
 // ----------------------------------------------------------------------------

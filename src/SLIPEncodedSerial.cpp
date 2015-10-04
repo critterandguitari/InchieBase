@@ -37,10 +37,11 @@ int SLIPEncodedSerial::sendPacket(const uint8_t *buf, uint32_t len)//, hardware_
     for (i = 0; i<encodedLength; i++){
     	//uart2_send(encodedBuf[i]);
     	uart->tx_buf[uart->tx_buf_head++] = encodedBuf[i];  //TODO:  block here if buffer gets full
-    	uart->tx_buf_head %= UART_BUFFER_SIZE;
-    	uart->tx_it_en(encodedBuf[i]); // turn on uart interrupt to enable sending
-
+    	if (uart->tx_buf_head >= UART_BUFFER_SIZE)
+    		uart->tx_buf_head = 0;
+    	//uart->tx_it_en(encodedBuf[i]); // turn on uart interrupt to enable sending
     }
+    uart->tx_it_en(0); // turn on uart interrupt to enable sending
     return encodedLength;//s.writeBuffer(encodedBuf, encodedLength);
 }
 

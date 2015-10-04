@@ -10,7 +10,7 @@
 
 // ----------------------------------------------------------------------------
 
-#define TIMER_FREQUENCY_HZ (1000u)  // one tenth of millisecond
+#define TIMER_FREQUENCY_HZ (1000u)  // one millisecond
 
 
 extern volatile uint32_t timer_delayCount;
