@@ -26,7 +26,10 @@ src/SLIPEncodedSerial.o: ../src/SLIPEncodedSerial.cpp \
  ../system/include/stm32f0-stdperiph/stm32f0xx_tim.h \
  ../system/include/stm32f0-stdperiph/stm32f0xx_usart.h \
  ../system/include/stm32f0-stdperiph/stm32f0xx_wwdg.h \
- ../system/include/stm32f0-stdperiph/stm32f0xx_misc.h ../src/BlinkLed.h
+ ../system/include/stm32f0-stdperiph/stm32f0xx_misc.h ../src/InchieLED.h \
+ ../src/Inchie.h ../src/OSC/OSCMessage.h ../src/OSC/OSCData.h \
+ ../src/OSC/OSCTiming.h ../src/OSC/SimpleWriter.h \
+ ../src/OSC/SimpleWriter.h ../src/BlinkLed.h
 
 ../src/SLIPEncodedSerial.h:
 
@@ -89,5 +92,19 @@ src/SLIPEncodedSerial.o: ../src/SLIPEncodedSerial.cpp \
 ../system/include/stm32f0-stdperiph/stm32f0xx_wwdg.h:
 
 ../system/include/stm32f0-stdperiph/stm32f0xx_misc.h:
+
+../src/InchieLED.h:
+
+../src/Inchie.h:
+
+../src/OSC/OSCMessage.h:
+
+../src/OSC/OSCData.h:
+
+../src/OSC/OSCTiming.h:
+
+../src/OSC/SimpleWriter.h:
+
+../src/OSC/SimpleWriter.h:
 
 ../src/BlinkLed.h:

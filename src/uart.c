@@ -15,11 +15,14 @@
 hardware_uart uart_upstream;
 hardware_uart uart_downstream;
 
-void uart1_tx_it_en(void){
-    USART_ITConfig(USART1, USART_IT_TXE, ENABLE); // turn on tx interrupt
+void uart1_tx_it_en(uint8_t tx){
+   // USART_ITConfig(USART1, USART_IT_TXE, ENABLE); // turn on tx interrupt
+
+	while(USART_GetFlagStatus(USART1, USART_FLAG_TXE) == RESET);
+	USART_SendData(USART1, (uint16_t)tx); // Transmit the character
 }
 
-void uart2_tx_it_en(void){
+void uart2_tx_it_en(uint8_t tx){
     USART_ITConfig(USART2, USART_IT_TXE, ENABLE); // turn on tx interrupt
 }
 
@@ -155,6 +158,9 @@ void USART2_IRQHandler(void) {
         }
     }
 }
+
+//uint8_t last_sent[3];
+//uint8_t last_sent_count = 0;
 
 void USART1_IRQHandler(void) {
     if( USART_GetITStatus(USART1, USART_IT_RXNE) != RESET){

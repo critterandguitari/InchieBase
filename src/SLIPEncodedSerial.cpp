@@ -1,5 +1,6 @@
 
 #include "SLIPEncodedSerial.h"
+#include "InchieLED.h"
 
 extern "C" {
 #include "uart.h"
@@ -37,7 +38,8 @@ int SLIPEncodedSerial::sendPacket(const uint8_t *buf, uint32_t len)//, hardware_
     	//uart2_send(encodedBuf[i]);
     	uart->tx_buf[uart->tx_buf_head++] = encodedBuf[i];  //TODO:  block here if buffer gets full
     	uart->tx_buf_head %= UART_BUFFER_SIZE;
-    	uart->tx_it_en(); // turn on uart interrupt to enable sending
+    	uart->tx_it_en(encodedBuf[i]); // turn on uart interrupt to enable sending
+
     }
     return encodedLength;//s.writeBuffer(encodedBuf, encodedLength);
 }
@@ -54,6 +56,7 @@ int SLIPEncodedSerial::recvPacket(void)//hardware_uart * uart)
                 rxPacketIndex = 0;
                 rxPacket[rxPacketIndex++] = tmp8;
                 rstate = RECEIVING;
+    			if (tmp8 != '/') LEDON;
             }
         } // waiting
         else if (rstate == RECEIVING){
@@ -86,6 +89,7 @@ void SLIPEncodedSerial::encode(uint8_t b){
    } else {
         encodedBuf[encodedBufIndex++] = b;
     }
+    //if (encodedBuf[1] != '/') AUX_LED_BLUE_ON;
 }
 
 void SLIPEncodedSerial::encode(const uint8_t *buf, int size) 

@@ -22,15 +22,15 @@ typedef struct {
     uint16_t  tx_buf_head;
     uint16_t  tx_buf_tail;
 
-    void (*tx_it_en) (void);
+    void (*tx_it_en) (uint8_t);
 
 } hardware_uart;
 
 
 void uart_init(void);
 
-void uart1_tx_it_en(void);
-void uart2_tx_it_en(void);
+void uart1_tx_it_en(uint8_t);
+void uart2_tx_it_en(uint8_t);
 
 
 #endif /* UART_H_ */

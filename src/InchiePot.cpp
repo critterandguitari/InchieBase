@@ -73,7 +73,7 @@ void InchiePot::respond (OSCMessage &msg){
 void InchiePot::perform (void){
 
 	if (stopwatchReport() >= 10){
-		LEDON;
+		//LEDON;
 		stopwatchReStart();
 
 	    /* Test EOC flag */
@@ -93,7 +93,7 @@ void InchiePot::perform (void){
 			upstream.sendPacket(oscBuf.buffer, oscBuf.length);
 
 		}
-		LEDOFF;
+		//LEDOFF;
 	}
 }
 

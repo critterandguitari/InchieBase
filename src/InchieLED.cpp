@@ -7,12 +7,7 @@
 
 #include "InchieLED.h"
 
-#define AUX_LED_BLUE_ON GPIO_ResetBits(GPIOB, GPIO_Pin_0)
-#define AUX_LED_RED_ON GPIO_ResetBits(GPIOB, GPIO_Pin_1)
-#define AUX_LED_GREEN_ON GPIO_ResetBits(GPIOA, GPIO_Pin_7)
-#define AUX_LED_BLUE_OFF GPIO_SetBits(GPIOB, GPIO_Pin_0)
-#define AUX_LED_RED_OFF GPIO_SetBits(GPIOB, GPIO_Pin_1)
-#define AUX_LED_GREEN_OFF GPIO_SetBits(GPIOA, GPIO_Pin_7)
+
 
 InchieLED::InchieLED(SimpleWriter &buf, SLIPEncodedSerial &up, SLIPEncodedSerial &down)
 : oscBuf(buf), upstream(up), downstream(down)
@@ -46,7 +41,7 @@ void InchieLED::init (void){
 
     GPIO_Init(GPIOA, &GPIO_InitStructure);
 
-	AUX_LED_BLUE_ON;AUX_LED_RED_OFF;AUX_LED_GREEN_ON;
+	AUX_LED_BLUE_OFF;AUX_LED_RED_OFF;AUX_LED_GREEN_OFF;
 }
 
 void InchieLED::respond (OSCMessage &msg){

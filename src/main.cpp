@@ -34,7 +34,7 @@ SimpleWriter oscBuf;
 
 // create inchie object and initialize
 //InchiePot inchie(oscBuf, upstream, downstream);
-InchieTest inchie(oscBuf, upstream, downstream);
+InchiePot inchie(oscBuf, upstream, downstream);
 
 /// main callbacks
 void reset(OSCMessage &msg) {
@@ -151,11 +151,14 @@ int main(int argc, char* argv[]) {
 
 		if (downstream.recvPacket()) {
 			msgIn.fill(downstream.decodedBuf, downstream.decodedLength);
+			//if (downstream.decodedBuf[0] != '/') LEDON;
 			if (!msgIn.hasError()) {
 
 				// send it upstream
 				msgIn.send(oscBuf);
 				upstream.sendPacket(oscBuf.buffer, oscBuf.length);
+
+				//if (oscBuf.buffer[0] != '/') AUX_LED_BLUE_ON;
 
 				msgIn.empty(); // free space occupied by message
 
