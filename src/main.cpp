@@ -82,7 +82,7 @@ int main(int argc, char* argv[]) {
 	inchie.init();
 
 	OSCMessage msgIn;
-
+    while (1) {
 	LEDOFF;
 	timer_sleep(100);
 	LEDON;
@@ -90,7 +90,7 @@ int main(int argc, char* argv[]) {
 	LEDOFF;
 	timer_sleep(100);
 	LEDON;
-
+    }
 	stopwatchReStart();
 
 	while (1) {

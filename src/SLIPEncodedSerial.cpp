@@ -57,7 +57,7 @@ int SLIPEncodedSerial::recvPacket(void)//hardware_uart * uart)
                 rxPacketIndex = 0;
                 rxPacket[rxPacketIndex++] = tmp8;
                 rstate = RECEIVING;
-    			if (tmp8 != '/') LEDON;
+    			//if (tmp8 != '/') LEDON;
             }
         } // waiting
         else if (rstate == RECEIVING){
