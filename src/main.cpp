@@ -82,16 +82,28 @@ int main(int argc, char* argv[]) {
 	inchie.init();
 
 	OSCMessage msgIn;
+	OSCMessage msgOut("/cool");
+	msgOut.add((int)5678);
+    msgOut.send(oscBuf);
+
+    stopwatchReStart();
+
     while (1) {
-	LEDOFF;
-	timer_sleep(100);
-	LEDON;
-	timer_sleep(100);
-	LEDOFF;
-	timer_sleep(100);
-	LEDON;
+        LEDON;
+        timer_sleep(100);
+        LEDOFF;
+        timer_sleep(100);
+
+
+        downstream.sendPacket(oscBuf.buffer, oscBuf.length);
+
+        while(stopwatchReport() < 500){
+            uart_service_tx();;
+        }
+        stopwatchReStart();
     }
-	stopwatchReStart();
+
+
 
 	while (1) {
 		if (upstream.recvPacket()) {
