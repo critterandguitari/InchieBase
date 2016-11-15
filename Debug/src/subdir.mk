@@ -5,6 +5,7 @@
 # Add inputs and outputs from these tool invocations to the build variables 
 CPP_SRCS += \
 ../src/InchieKey.cpp \
+../src/InchieKeyLED.cpp \
 ../src/InchieLED.cpp \
 ../src/InchiePot.cpp \
 ../src/InchieTest.cpp \
@@ -19,6 +20,7 @@ C_SRCS += \
 OBJS += \
 ./src/BlinkLed.o \
 ./src/InchieKey.o \
+./src/InchieKeyLED.o \
 ./src/InchieLED.o \
 ./src/InchiePot.o \
 ./src/InchieTest.o \
@@ -34,6 +36,7 @@ C_DEPS += \
 
 CPP_DEPS += \
 ./src/InchieKey.d \
+./src/InchieKeyLED.d \
 ./src/InchieLED.d \
 ./src/InchiePot.d \
 ./src/InchieTest.d \

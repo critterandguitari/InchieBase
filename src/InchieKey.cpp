@@ -11,8 +11,8 @@ extern "C" {
 #include "BlinkLed.h"
 }
 
-InchieKey::InchieKey(SimpleWriter &buf, SLIPEncodedSerial &up, SLIPEncodedSerial &down)
-: oscBuf(buf), upstream(up), downstream(down)
+InchieKey::InchieKey(SimpleWriter &buf, SLIPEncodedSerial &serial)
+: oscBuf(buf), slipSerial(serial)
 {
 	index = 0;
 	keyState = 0;
@@ -50,7 +50,7 @@ void InchieKey::perform (void){
 	    OSCMessage msgOut(address);
 		msgOut.add(keyState);
 	    msgOut.send(oscBuf);
-		upstream.sendPacket(oscBuf.buffer, oscBuf.length);
+		slipSerial.sendPacket(oscBuf.buffer, oscBuf.length);
 
 		if (keyState) LEDON;
 		else LEDOFF;

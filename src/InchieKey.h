@@ -23,13 +23,12 @@ class InchieKey {
 private:
 
 public:
-	InchieKey(SimpleWriter &buf, SLIPEncodedSerial &up, SLIPEncodedSerial &down);
+	InchieKey(SimpleWriter &buf, SLIPEncodedSerial &serial);
 	~InchieKey() {};
 
 	// for communication
 	SimpleWriter &oscBuf;
-	SLIPEncodedSerial &upstream;
-	SLIPEncodedSerial &downstream;
+	SLIPEncodedSerial &slipSerial;
 
 	// for address
 	char const * type = "key";

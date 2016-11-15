@@ -12,7 +12,7 @@
 
 // the upstream is uart 1
 // downstream is uart 2
-hardware_uart uart_upstream;
+//hardware_uart uart_upstream;
 hardware_uart uart_downstream;
 
 void uart1_tx_it_en(uint8_t tx){
@@ -37,7 +37,7 @@ void uart_service_tx(void){
 		}
 	}
 
-	if (USART_GetFlagStatus(USART1, USART_FLAG_TXE) != RESET) {
+/*	if (USART_GetFlagStatus(USART1, USART_FLAG_TXE) != RESET) {
 		uint8_t tx;
 
 		if (uart_upstream.tx_buf_head != uart_upstream.tx_buf_tail){
@@ -46,18 +46,18 @@ void uart_service_tx(void){
 				uart_upstream.tx_buf_tail = 0;
 			USART_SendData(USART1, (uint16_t)tx); // Transmit the character
 		}
-	}
+	}*/
 }
 
 void uart_init(void){
 
 
     // zero things out
-    uart_upstream.rx_buf_head = 0;
+  /*  uart_upstream.rx_buf_head = 0;
     uart_upstream.rx_buf_tail = 0;
     uart_upstream.tx_buf_head = 0;
     uart_upstream.tx_buf_tail = 0;
-    uart_upstream.tx_it_en = uart1_tx_it_en;
+    uart_upstream.tx_it_en = uart1_tx_it_en;*/
 
     uart_downstream.rx_buf_head = 0;
     uart_downstream.rx_buf_tail = 0;
@@ -110,7 +110,7 @@ void uart_init(void){
 
 
     // uart 1 init
-     RCC_AHBPeriphClockCmd(RCC_AHBPeriph_GPIOA, ENABLE);
+    /* RCC_AHBPeriphClockCmd(RCC_AHBPeriph_GPIOA, ENABLE);
 
      RCC_APB2PeriphClockCmd(RCC_APB2Periph_USART1,ENABLE);
 
@@ -144,7 +144,7 @@ void uart_init(void){
      NVIC_InitStructure.NVIC_IRQChannelCmd = ENABLE;
      NVIC_Init(&NVIC_InitStructure);
 
-     USART_Cmd(USART1,ENABLE);
+     USART_Cmd(USART1,ENABLE);*/
 
      //end uart 1 init
 }
@@ -186,11 +186,11 @@ void USART2_IRQHandler(void) {
 //uint8_t last_sent_count = 0;
 
 void USART1_IRQHandler(void) {
-    if( USART_GetITStatus(USART1, USART_IT_RXNE) != RESET){
+  /*  if( USART_GetITStatus(USART1, USART_IT_RXNE) != RESET){
         uart_upstream.rx_buf[uart_upstream.rx_buf_head] = USART_ReceiveData(USART1);
         uart_upstream.rx_buf_head++;
         uart_upstream.rx_buf_head %= UART_BUFFER_SIZE;  //
-    }
+    }*/
 
    /* if (USART_GetITStatus(USART1, USART_IT_TXE) != RESET) {
         uint8_t tx;
