@@ -72,15 +72,19 @@ void reportStat(OSCMessage &msg){
 
 int main(int argc, char* argv[]) {
 
+    int hi = 0;
+
     /* Check if the system has resumed from IWDG reset */
     if (RCC_GetFlagStatus(RCC_FLAG_IWDGRST) != RESET)
     {
       /* IWDGRST flag set */
       /* Clear reset flags */
+        hi = 1;
       RCC_ClearFlag();
     }
     else
     {
+        hi = 0;
       /* IWDGRST flag is not set */
     }
 
@@ -93,20 +97,30 @@ int main(int argc, char* argv[]) {
 	inchie.init();
 
 	OSCMessage msgIn;
-	OSCMessage msgOut;/*("/cool");
-	msgOut.add((int)5678);
-    msgOut.send(oscBuf);*/
+	OSCMessage msgOut("/hi");
+
 
     LEDON;
-    timer_sleep(100);
+    timer_sleep(10);
     LEDOFF;
-    timer_sleep(100);
+    timer_sleep(10);
     LEDON;
-    timer_sleep(100);
+    timer_sleep(10);
     LEDOFF;
-    timer_sleep(100);
+    timer_sleep(10);
 
+    // say hi
+    msgOut.add((int)hi);
+    msgOut.send(oscBuf);
+    slipSerial.sendPacket(oscBuf.buffer, oscBuf.length);
     stopwatchReStart();
+    while(stopwatchReport() < 500){
+        uart_service_tx();
+    }
+    stopwatchReStart();
+
+
+
 /*    while (1) {
         LEDON;
         timer_sleep(100);
@@ -205,7 +219,11 @@ int main(int argc, char* argv[]) {
 		}
 
 		// do stuff, possibly send message out
-		inchie.perform();
+		// limit 1 per ms
+		if (stopwatchReport() > 2){
+		    stopwatchReStart();
+	        inchie.perform();
+		}
 
 		//	service the tx buffer
 		uart_service_tx();
