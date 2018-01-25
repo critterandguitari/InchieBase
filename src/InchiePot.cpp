@@ -12,10 +12,13 @@ extern "C" {
 #include "BlinkLed.h"
 }
 
-InchiePot::InchiePot(SimpleWriter &buf, SLIPEncodedSerial &up, SLIPEncodedSerial &down)
-: oscBuf(buf), upstream(up), downstream(down)
+InchiePot::InchiePot(SimpleWriter &buf, SLIPEncodedSerial &serial)
+: oscBuf(buf), slipSerial(serial)
 {
 	index = 0;
+	pollCount = 0;
+	potVal = 0;
+	changed = false;
 }
 
 void InchiePot::init (void){
@@ -71,29 +74,41 @@ void InchiePot::respond (OSCMessage &msg){
 }
 
 void InchiePot::perform (void){
+	pollCount++;
+	if (pollCount >= 10){
+		pollCount = 0;
+		/* Test EOC flag */
+		while(ADC_GetFlagStatus(ADC1, ADC_FLAG_EOC) == RESET);
 
-	if (stopwatchReport() >= 10){
-		//LEDON;
-		stopwatchReStart();
+		/* Get ADC1 converted data */
+		int16_t v = ADC_GetConversionValue(ADC1);
+		//make it 8 bit
+		v >>= 2;
 
-	    /* Test EOC flag */
-	    while(ADC_GetFlagStatus(ADC1, ADC_FLAG_EOC) == RESET);
+		// smooth it out
+		if(v==0 || v==255) {
+			// allow extremes
+			changed |= v != potVal;
+			potVal = v;
+		} else {
+			// 75% new value, 25% old value
+			int16_t nv = (v >> 1) + (v >> 2) + (potVal >> 2);
+			int diff = nv - potVal;
+			if(diff>1 || diff <-1) {
+				changed = true;
+				potVal = nv;
+			}
+		}
 
-	    /* Get ADC1 converted data */
-	    potVal =ADC_GetConversionValue(ADC1);
-
-		if (potVal != potValLast){
-
-			potValLast = potVal;
-
+		if (changed){
+			changed = false;
 		    sprintf(address, "/%s/%d", type, index);
 		    OSCMessage msgOut(address);
 			msgOut.add(potVal);
 		    msgOut.send(oscBuf);
-			upstream.sendPacket(oscBuf.buffer, oscBuf.length);
+			slipSerial.sendPacket(oscBuf.buffer, oscBuf.length);
 
 		}
-		//LEDOFF;
 	}
 }
 

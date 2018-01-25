@@ -19,22 +19,24 @@ extern "C" {
 #include "SLIPEncodedSerial.h"
 #include "OSC/SimpleWriter.h"
 //#include "InchieLED.h"
-#include "InchieKeyLED.h"
+//#include "InchieKeyLED.h"
+#include "Inchie4KeyLED.h"
 //#include "InchiePot.h"
 //#include "InchieTest.h"
 
 // uart buffers
-//extern hardware_uart uart_upstream;
-extern hardware_uart uart_downstream;
+extern hardware_uart uart_upstream;
+//extern hardware_uart uart_downstream;
 
 // OSC stuff
 //SLIPEncodedSerial upstream(&uart_upstream);
-SLIPEncodedSerial slipSerial(&uart_downstream);
+SLIPEncodedSerial slipSerial(&uart_upstream);
 SimpleWriter oscBuf;
 
 // create inchie object and initialize
-//InchiePot inchie(oscBuf, upstream, downstream);
-InchieKeyLED inchie(oscBuf, slipSerial);
+//InchiePot inchie(oscBuf, slipSerial);
+//InchieKeyLED inchie(oscBuf, slipSerial);
+Inchie4KeyLED inchie(oscBuf, slipSerial);
 
 /// main callbacks
 void reset(OSCMessage &msg) {
@@ -118,8 +120,6 @@ int main(int argc, char* argv[]) {
         uart_service_tx();
     }
     stopwatchReStart();
-
-
 
 /*    while (1) {
         LEDON;

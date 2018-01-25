@@ -28,9 +28,7 @@ src/InchiePot.o: ../src/InchiePot.cpp ../src/InchiePot.h \
  ../system/include/stm32f0-stdperiph/stm32f0xx_usart.h \
  ../system/include/stm32f0-stdperiph/stm32f0xx_wwdg.h \
  ../system/include/stm32f0-stdperiph/stm32f0xx_misc.h \
- ../src/OSC/SimpleWriter.h ../src/Timer.h \
- ../system/include/cmsis/cmsis_device.h \
- ../system/include/cmsis/stm32f0xx.h ../src/BlinkLed.h
+ ../src/OSC/SimpleWriter.h ../src/BlinkLed.h
 
 ../src/InchiePot.h:
 
@@ -105,11 +103,5 @@ src/InchiePot.o: ../src/InchiePot.cpp ../src/InchiePot.h \
 ../system/include/stm32f0-stdperiph/stm32f0xx_misc.h:
 
 ../src/OSC/SimpleWriter.h:
-
-../src/Timer.h:
-
-../system/include/cmsis/cmsis_device.h:
-
-../system/include/cmsis/stm32f0xx.h:
 
 ../src/BlinkLed.h:

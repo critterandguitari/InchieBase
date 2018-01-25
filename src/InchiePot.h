@@ -14,9 +14,7 @@
 #include "OSC/OSCMessage.h"
 #include "SLIPEncodedSerial.h"
 #include "OSC/SimpleWriter.h"
-extern "C" {
-#include "Timer.h"
-}
+
 
 #include "stm32f0xx.h"
 
@@ -25,17 +23,16 @@ class InchiePot {
 private:
 
 public:
-	InchiePot(SimpleWriter &buf, SLIPEncodedSerial &up, SLIPEncodedSerial &down);
+	InchiePot(SimpleWriter &buf, SLIPEncodedSerial &serial);
 	~InchiePot() {};
 
 	// for communication
 	SimpleWriter &oscBuf;
-	SLIPEncodedSerial &upstream;
-	SLIPEncodedSerial &downstream;
+	SLIPEncodedSerial &slipSerial;
 
 	// for address
 	char const * type = "pot";
-	int index = 0;
+	int index;
 	char address[16];
 
 	// every inchie must have these three fucntions
@@ -44,9 +41,9 @@ public:
 	void perform (void);
 
 	// specific for this inchie
-	int potVal = 0;
-	int potValLast = 0;
-	uint32_t count = 0;
+	int16_t potVal;
+	uint32_t pollCount;
+	bool changed;
 
 };
 
