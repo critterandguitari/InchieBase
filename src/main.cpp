@@ -19,8 +19,8 @@ extern "C" {
 #include "SLIPEncodedSerial.h"
 #include "OSC/SimpleWriter.h"
 //#include "InchieLED.h"
-//#include "InchieKeyLED.h"
-#include "Inchie4KeyLED.h"
+#include "InchieKeyLED.h"
+//#include "Inchie4KeyLED.h"
 //#include "InchiePot.h"
 //#include "InchieTest.h"
 
@@ -35,8 +35,8 @@ SimpleWriter oscBuf;
 
 // create inchie object and initialize
 //InchiePot inchie(oscBuf, slipSerial);
-//InchieKeyLED inchie(oscBuf, slipSerial);
-Inchie4KeyLED inchie(oscBuf, slipSerial);
+InchieKeyLED inchie(oscBuf, slipSerial);
+//Inchie4KeyLED inchie(oscBuf, slipSerial);
 
 /// main callbacks
 void reset(OSCMessage &msg) {
@@ -190,6 +190,9 @@ int main(int argc, char* argv[]) {
 		if (slipSerial.recvPacket()) {
 			// fill the message and dispatch it
 
+			// echo
+			slipSerial.sendPacket(slipSerial.decodedBuf, slipSerial.decodedLength);
+			/*
 			msgIn.fill(slipSerial.decodedBuf, slipSerial.decodedLength);
 
 			// dispatch it
@@ -215,15 +218,15 @@ int main(int argc, char* argv[]) {
 
 			} else {   // just empty it if there was an error
 				msgIn.empty(); // free space occupied by message
-			}
+			}*/
 		}
 
 		// do stuff, possibly send message out
 		// limit 1 per ms
-		if (stopwatchReport() > 2){
+		/*if (stopwatchReport() > 2){
 		    stopwatchReStart();
 	        inchie.perform();
-		}
+		}*/
 
 		//	service the tx buffer
 		uart_service_tx();

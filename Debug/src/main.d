@@ -30,7 +30,7 @@ src/main.o: ../src/main.cpp ../src/uart.h \
  ../system/include/cmsis/stm32f0xx.h ../src/BlinkLed.h \
  ../src/OSC/OSCMessage.h ../src/OSC/OSCData.h ../src/OSC/OSCTiming.h \
  ../src/OSC/SimpleWriter.h ../src/SLIPEncodedSerial.h \
- ../src/OSC/SimpleWriter.h ../src/Inchie4KeyLED.h
+ ../src/OSC/SimpleWriter.h ../src/InchieKeyLED.h
 
 ../src/uart.h:
 
@@ -112,4 +112,4 @@ src/main.o: ../src/main.cpp ../src/uart.h \
 
 ../src/OSC/SimpleWriter.h:
 
-../src/Inchie4KeyLED.h:
+../src/InchieKeyLED.h:

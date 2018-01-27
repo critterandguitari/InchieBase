@@ -23,11 +23,9 @@ Inchie4KeyLED::Inchie4KeyLED(SimpleWriter &buf, SLIPEncodedSerial &serial)
 void Inchie4KeyLED::init (void){
     GPIO_InitTypeDef  GPIO_InitStructure;
 
-    /* Periph clocks enable */
     RCC_AHBPeriphClockCmd(RCC_AHBPeriph_GPIOA, ENABLE);
 
 
-      /* Configure Buttons pin as input */
     GPIO_InitStructure.GPIO_Pin = GPIO_Pin_1 | GPIO_Pin_0 |GPIO_Pin_2 | GPIO_Pin_3;
     GPIO_InitStructure.GPIO_Mode = GPIO_Mode_IN;
     GPIO_InitStructure.GPIO_PuPd = GPIO_PuPd_UP;
