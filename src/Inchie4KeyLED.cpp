@@ -13,10 +13,10 @@ extern "C" {
 #include "BlinkLed.h"
 }
 
-Inchie4KeyLED::Inchie4KeyLED(SimpleWriter &buf, SLIPEncodedSerial &serial)
-: oscBuf(buf), slipSerial(serial)
+Inchie4KeyLED::Inchie4KeyLED(SLIPEncodedSerial &serial)
+: slipSerial(serial)
 {
-    index = 0;
+    index = 254;
     keyState_1 = keyStateLast_1 = keyState_2 = keyStateLast_2 = keyState_3 = keyStateLast_3 = keyState_4 = keyStateLast_4 = 0;
 }
 
@@ -63,102 +63,92 @@ void Inchie4KeyLED::init (void){
 
 }
 
-void Inchie4KeyLED::respond (OSCMessage &msg){
-    int stat, led;
+void Inchie4KeyLED::respond (const uint8_t *buf){
 
-    // digitalWrite(ledPin, LOW);
-    if (msg.isInt(0) && msg.isInt(1)) {
-        led = msg.getInt(0);
-    	stat = msg.getInt(1);
+    uint8_t led = buf[1];
+    uint8_t stat = buf[2];
 
-        stat %= 8;
-        if (led == 1) {
-            if (stat == 0) {AUX_LED1_RED_OFF;AUX_LED1_GREEN_OFF;AUX_LED1_BLUE_OFF;}
-            if (stat == 1) {AUX_LED1_RED_OFF;AUX_LED1_GREEN_OFF;AUX_LED1_BLUE_ON;}
-            if (stat == 2) {AUX_LED1_RED_OFF;AUX_LED1_GREEN_ON;AUX_LED1_BLUE_OFF;}
-            if (stat == 3) {AUX_LED1_RED_OFF;AUX_LED1_GREEN_ON;AUX_LED1_BLUE_ON;}
-            if (stat == 4) {AUX_LED1_RED_ON;AUX_LED1_GREEN_OFF;AUX_LED1_BLUE_OFF;}
-            if (stat == 5) {AUX_LED1_RED_ON;AUX_LED1_GREEN_OFF;AUX_LED1_BLUE_ON;}
-            if (stat == 6) {AUX_LED1_RED_ON;AUX_LED1_GREEN_ON;AUX_LED1_BLUE_OFF;}
-            if (stat == 7) {AUX_LED1_RED_ON;AUX_LED1_GREEN_ON;AUX_LED1_BLUE_ON;}
-        }
-        if (led == 2) {
-            if (stat == 0) {AUX_LED2_RED_OFF;AUX_LED2_GREEN_OFF;AUX_LED2_BLUE_OFF;}
-            if (stat == 1) {AUX_LED2_RED_OFF;AUX_LED2_GREEN_OFF;AUX_LED2_BLUE_ON;}
-            if (stat == 2) {AUX_LED2_RED_OFF;AUX_LED2_GREEN_ON;AUX_LED2_BLUE_OFF;}
-            if (stat == 3) {AUX_LED2_RED_OFF;AUX_LED2_GREEN_ON;AUX_LED2_BLUE_ON;}
-            if (stat == 4) {AUX_LED2_RED_ON;AUX_LED2_GREEN_OFF;AUX_LED2_BLUE_OFF;}
-            if (stat == 5) {AUX_LED2_RED_ON;AUX_LED2_GREEN_OFF;AUX_LED2_BLUE_ON;}
-            if (stat == 6) {AUX_LED2_RED_ON;AUX_LED2_GREEN_ON;AUX_LED2_BLUE_OFF;}
-            if (stat == 7) {AUX_LED2_RED_ON;AUX_LED2_GREEN_ON;AUX_LED2_BLUE_ON;}
-        }
-        if (led == 3) {
-            if (stat == 0) {AUX_LED3_RED_OFF;AUX_LED3_GREEN_OFF;AUX_LED3_BLUE_OFF;}
-            if (stat == 1) {AUX_LED3_RED_OFF;AUX_LED3_GREEN_OFF;AUX_LED3_BLUE_ON;}
-            if (stat == 2) {AUX_LED3_RED_OFF;AUX_LED3_GREEN_ON;AUX_LED3_BLUE_OFF;}
-            if (stat == 3) {AUX_LED3_RED_OFF;AUX_LED3_GREEN_ON;AUX_LED3_BLUE_ON;}
-            if (stat == 4) {AUX_LED3_RED_ON;AUX_LED3_GREEN_OFF;AUX_LED3_BLUE_OFF;}
-            if (stat == 5) {AUX_LED3_RED_ON;AUX_LED3_GREEN_OFF;AUX_LED3_BLUE_ON;}
-            if (stat == 6) {AUX_LED3_RED_ON;AUX_LED3_GREEN_ON;AUX_LED3_BLUE_OFF;}
-            if (stat == 7) {AUX_LED3_RED_ON;AUX_LED3_GREEN_ON;AUX_LED3_BLUE_ON;}
-        }
-        if (led == 4) {
-            if (stat == 0) {AUX_LED4_RED_OFF;AUX_LED4_GREEN_OFF;AUX_LED4_BLUE_OFF;}
-            if (stat == 1) {AUX_LED4_RED_OFF;AUX_LED4_GREEN_OFF;AUX_LED4_BLUE_ON;}
-            if (stat == 2) {AUX_LED4_RED_OFF;AUX_LED4_GREEN_ON;AUX_LED4_BLUE_OFF;}
-            if (stat == 3) {AUX_LED4_RED_OFF;AUX_LED4_GREEN_ON;AUX_LED4_BLUE_ON;}
-            if (stat == 4) {AUX_LED4_RED_ON;AUX_LED4_GREEN_OFF;AUX_LED4_BLUE_OFF;}
-            if (stat == 5) {AUX_LED4_RED_ON;AUX_LED4_GREEN_OFF;AUX_LED4_BLUE_ON;}
-            if (stat == 6) {AUX_LED4_RED_ON;AUX_LED4_GREEN_ON;AUX_LED4_BLUE_OFF;}
-            if (stat == 7) {AUX_LED4_RED_ON;AUX_LED4_GREEN_ON;AUX_LED4_BLUE_ON;}
-        }
-    }
+	stat %= 8;
+	if (led == 1) {
+		if (stat == 0) {AUX_LED1_RED_OFF;AUX_LED1_GREEN_OFF;AUX_LED1_BLUE_OFF;}
+		if (stat == 1) {AUX_LED1_RED_OFF;AUX_LED1_GREEN_OFF;AUX_LED1_BLUE_ON;}
+		if (stat == 2) {AUX_LED1_RED_OFF;AUX_LED1_GREEN_ON;AUX_LED1_BLUE_OFF;}
+		if (stat == 3) {AUX_LED1_RED_OFF;AUX_LED1_GREEN_ON;AUX_LED1_BLUE_ON;}
+		if (stat == 4) {AUX_LED1_RED_ON;AUX_LED1_GREEN_OFF;AUX_LED1_BLUE_OFF;}
+		if (stat == 5) {AUX_LED1_RED_ON;AUX_LED1_GREEN_OFF;AUX_LED1_BLUE_ON;}
+		if (stat == 6) {AUX_LED1_RED_ON;AUX_LED1_GREEN_ON;AUX_LED1_BLUE_OFF;}
+		if (stat == 7) {AUX_LED1_RED_ON;AUX_LED1_GREEN_ON;AUX_LED1_BLUE_ON;}
+	}
+	if (led == 2) {
+		if (stat == 0) {AUX_LED2_RED_OFF;AUX_LED2_GREEN_OFF;AUX_LED2_BLUE_OFF;}
+		if (stat == 1) {AUX_LED2_RED_OFF;AUX_LED2_GREEN_OFF;AUX_LED2_BLUE_ON;}
+		if (stat == 2) {AUX_LED2_RED_OFF;AUX_LED2_GREEN_ON;AUX_LED2_BLUE_OFF;}
+		if (stat == 3) {AUX_LED2_RED_OFF;AUX_LED2_GREEN_ON;AUX_LED2_BLUE_ON;}
+		if (stat == 4) {AUX_LED2_RED_ON;AUX_LED2_GREEN_OFF;AUX_LED2_BLUE_OFF;}
+		if (stat == 5) {AUX_LED2_RED_ON;AUX_LED2_GREEN_OFF;AUX_LED2_BLUE_ON;}
+		if (stat == 6) {AUX_LED2_RED_ON;AUX_LED2_GREEN_ON;AUX_LED2_BLUE_OFF;}
+		if (stat == 7) {AUX_LED2_RED_ON;AUX_LED2_GREEN_ON;AUX_LED2_BLUE_ON;}
+	}
+	if (led == 3) {
+		if (stat == 0) {AUX_LED3_RED_OFF;AUX_LED3_GREEN_OFF;AUX_LED3_BLUE_OFF;}
+		if (stat == 1) {AUX_LED3_RED_OFF;AUX_LED3_GREEN_OFF;AUX_LED3_BLUE_ON;}
+		if (stat == 2) {AUX_LED3_RED_OFF;AUX_LED3_GREEN_ON;AUX_LED3_BLUE_OFF;}
+		if (stat == 3) {AUX_LED3_RED_OFF;AUX_LED3_GREEN_ON;AUX_LED3_BLUE_ON;}
+		if (stat == 4) {AUX_LED3_RED_ON;AUX_LED3_GREEN_OFF;AUX_LED3_BLUE_OFF;}
+		if (stat == 5) {AUX_LED3_RED_ON;AUX_LED3_GREEN_OFF;AUX_LED3_BLUE_ON;}
+		if (stat == 6) {AUX_LED3_RED_ON;AUX_LED3_GREEN_ON;AUX_LED3_BLUE_OFF;}
+		if (stat == 7) {AUX_LED3_RED_ON;AUX_LED3_GREEN_ON;AUX_LED3_BLUE_ON;}
+	}
+	if (led == 4) {
+		if (stat == 0) {AUX_LED4_RED_OFF;AUX_LED4_GREEN_OFF;AUX_LED4_BLUE_OFF;}
+		if (stat == 1) {AUX_LED4_RED_OFF;AUX_LED4_GREEN_OFF;AUX_LED4_BLUE_ON;}
+		if (stat == 2) {AUX_LED4_RED_OFF;AUX_LED4_GREEN_ON;AUX_LED4_BLUE_OFF;}
+		if (stat == 3) {AUX_LED4_RED_OFF;AUX_LED4_GREEN_ON;AUX_LED4_BLUE_ON;}
+		if (stat == 4) {AUX_LED4_RED_ON;AUX_LED4_GREEN_OFF;AUX_LED4_BLUE_OFF;}
+		if (stat == 5) {AUX_LED4_RED_ON;AUX_LED4_GREEN_OFF;AUX_LED4_BLUE_ON;}
+		if (stat == 6) {AUX_LED4_RED_ON;AUX_LED4_GREEN_ON;AUX_LED4_BLUE_OFF;}
+		if (stat == 7) {AUX_LED4_RED_ON;AUX_LED4_GREEN_ON;AUX_LED4_BLUE_ON;}
+	}
+
 }
 
 void Inchie4KeyLED::perform (void){
 
+	uint8_t buf[4];
+
+	buf[0] = 0;  // address of brain
+	buf[1] = index;
+
     keyState_1 = (GPIO_ReadInputDataBit(GPIOA, GPIO_Pin_1)) ? 0 : 1;
     if (keyState_1 != keyStateLast_1){
         keyStateLast_1 = keyState_1;
-        sprintf(address, "/h/%s/%d", type, index);
-        OSCMessage msgOut(address);
-        msgOut.add((int32_t)1);
-        msgOut.add(keyState_1);
-        msgOut.send(oscBuf);
-        slipSerial.sendPacket(oscBuf.buffer, oscBuf.length);
+        buf[2] = 1;
+        buf[3] = keyState_1;
+        slipSerial.sendPacket(buf, 4);
     }
 
     keyState_2 = (GPIO_ReadInputDataBit(GPIOA, GPIO_Pin_0)) ? 0 : 1;
     if (keyState_2 != keyStateLast_2){
         keyStateLast_2 = keyState_2;
-        sprintf(address, "/h/%s/%d", type, index);
-        OSCMessage msgOut(address);
-        msgOut.add((int32_t)2);
-        msgOut.add(keyState_2);
-        msgOut.send(oscBuf);
-        slipSerial.sendPacket(oscBuf.buffer, oscBuf.length);
+        buf[2] = 2;
+        buf[3] = keyState_2;
+        slipSerial.sendPacket(buf, 4);
     }
 
     keyState_3 = (GPIO_ReadInputDataBit(GPIOA, GPIO_Pin_2)) ? 0 : 1;
     if (keyState_3 != keyStateLast_3){
         keyStateLast_3 = keyState_3;
-        sprintf(address, "/h/%s/%d", type, index);
-        OSCMessage msgOut(address);
-        msgOut.add((int32_t)3);
-        msgOut.add(keyState_3);
-        msgOut.send(oscBuf);
-        slipSerial.sendPacket(oscBuf.buffer, oscBuf.length);
+        buf[2] = 3;
+        buf[3] = keyState_3;
+        slipSerial.sendPacket(buf, 4);
     }
 
     keyState_4 = (GPIO_ReadInputDataBit(GPIOA, GPIO_Pin_3)) ? 0 : 1;
     if (keyState_4 != keyStateLast_4){
         keyStateLast_4 = keyState_4;
-        sprintf(address, "/h/%s/%d", type, index);
-        OSCMessage msgOut(address);
-        msgOut.add((int32_t)4);
-        msgOut.add(keyState_4);
-        msgOut.send(oscBuf);
-        slipSerial.sendPacket(oscBuf.buffer, oscBuf.length);
+        buf[2] = 4;
+        buf[3] = keyState_4;
+        slipSerial.sendPacket(buf, 4);
     }
 }
 
