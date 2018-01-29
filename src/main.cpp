@@ -21,8 +21,8 @@ extern "C" {
 #include "SLIPEncodedSerial.h"
 //#include "InchieLED.h"
 //#include "InchieKeyLED.h"
-#include "Inchie4KeyLED.h"
-//#include "InchiePot.h"
+//#include "Inchie4KeyLED.h"
+#include "InchiePot.h"
 //#include "InchieTest.h"
 
 // uart buffers
@@ -34,9 +34,9 @@ extern hardware_uart uart_upstream;
 SLIPEncodedSerial slipSerial(&uart_upstream);
 
 // create inchie object and initialize
-//InchiePot inchie(oscBuf, slipSerial);
+InchiePot inchie(slipSerial);
 //InchieKeyLED inchie(oscBuf, slipSerial);
-Inchie4KeyLED inchie(slipSerial);
+//Inchie4KeyLED inchie(slipSerial);
 
 int main(int argc, char* argv[]) {
 
@@ -68,13 +68,13 @@ int main(int argc, char* argv[]) {
 	// init the inchie
 	inchie.init();
 
-    LEDON;AUX_LED1_RED_ON;
+    LEDON;//AUX_LED1_RED_ON;
     timer_sleep(10);
-    LEDOFF;AUX_LED1_RED_OFF;
+    LEDOFF;//AUX_LED1_RED_OFF;
     timer_sleep(10);
-    LEDON;AUX_LED1_RED_ON;
+    LEDON;//AUX_LED1_RED_ON;
     timer_sleep(10);
-    LEDOFF;AUX_LED1_RED_OFF;
+    LEDOFF;//AUX_LED1_RED_OFF;
     timer_sleep(10);
 
     /* IWDG timeout equal to 250 ms (the timeout may varies due to LSI frequency

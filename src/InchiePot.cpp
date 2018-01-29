@@ -12,10 +12,10 @@ extern "C" {
 #include "BlinkLed.h"
 }
 
-InchiePot::InchiePot(SimpleWriter &buf, SLIPEncodedSerial &serial)
-: oscBuf(buf), slipSerial(serial)
+InchiePot::InchiePot(SLIPEncodedSerial &serial)
+: slipSerial(serial)
 {
-	index = 0;
+	index = 254;
 	pollCount = 0;
 	potVal = 0;
 	changed = false;
@@ -69,11 +69,17 @@ void InchiePot::init (void){
 
 }
 
-void InchiePot::respond (OSCMessage &msg){
+void InchiePot::respond (const uint8_t *buf){
 
 }
 
 void InchiePot::perform (void){
+
+	uint8_t buf[3];
+
+	buf[0] = 0;  // address of brain
+	buf[1] = index;
+
 	pollCount++;
 	if (pollCount >= 10){
 		pollCount = 0;
@@ -102,12 +108,8 @@ void InchiePot::perform (void){
 
 		if (changed){
 			changed = false;
-		    sprintf(address, "/%s/%d", type, index);
-		    OSCMessage msgOut(address);
-			msgOut.add(potVal);
-		    msgOut.send(oscBuf);
-			slipSerial.sendPacket(oscBuf.buffer, oscBuf.length);
-
+	        buf[2] = potVal;
+	        slipSerial.sendPacket(buf, 3);
 		}
 	}
 }

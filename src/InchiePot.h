@@ -11,9 +11,7 @@
 
 #include <stdint.h>
 #include <stdio.h>
-#include "OSC/OSCMessage.h"
 #include "SLIPEncodedSerial.h"
-#include "OSC/SimpleWriter.h"
 
 
 #include "stm32f0xx.h"
@@ -23,21 +21,20 @@ class InchiePot {
 private:
 
 public:
-	InchiePot(SimpleWriter &buf, SLIPEncodedSerial &serial);
+	InchiePot(SLIPEncodedSerial &serial);
 	~InchiePot() {};
 
 	// for communication
-	SimpleWriter &oscBuf;
 	SLIPEncodedSerial &slipSerial;
 
 	// for address
 	char const * type = "pot";
-	int index;
+	uint8_t index;
 	char address[16];
 
 	// every inchie must have these three fucntions
 	void init (void);
-	void respond (OSCMessage &msg);
+	void respond (const uint8_t *buf);
 	void perform (void);
 
 	// specific for this inchie
