@@ -28,7 +28,7 @@ src/main.o: ../src/main.cpp ../src/uart.h \
  ../system/include/stm32f0-stdperiph/stm32f0xx_misc.h ../src/Timer.h \
  ../system/include/cmsis/cmsis_device.h \
  ../system/include/cmsis/stm32f0xx.h ../src/BlinkLed.h \
- ../src/SLIPEncodedSerial.h ../src/InchiePot.h
+ ../src/SLIPEncodedSerial.h ../src/InchieKeyLED.h
 
 ../src/uart.h:
 
@@ -100,4 +100,4 @@ src/main.o: ../src/main.cpp ../src/uart.h \
 
 ../src/SLIPEncodedSerial.h:
 
-../src/InchiePot.h:
+../src/InchieKeyLED.h:

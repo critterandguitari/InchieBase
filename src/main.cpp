@@ -20,9 +20,9 @@ extern "C" {
 
 #include "SLIPEncodedSerial.h"
 //#include "InchieLED.h"
-//#include "InchieKeyLED.h"
+#include "InchieKeyLED.h"
 //#include "Inchie4KeyLED.h"
-#include "InchiePot.h"
+//#include "InchiePot.h"
 //#include "InchieTest.h"
 
 // uart buffers
@@ -34,8 +34,8 @@ extern hardware_uart uart_upstream;
 SLIPEncodedSerial slipSerial(&uart_upstream);
 
 // create inchie object and initialize
-InchiePot inchie(slipSerial);
-//InchieKeyLED inchie(oscBuf, slipSerial);
+//InchiePot inchie(slipSerial);
+InchieKeyLED inchie(slipSerial);
 //Inchie4KeyLED inchie(slipSerial);
 
 int main(int argc, char* argv[]) {

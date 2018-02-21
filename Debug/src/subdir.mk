@@ -11,6 +11,7 @@ CPP_SRCS += \
 ../src/InchiePot.cpp \
 ../src/InchieTest.cpp \
 ../src/SLIPEncodedSerial.cpp \
+../src/ledkey_4x.cpp \
 ../src/main.cpp 
 
 C_SRCS += \
@@ -28,6 +29,7 @@ OBJS += \
 ./src/InchieTest.o \
 ./src/SLIPEncodedSerial.o \
 ./src/Timer.o \
+./src/ledkey_4x.o \
 ./src/main.o \
 ./src/uart.o 
 
@@ -44,6 +46,7 @@ CPP_DEPS += \
 ./src/InchiePot.d \
 ./src/InchieTest.d \
 ./src/SLIPEncodedSerial.d \
+./src/ledkey_4x.d \
 ./src/main.d 
 
 
